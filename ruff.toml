@@ -1,0 +1,14 @@
+# Ruff lint config — Enki
+# Minimal ruleset: surface real bugs, ignore style noise.
+
+line-length = 120
+target-version = "py39"
+
+exclude = ["build", "drafts"]
+
+[lint]
+select = ["F", "E9"]
+ignore = []
+
+[lint.per-file-ignores]
+"tests/*" = ["F401", "F811"]
