@@ -189,7 +189,6 @@ def describe() -> str:
 
 
 if __name__ == '__main__':
-    import json
     print(describe())
     print()
 

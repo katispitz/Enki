@@ -44,7 +44,7 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict
 from typing import Optional
 
-from _axis_engine import compute_axis_state, AxisState
+from _axis_engine import compute_axis_state
 
 
 @dataclass

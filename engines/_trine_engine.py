@@ -23,7 +23,6 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict
 from typing import Optional
 
-from _axis_engine import AxisState
 
 
 @dataclass

@@ -21,7 +21,6 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict
 from typing import Optional
 
-from cube_edges import DIRECTION_GROUPS
 from carrier_directions import direction_state
 
 
@@ -115,7 +114,6 @@ def describe() -> str:
 
 
 if __name__ == '__main__':
-    import json
     print(describe())
     # Sample live: all 8 PE planets at conjunction-spread (no aspect)
     print('SAMPLE LIVE STATE (all 8 planets in single zodiac quadrant):')

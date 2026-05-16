@@ -13,7 +13,7 @@ an axis-direction = 4 parallel cube edges. Each class covers ALL 8 PE planets.
 from __future__ import annotations
 from typing import Optional
 
-from cube_edges import DIRECTION_GROUPS, EDGE_AXIS, edge_state
+from cube_edges import DIRECTION_GROUPS
 from carrier_pairs import pair_state
 from _carrier_direction_engine import (
     CarrierDirectionState, compute_carrier_direction_state

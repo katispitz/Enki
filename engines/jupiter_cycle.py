@@ -123,7 +123,6 @@ def describe() -> str:
 
 
 if __name__ == '__main__':
-    import json
     print(describe())
     print()
     ideal_lons = [(i * JUPITER_SIGN_STEP) % 360.0 for i in range(JUPITER_SIDEREAL_N)]

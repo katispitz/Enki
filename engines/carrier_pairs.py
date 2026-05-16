@@ -19,7 +19,7 @@ from __future__ import annotations
 from typing import Optional
 
 from cube_edges import (
-    ANTIPODAL_PAIRS, EDGE_PLANET_PAIRS, EDGE_AXIS, edge_state
+    ANTIPODAL_PAIRS, EDGE_AXIS, edge_state
 )
 from _carrier_pair_engine import CarrierPairState, compute_carrier_pair_state
 

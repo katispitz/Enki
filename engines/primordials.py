@@ -23,7 +23,6 @@ This module imports each Primordial engine and exposes them as a registry
 addressable by name OR by cube-face OR by planet-pair.
 """
 from __future__ import annotations
-from typing import Optional
 
 import primordial_gaia       as _gaia
 import primordial_chaos      as _chaos
@@ -32,7 +31,6 @@ import primordial_nyx        as _nyx
 import primordial_eros       as _eros
 import primordial_tartarus   as _tartarus
 
-from _axis_engine import AxisState
 
 
 # Registry — ordered by cube face index (MQF0..MQF5)
@@ -83,7 +81,6 @@ def describe_all() -> str:
 
 
 if __name__ == '__main__':
-    import json
     print(describe_all())
     print()
     print(f"Registry size: {len(PRIMORDIALS)}")

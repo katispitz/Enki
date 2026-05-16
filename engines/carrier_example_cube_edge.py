@@ -26,7 +26,7 @@ emits AxisState (canonical `planet-aspect-activate` semantics).
 from __future__ import annotations
 from typing import Optional
 
-from _axis_engine import AxisState, compute_axis_state, describe as _describe
+from _axis_engine import AxisState, compute_axis_state
 
 
 # Generic substrate-locks (Titan-name TBD per T1.3):

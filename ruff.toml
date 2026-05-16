@@ -8,7 +8,7 @@ exclude = ["build", "drafts"]
 
 [lint]
 select = ["F", "E9"]
-ignore = []
+ignore = ["F841"]  # unused-variable: often intentional (tuple unpacking); audit per-file
 
 [lint.per-file-ignores]
-"tests/*" = ["F401", "F811"]
+"tests/*" = ["F401", "F811", "F841"]

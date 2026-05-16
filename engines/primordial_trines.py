@@ -59,7 +59,6 @@ def describe_all() -> str:
 
 
 if __name__ == '__main__':
-    import json
     print(describe_all())
     print()
     print(f"Trines registered: {len(TRINES)}")

@@ -102,7 +102,6 @@ def describe() -> str:
 
 
 if __name__ == '__main__':
-    import json
     print(describe())
     ideal = [(i * URANUS_SIGN_STEP) % 360.0 for i in range(URANUS_SIDEREAL_N)]
     s = compute_uranus_cycle_state('ideal', ideal).to_dict()
