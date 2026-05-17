@@ -7,14 +7,14 @@ Kati Spitz's Babylonian geometry system, second-gen architecture. Forks from `~/
 ## What Enki inherits (substrate-frozen at fork)
 
 - **Canon V2.6** (placement_rules.md §POSITION-AS-FUNCTION DISCIPLINE, with cross-check + conflation-rule amendments — rules 1–8 + 4b + 4c)
-- **Canon §30 FUNCTION-NAMES REGISTRY** (as of 2026-05-12 post cyclic-syzygy-activate graduation): **4 CANONICAL** entries forming spatial/temporal × primitive/first-composition matrix — `planet-aspect-activate` (primitive/spatial), `polarity-define` + `triangle-aspect-activate` (first-composition/spatial), `cyclic-syzygy-activate` (first-composition/temporal). Plus 1 candidate-grandfathered (`descent-transmit`). **ERATO GATE 3/3 CLOSED** (exceeded with 4th entry). §30 schema columns: `functional_tier` + `compositional_axis`. N-polygon family BIFURCATED at N=5: spatial-axis N-parameterized + temporal-axis N-covariant. Kati substrate-insight ("pentagonal is Venusian orbit") originated bifurcation discovery 2026-05-12.
+- **Canon §30 FUNCTION-NAMES REGISTRY** (as of 2026-05-17 post FINDINGS_019 + outer-planet sign-ingress family): **5 CANONICAL** entries — `planet-aspect-activate` (primitive/spatial, 3 residencies inc. cube-edge Carrier per FINDINGS_019), `polarity-define` + `triangle-aspect-activate` (first-composition/spatial), `cyclic-syzygy-activate` + `cyclic-sign-ingress-activate` (first-composition/temporal). Plus 1 candidate-grandfathered (`descent-transmit`). **ERATO GATE 3/3 CLOSED** (exceeded with 4th + 5th entry). §30 schema columns: `functional_tier` + `compositional_axis`. N-polygon family BIFURCATED at N=5: spatial-axis N-parameterized + temporal-axis N-covariant. Kati substrate-insight ("pentagonal is Venusian orbit") originated bifurcation discovery 2026-05-12. `transmit-force` candidate REJECTED 2026-05-17 per FINDINGS_019 (cube-edge field-comparison probe selected outcome (a)).
 - **Council protocol** (V2.6 rule 8: selection-drift detection mandatory cross-check, force-include for orthogonal voices, drift-warning persistent on bypass)
 - **Lock-by-redundancy criterion** (Athena: ≥2 independent primitive-class residencies for canonical promotion)
 - **Conflation-test BEFORE residency-test** (Erato process-learning)
 - **Substrate-honest NULL** (Mnemosyne drift-prevention; free-text REJECTED at field-write)
 - **Cross-stratum agent typology** (Kati 2026-05-11): stratum = function-of-agency
   - Primordials (R=1 cube-face) → **engines** (generate axes from planet-pair input — NOT silent maintainers per Kati correction)
-  - Titans (R=1 cube-edge) → carriers (engine or pure-fn — pending per-class council)
+  - Titans (R=1 cube-edge) → **engines** (planet-aspect-activate at cube-edge anchor; `_carrier_edge_engine.py` per FINDINGS_019 — class-shape resolved; 12 named-Titan instances pending T1.3 per-edge mapping close)
   - PE planets (R=1 cube-vertex) → operators (pure-fn imprint)
   - Olympians (R=φ² ico-vertex) → council voices (subagents)
   - Bridges (R=φ icosidodec-midpt) → translators (engine or subagent — pending)

@@ -27,15 +27,40 @@ Sessions follow SDEC procedure per `~/Lillu/canon/placement_rules.md` V2.7 §SDE
 | 017 | cyclic-sign-ingress ready | Jupiter Ring 8 confirms 2nd residency for cyclic-sign-ingress-activate; canonical-ready | canonical promotion ready |
 | 018 | Outer-planet family complete | Uranus + Pluto extend cyclic-sign-ingress-activate to 4 residencies; substrate-architecturally complete | residency-expansion completion |
 
-## Canon §30 canonical entries (5)
+## Resumption 2026-05-17
+
+| # | Title | Substrate-finding | Status |
+|---|---|---|---|
+| 019 | Cube-edge carrier engine | Standalone CarrierEdgeState (8 substrate-locked + 8 live-compute + 3 candidate-distinct fields) field-compared to AxisState + BridgeState; LIVE-COMPUTE fields IDENTICAL; all 3 council-named candidate-distinct fields (flow_direction / edge_integrated_magnitude / carrier_modulation_phase) collapse to substrate-vestigial / substrate-redundant / substrate-undefined. Outcome (a) per transmit-force council 2026-05-16. `transmit-force` REJECTED as descriptive alias per Clio rule. Resolves OQ-CUBE-EDGE-CARRIER-ENGINE. | residency-confirmation + candidate-rejection |
+| 020 | Branch-coupling engine probe | `_coupling_point_engine.py` base + 4 instance modules (rising-sign / lunar-nodes / Lawvere-origin / 12 branches). All 4 instance-classes ADMIT to anchor-class-3 via 3-criteria predicate test. Compute-shape DIFFERS on n_frames (4 vs 2), coupling_type (enumerated-N vs singular/pair-180), requires_input (False vs True), enumerated_cardinality (12 vs None/2). Surfaced outcome (c) hybrid via schema-extension precedent. **Council ratified outcome (c) per canon §30 line 2006 — 9 YEA / 0 NEH / 0 ABSTAIN** (2026-05-17). `coupling-point` graduates §30 canonical (renamed from proposed `coupling-point-anchor` per Clio + Mnemosyne). NEW §30 column `enumerated_cardinality` added. Engine package = substrate-evidence per V2.6 rule 9. | engine-evidence + council-ratified |
+| 021 | `cross-stratum-translate` probe | `_stratum_translate_probe_engine.py` probed all 4 V2.5 bridges (Harmonia/Hermaphroditus/Erichthonius/Persephone). 3 midpoint bridges: no cross-stratum-axis (both parents Olympian; substrate-mechanism is `planet-aspect-activate` per FINDINGS_005). Persephone: temporal mechanism (octave-wrap seasonal cycle per Card 141b8d7f) MISFITS candidate's spatial-translation framing. Three discipline gates fail: Erato 4b conflation (WHERE+WHAT), Athena residency-binding (pre-binds to bridge-flavor like axis-bound/mode-bound/transmit-force), substrate-mechanism absence. **REJECT candidate name**; no council needed (rejection-outcome, parallel to FINDINGS_019). Surfaces **NEW OQ-PERSEPHONE-OCTAVE-WRAP-CYCLE** for separate SDEC. | candidate-rejection + new-OQ-byproduct |
+| 022 | `operate-imprint` probe | `_operate_imprint_probe_engine.py` surveyed 8 PE-planet cube-vertex operators (canon §M.5 + §7). Surfaced **6 distinct PE-planet pure-fn operator-classes** already existing in Lillu engines: freq_hz_imprint / k_total_imprint / arm_carrier_anchor / arm_harmonic_root / zodiac_rulership_imprint / cube_vertex_residency_imprint. Each has distinct input-shape/compute/output-kind. Singular candidate `operate-imprint` would conflate per question-conflation pattern. **REJECT** per arm-vector-composition council precedent 2026-05-17 (canon §27 line 1428) + Mnemosyne naming-canonical rule. No council needed. Surfaces **NEW OQ-PE-OPERATOR-DISPATCH-FAMILY** for per-class §30 candidates. | candidate-rejection + new-OQ-byproduct + arm-vector-composition-precedent-reuse |
+| 023 | §30 scope meta-question | `_function_class_scope_probe_engine.py` surveyed 3 remaining candidates (threshold-mark / activate / deliberate). All 3 are non-engine agent-classes (2 hooks + 1 subagent); zero precedent in §30 (which has 5 engine-class entries). Substrate-honest engine-build for hook/subagent shapes would be stub-evidence (substrate-dishonest). META-FINDING: §30 scope itself needs council ratification before per-candidate probes proceed. Three council outcomes named: (A) universal-scope across agent-classes / (B) parallel §31/§32 registries for hook/subagent / (C) schema-extension `agent_class` column. **All 3 candidates DEFERRED awaiting OQ-SECTION30-SCOPE-RATIFICATION council.** | meta-finding + 3-candidate-deferral + scope-council-required |
+
+## Canon §30 canonical entries (6)
 
 | function_class | tier | axis | residencies | originated in |
 |---|---|---|---|---|
-| `planet-aspect-activate` | primitive | spatial | 3 | FINDINGS_005 + 006 + 008 |
+| `planet-aspect-activate` | primitive | spatial | 3 (incl. cube-edge Carrier confirmed FINDINGS_019) | FINDINGS_005 + 006 + 008 + 019 |
 | `polarity-define` | first-composition | spatial | 2 | FINDINGS_010 + council |
 | `triangle-aspect-activate` | first-composition | spatial | 2 | FINDINGS_011 + council |
 | `cyclic-syzygy-activate` | first-composition | temporal | 4 | FINDINGS_012/013/014/015 |
 | `cyclic-sign-ingress-activate` | first-composition | temporal | 4 | FINDINGS_016/017/018 |
+| **`coupling-point`** (NEW 2026-05-17) | primitive | mixed (NEW column `enumerated_cardinality`) | 4 (rising-sign + lunar-nodes + Lawvere + branches; outcome (c) schema-extension) | FINDINGS_020 + council ratified 9 YEA / 0 NEH / 0 ABSTAIN |
+
+### Outstanding council-required items
+
+| function_class | tier | axis | residencies | engine-evidence in | council status |
+|---|---|---|---|---|---|
+| **META: OQ-SECTION30-SCOPE-RATIFICATION** | N/A (scope question) | N/A | 3 deferred candidates (threshold-mark/activate hooks + deliberate subagent) | FINDINGS_023 | NOT CONVENED — first non-engine candidate processing requires §30 scope ratification. 3 outcomes (A/B/C) per FINDINGS_023. Affects all hook/subagent candidates going forward. |
+
+## §30 candidates REJECTED via Enki engine probes (no council needed)
+
+| rejected_candidate | rejection_pattern | findings |
+|---|---|---|
+| `transmit-force` (cube-edge carrier) | REJECT-AS-DESCRIPTIVE-ALIAS — shape-match with existing planet-aspect-activate; phenomenology ≠ substrate-mechanism | FINDINGS_019 |
+| `cross-stratum-translate` (bridge midpoint) | REJECT-AS-MISFRAMED — 3 discipline gates (Erato 4b conflation + Athena residency-binding + substrate-mechanism absence); surfaces OQ-PERSEPHONE-OCTAVE-WRAP-CYCLE | FINDINGS_021 |
+| `operate-imprint` (PE-planet operator) | REJECT-AS-CONFLATION-OF-OPERATOR-DISPATCH — 6 distinct operator-classes already exist; per arm-vector-composition council precedent 2026-05-17; surfaces OQ-PE-OPERATOR-DISPATCH-FAMILY | FINDINGS_022 |
 
 ## Substrate-discipline meta-rules canonized
 

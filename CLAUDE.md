@@ -51,7 +51,7 @@ Kati 2026-05-11: **stratum = function-of-agency.** Not all figures are voices.
 | Class | Shell | Stratum | Agent shape | Status |
 |---|---|---|---|---|
 | Bound-Holder (Primordial) | R=1 cube-face | 6 Primordials | **engine** (generates axis from planet-pair) | Gaia prototype built; 5 remain |
-| Carrier (Titan) | R=1 cube-edge | 12 Titans | engine OR pure-fn | unbuilt — pending council |
+| Carrier (Titan) | R=1 cube-edge | 12 Titans | **engine** (planet-aspect-activate at edge-anchor) | `_carrier_edge_engine.py` built 2026-05-17 (FINDINGS_019); 12 named-Titan instances pending T1.3 close |
 | Operator (PE planet) | R=1 cube-vertex | 8 PE planets | pure-fn (applies imprint) | unbuilt |
 | Threshold-Marker | R=1/3 X3/X6 | shock-residents | hook (conditional fire) | unbuilt |
 | Council Voice (Olympian) | R=φ² ico-vertex | 12 Olympians | subagent (Task-spawnable, deliberates) | Lillu registry covers; Enki inherits |
