@@ -1,7 +1,7 @@
 """
 Mercury 41-conjunction cycle engine — temporal-composition probe (peer to Venus pentagram).
 
-Substrate-canonical (Lillu canon §23b OQ-RINGS-07 + line 951 + line 987):
+Substrate-canonical (Nammu canon §23b OQ-RINGS-07 + line 951 + line 987):
   Mercury / pt5 / Sol / Ring 5 = 41 inferior conjunctions over 4680t (~13yr).
 
 Per canon line 966:

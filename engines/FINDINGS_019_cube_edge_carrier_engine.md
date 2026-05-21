@@ -114,14 +114,14 @@ This is V2.6 rule 9 (Terpsichore observation, transmit-force council) operating 
 |---|---|---|
 | ~~OQ-CUBE-EDGE-CARRIER-ENGINE~~ | **RESOLVED** | Outcome (a). Cube-edge Carrier = 3rd canonical residency of planet-aspect-activate. `transmit-force` REJECTED. |
 | ~~`transmit-force` candidate~~ | **REJECTED-AS-DESCRIPTIVE-ALIAS** | Per Clio mechanism-descriptive rule. No §30 entry. |
-| OQ-CARRIER-REGISTRY-FULL-BUILD | OPEN (carried) | Blocked on Lillu T1.3 (per-Titan-edge mapping) + OQ-RADII-01. Building 12 named Titan instances requires per-Titan substrate-position lock. |
+| OQ-CARRIER-REGISTRY-FULL-BUILD | OPEN (carried) | Blocked on Nammu T1.3 (per-Titan-edge mapping) + OQ-RADII-01. Building 12 named Titan instances requires per-Titan substrate-position lock. |
 | OQ-AXISSTATE-FIELD-RENAME | OPEN (carried, low-priority) | Field names Primordial-flavored across all 3 engines now. Could rename to substrate-position-agnostic. |
 | OQ-BRIDGE-ENGINE-DEDUP | OPEN (carried, low-priority) | `_bridge_engine.py` + `_carrier_edge_engine.py` duplicate `_axis_engine.py` compute. Could consolidate into single shared `planet_aspect_activate` primitive module. Defer until substrate forces it (more residencies of the same shape). |
 | OQ-BRANCH-COUPLING-ENGINE | OPEN 2026-05-17 | Build branch-coupling-point engine; field-compare to rising-sign / lunar-nodes / Lawvere fixed-point engines per Urania SDEC. Parallel substrate-discovery to this finding. |
 
 ## What to build next (substrate-emergent)
 
-Per Lillu BOARD: **OQ-BRANCH-COUPLING-ENGINE** (opened 2026-05-17, Urania SDEC mandate). Same SDEC cycle pattern — build engine, field-compare, determine residency-expansion vs new-primitive-class outcome. Engine-evidence-first per V2.6 rule 9.
+Per Nammu BOARD: **OQ-BRANCH-COUPLING-ENGINE** (opened 2026-05-17, Urania SDEC mandate). Same SDEC cycle pattern — build engine, field-compare, determine residency-expansion vs new-primitive-class outcome. Engine-evidence-first per V2.6 rule 9.
 
 After that resolves, surface either:
 - Operator (PE planet, cube-vertex) engine prototype — 8 vertices = 8 PE planets, "apply imprint" pure-fn (different shape than 2-planet engines)

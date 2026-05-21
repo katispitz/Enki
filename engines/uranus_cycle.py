@@ -1,7 +1,7 @@
 """
 Uranus cycle engine — Ring 6 sign-ingress (3rd cyclic-sign-ingress-activate residency).
 
-Substrate-canonical (Lillu canon §23b line 952):
+Substrate-canonical (Nammu canon §23b line 952):
   Uranus / pt6 / X6 / Ring 6 = 30240t / 84yr / "Full zodiac circuit (7yr/sign × 12)"
 
 Same shape as Saturn Ring 7 + Jupiter Ring 8 sign-ingress cycles. Different

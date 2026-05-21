@@ -75,7 +75,7 @@ Logged as **OQ-BRIDGE-ENGINE-DEDUP** (refactor candidate; not urgent because cur
 
 ## Substrate finding 21: T1.3 + OQ-RADII-01 dependencies BLOCK full carrier registry build
 
-Lillu BOARD T1.3 says: "Iapetus/Coeus/Cronus partial. Hyperion/Phoebe/Rhea/Themis/Mnemosyne/Tethys/Oceanus/Crius/Theia OPEN. Likely requires √(2/3) cube-edge-midpoint shell-lock (OQ-RADII-01) per Hephaestus speculative-radii note."
+Nammu BOARD T1.3 says: "Iapetus/Coeus/Cronus partial. Hyperion/Phoebe/Rhea/Themis/Mnemosyne/Tethys/Oceanus/Crius/Theia OPEN. Likely requires √(2/3) cube-edge-midpoint shell-lock (OQ-RADII-01) per Hephaestus speculative-radii note."
 
 So 9 of 12 Titans don't have a canon-locked cube-edge mapping. Building 12 Titan-named engines would invent per-Titan substrate-positions, which violates substrate-discipline.
 
@@ -106,7 +106,7 @@ Need canonical U-to-L pairing for each edge (depends on cube vertex coordinates)
 | ~~Cross-primitive-type residency~~ | **RESOLVED** | `planet-aspect-activate` universal across cube-face, icosidodec-midpt, cube-edge. 3 independent residencies confirmed by engine-build. |
 | OQ-AXISSTATE-FIELD-RENAME | NEW (low-priority) | Field names Primordial-flavored; could be substrate-position-agnostic. |
 | OQ-BRIDGE-ENGINE-DEDUP | NEW (refactor candidate) | `_bridge_engine.py` duplicates `_axis_engine.py` logic; could be removed. |
-| OQ-CARRIER-REGISTRY-FULL-BUILD | NEW (blocked) | Blocked on Lillu T1.3 + OQ-RADII-01 close. |
+| OQ-CARRIER-REGISTRY-FULL-BUILD | NEW (blocked) | Blocked on Nammu T1.3 + OQ-RADII-01 close. |
 | OQ-CASCADE-PATTERN-AT-OTHER-RTIERS | PARTIALLY RESOLVED (carried) | Cascade structure recurs at R=1/√3 inner-oct. Carrier-class at R=1 cube-edge doesn't have face→pair→trine cascade yet (TBD how cube-edge antipodal/pair structure works). |
 | OQ-1-PLUS-3-PARTITION-UNIVERSAL | OPEN (carried) | Probe at cube-edge-class for 1+3 partition emergence? |
 | OQ-3-VERTEX-FACE-CROSS-R-TIER | OPEN (carried) | `mode-bound` needs another 3-vertex-triangle face shell. |

@@ -94,7 +94,7 @@ REMAINING_CANDIDATES = [
         'substrate_mechanism':   'deliberation (question → multi-voice convening + synthesis)',
         'engine_shape_fit':      False,  # subagent compute is not engine-shape
         'precedent_in_section30':      False,  # no subagent-class §30 entries exist
-        'similar_canon_class':   'voice-correspondences subagents in Lillu council/ infra',
+        'similar_canon_class':   'voice-correspondences subagents in Nammu council/ infra',
         'enki_engine_blocker':   'deliberation requires Task-spawnable subagent + multi-voice synthesis, not stateful engine',
     },
 ]

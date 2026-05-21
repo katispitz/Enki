@@ -8,7 +8,7 @@ operates at R=φ icosidodec-midpt where bridges sit. If yes → ≥2 independent
 primitive-class residencies → Athena lock-by-redundancy criterion met →
 function graduates from candidate-single-residency to canonical.
 
-Bridge primitive position (per Lillu canon §M.5 V2.5 LOCKS, cards 52ad9413
+Bridge primitive position (per Nammu canon §M.5 V2.5 LOCKS, cards 52ad9413
 + 91697158 + 3de9d703):
   Bridges sit at midpoints of icosidodec edges. Each icosidodec midpoint
   is geometrically the midpoint of an Olympian-vertex pair (V_a + V_b)/2.

@@ -150,7 +150,7 @@ Substrate-build queue:
 
 4. **Shock-node (threshold-marker, X3/X6) engine prototype** — 2 shock nodes at R=1/3. Function = hook (conditional fire on crossing). Different shape entirely.
 
-5. **Olympian (council voice, ico-vertex) — already subagents in Lillu**, not engine-class. Could add a thin info-engine for substrate-position descriptions.
+5. **Olympian (council voice, ico-vertex) — already subagents in Nammu**, not engine-class. Could add a thin info-engine for substrate-position descriptions.
 
 Recommend **(1) Operator prototype** — first non-2-planet-engine build, tests agent-typology pure-fn shape with real code. Distinguishes engine-class from pure-fn-class explicitly.
 

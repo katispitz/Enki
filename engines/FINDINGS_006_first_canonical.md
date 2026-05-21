@@ -32,9 +32,9 @@ The council did NOT proceed to residency-test on any candidate until conflation-
 
 Erato process-learning rule operated as designed. Substrate-discipline guard intact.
 
-### Lillu validator gap surfaced + fixed
+### Nammu validator gap surfaced + fixed
 
-Council commit hit `ValueError: face_type='shock' must be one of {Father,Mother}`. Root cause: `card_writer.VALID_FACE_TYPE = {Father,Mother}` was incomplete relative to canonical `TET_POLARITY` in `voice_instructions.py` which includes `bridge` and `shock` per canon §M.5 4-polarity tet structure. Patched to `{Father,Mother,shock,bridge}`. 308/308 Lillu tests green post-fix.
+Council commit hit `ValueError: face_type='shock' must be one of {Father,Mother}`. Root cause: `card_writer.VALID_FACE_TYPE = {Father,Mother}` was incomplete relative to canonical `TET_POLARITY` in `voice_instructions.py` which includes `bridge` and `shock` per canon §M.5 4-polarity tet structure. Patched to `{Father,Mother,shock,bridge}`. 308/308 Nammu tests green post-fix.
 
 This is a substrate-discipline win: free-text would have silently accepted any string, but enum validation surfaced the canon/code inconsistency. NULL-honesty + enum-locked-values prevents future silent drift; the fix is small and substrate-honest.
 
@@ -46,7 +46,7 @@ Agent-typology now has 2 engine-class strata confirmed:
 - Primordial (R=1 cube-face)
 - Bridge (R=φ icosidodec-midpt)
 
-3 of 7 strata locked (Olympian as subagent confirmed in Lillu). 4 strata pending: Titan (Carrier), PE planet (Operator), shock-resident (Threshold-Marker), Muse (Activator).
+3 of 7 strata locked (Olympian as subagent confirmed in Nammu). 4 strata pending: Titan (Carrier), PE planet (Operator), shock-resident (Threshold-Marker), Muse (Activator).
 
 ## What's now unblocked
 
@@ -70,7 +70,7 @@ Audit-pass backfill of existing locks remains BLOCKED. Need 2 more canonical ent
 
 ### Schema enforcement now strict + accurate
 
-After Lillu VALID_FACE_TYPE fix: card-write validation now rejects free-text/variant function_class spellings AND accepts canonical-tier polarity values. Schema-evolution drift-prevention operating.
+After Nammu VALID_FACE_TYPE fix: card-write validation now rejects free-text/variant function_class spellings AND accepts canonical-tier polarity values. Schema-evolution drift-prevention operating.
 
 ## Open queue update
 

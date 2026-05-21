@@ -1,7 +1,7 @@
 """
 Saturn cycle engine — Ring 7 probe + Moon-synodic-mirror investigation.
 
-Substrate-canonical (Lillu canon §23b line 953):
+Substrate-canonical (Nammu canon §23b line 953):
   Saturn / pt7 / La / Ring 7 = 10620t / 29.5yr / "Full orbital / Moon-synodic mirror"
 
 Two substrate-meaningful cycle-types to investigate:

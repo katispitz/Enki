@@ -129,7 +129,7 @@ Options:
 
 2. **Pluto Ring 0 / Uranus Ring 6** — additional sign-ingress residencies, possible canonical promotion supports.
 
-3. **Audit-pass backfill** in Lillu (Erato gate exceeded) — apply substrate-discipline to existing cards.
+3. **Audit-pass backfill** in Nammu (Erato gate exceeded) — apply substrate-discipline to existing cards.
 
 4. **Test addition** for saturn_cycle.py in `~/Enki/tests/test_temporal_cycles.py`.
 

@@ -1,7 +1,7 @@
 """
 Jupiter cycle engine — Ring 8 sign-ingress probe (peer to Saturn Ring 7).
 
-Substrate-canonical (Lillu canon §23b line 954):
+Substrate-canonical (Nammu canon §23b line 954):
   Jupiter / pt8 / Si / Ring 8 = 4320t / 12yr / "Zodiac circuit (1yr/sign × 12)"
 
 Same shape as Saturn Ring 7 (FINDINGS_016): N=12 sign-ingresses per Ring cycle,

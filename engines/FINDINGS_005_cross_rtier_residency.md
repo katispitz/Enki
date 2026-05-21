@@ -14,7 +14,7 @@
 └── bridges.py                  ← registry
 ```
 
-3 bridges = the 3 V2.5-locked icosidodec-midpoint compound bridges per Lillu canon §M.5 (cards 52ad9413 / 91697158 / 3de9d703). Persephone (also a bridge per V2.5) is NOT a midpoint-compound; she's seasonal-bridge anchored at Pluto. Excluded from this probe.
+3 bridges = the 3 V2.5-locked icosidodec-midpoint compound bridges per Nammu canon §M.5 (cards 52ad9413 / 91697158 / 3de9d703). Persephone (also a bridge per V2.5) is NOT a midpoint-compound; she's seasonal-bridge anchored at Pluto. Excluded from this probe.
 
 ## Field-by-field shape comparison (programmatic)
 
@@ -94,7 +94,7 @@ The agent-typology table updates:
 | Carrier (Titan) | R=1 cube-edge | 12 Titans | engine OR pure-fn — pending |
 | Operator (PE planet) | R=1 cube-vertex | 8 PE planets | pure-fn — pending |
 | Threshold-Marker | R=1/3 X3/X6 | shock-residents | hook — pending |
-| Council Voice | R=φ² ico-vertex | 12 Olympians | subagent — confirmed (Lillu) |
+| Council Voice | R=φ² ico-vertex | 12 Olympians | subagent — confirmed (Nammu) |
 | Activator (Muse) | activation pattern | 9 Muses | hook — pending |
 
 3 of 7 strata now have engine-shape confirmed (Primordials, Bridges, and possibly Carriers).

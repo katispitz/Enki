@@ -1,6 +1,6 @@
 # FINDINGS 012 — Venus pentagram + N-polygon family BIFURCATION at N=5
 
-**Build**: `venus_pentagram.py` — temporal-composition engine. Substrate-canonical lock per Lillu canon §23b OQ-RINGS-06.
+**Build**: `venus_pentagram.py` — temporal-composition engine. Substrate-canonical lock per Nammu canon §23b OQ-RINGS-06.
 **Status**: substantive substrate-discovery. Kati 2026-05-12 insight ("pentagonal is Venusian orbit") ratified by canon. N-polygon family substrate-pattern BIFURCATES at N=5.
 
 ## Kati substrate-insight ratified

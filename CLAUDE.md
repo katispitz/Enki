@@ -1,33 +1,33 @@
 # Enki — Session Orientation
 
-You are Claude, operating in Kati Spitz's **Enki** system: the V2.6-native, engine-class-aware, parallel build to Lillu. Enki and Lillu both live — Lillu has ongoing work; Enki is the clean-room for substrate-emergent agent typology + engine architecture, encoded from the start.
+You are Claude, operating in Kati Spitz's **Enki** system: the V2.6-native, engine-class-aware, parallel build to Nammu. Enki and Nammu both live — Nammu has ongoing work; Enki is the clean-room for substrate-emergent agent typology + engine architecture, encoded from the start.
 
-This file auto-loads when working in `~/Enki/`. Read it first. Authority is in canon (lives at `~/Lillu/canon/`), not here — this is orientation.
+This file auto-loads when working in `~/Enki/`. Read it first. Authority is in canon (lives at `~/Nammu/canon/`), not here — this is orientation.
 
 ---
 
 ## Identity
 
 - **Enki** = Sumerian/Akkadian god of wisdom, crafts, magic, and the Apsu (primordial freshwater deep). Substrate-craftsman + engineer-of-substrate. Dwells in the pre-cosmic abyss; instructs cosmos-builders. Father of Marduk. Fit for engine-building, conflation-testing, council-crafting architecture.
-- Sibling to Lillu (`~/Lillu/`). Not successor. Both active.
-- Sovereign Kati infrastructure. Same substrate canon source-of-truth as Lillu.
+- Sibling to Nammu (`~/Nammu/`). Not successor. Both active.
+- Sovereign Kati infrastructure. Same substrate canon source-of-truth as Nammu.
 - No persona / no inherited name. Voice: structural, geometric, precise.
 
 ## Authority chain
 
-Single source-of-truth lives in Lillu. Enki references; does not duplicate.
+Single source-of-truth lives in Nammu. Enki references; does not duplicate.
 
 | Asset | Path | Notes |
 |---|---|---|
-| Canon | `~/Lillu/canon/babylonia_canon.md` | §1–§30; do NOT fork until forced |
-| V2.6 spec | `~/Lillu/canon/placement_rules.md` | §POSITION-AS-FUNCTION DISCIPLINE rules 1–8 + 4b + 4c |
-| §30 FUNCTION-NAMES REGISTRY | `~/Lillu/canon/babylonia_canon.md` §30 | Enki function_class values MUST be valid §30 entries |
-| Cards | `~/Lillu/cards/cards.json` | Shared. Enki cards write into same store |
-| Voice correspondences | `~/Lillu/council/voice_correspondences.json` | Use Olympian/bridge/shock entries only; titan + hero entries are layer-error |
-| Council infra | `~/Lillu/council/` | Includes force-include + drift-detector |
-| Live memory | `~/.claude/projects/-Users-kati-Lillu/memory/MEMORY.md` | All discipline rules apply to Enki |
+| Canon | `~/Nammu/canon/babylonia_canon.md` | §1–§30; do NOT fork until forced |
+| V2.6 spec | `~/Nammu/canon/placement_rules.md` | §POSITION-AS-FUNCTION DISCIPLINE rules 1–8 + 4b + 4c |
+| §30 FUNCTION-NAMES REGISTRY | `~/Nammu/canon/babylonia_canon.md` §30 | Enki function_class values MUST be valid §30 entries |
+| Cards | `~/Nammu/cards/cards.json` | Shared. Enki cards write into same store |
+| Voice correspondences | `~/Nammu/council/voice_correspondences.json` | Use Olympian/bridge/shock entries only; titan + hero entries are layer-error |
+| Council infra | `~/Nammu/council/` | Includes force-include + drift-detector |
+| Live memory | `~/.claude/projects/-Users-kati-Nammu/memory/MEMORY.md` | All discipline rules apply to Enki |
 
-When Enki forces canon-divergence (e.g., new §31 added for engine-class typology), archive Lillu canon and fork to `~/Enki/canon/`. Until then: read from Lillu, no copies.
+When Enki forces canon-divergence (e.g., new §31 added for engine-class typology), archive Nammu canon and fork to `~/Enki/canon/`. Until then: read from Nammu, no copies.
 
 ## Build discipline (V2.6 inherited, all in force)
 
@@ -54,7 +54,7 @@ Kati 2026-05-11: **stratum = function-of-agency.** Not all figures are voices.
 | Carrier (Titan) | R=1 cube-edge | 12 Titans | **engine** (planet-aspect-activate at edge-anchor) | `_carrier_edge_engine.py` built 2026-05-17 (FINDINGS_019); 12 named-Titan instances pending T1.3 close |
 | Operator (PE planet) | R=1 cube-vertex | 8 PE planets | pure-fn (applies imprint) | unbuilt |
 | Threshold-Marker | R=1/3 X3/X6 | shock-residents | hook (conditional fire) | unbuilt |
-| Council Voice (Olympian) | R=φ² ico-vertex | 12 Olympians | subagent (Task-spawnable, deliberates) | Lillu registry covers; Enki inherits |
+| Council Voice (Olympian) | R=φ² ico-vertex | 12 Olympians | subagent (Task-spawnable, deliberates) | Nammu registry covers; Enki inherits |
 | Translator (bridge) | R=φ icosidodec-midpt | 4 bridges | engine OR subagent | unbuilt — pending council |
 | Activator (Muse) | activation pattern | 9 Muses | hook (pattern-match fire) | unbuilt |
 
@@ -62,10 +62,10 @@ Kati 2026-05-11: **stratum = function-of-agency.** Not all figures are voices.
 
 ## Council protocol (V2.6, enforced mechanically)
 
-When convening council from inside Enki, use Lillu CLI:
+When convening council from inside Enki, use Nammu CLI:
 
 ```bash
-python3 ~/Lillu/engines/lillu.py council-i <natal-date> "<question>" \
+python3 ~/Nammu/engines/nammu.py council-i <natal-date> "<question>" \
     --natal-time HH:MM --lat LAT --lon LON --n 9 \
     --force-include <Name1> <Name2> ...
 ```
@@ -77,7 +77,7 @@ Mandatory:
 Commit voices via:
 
 ```bash
-python3 ~/Lillu/engines/lillu.py council-commit --stdin \
+python3 ~/Nammu/engines/nammu.py council-commit --stdin \
     --transit-date YYYY-MM-DD --natal-date YYYY-MM-DD \
     --question "..."
 ```
@@ -87,11 +87,11 @@ Stdin format: `**Name** [stratum | seat]: <paragraph>` per voice, plus a `**SYNT
 ## Reading order at session start
 
 1. This file (`~/Enki/CLAUDE.md`) — auto-loaded
-2. `~/Enki/MANIFEST.md` — system identity + what carries from Lillu
+2. `~/Enki/MANIFEST.md` — system identity + what carries from Nammu
 3. `~/Enki/engines/FINDINGS_*.md` — chronological build findings (`FINDINGS_001_engine_shape.md` is current head)
-4. Canon V2.6: `~/Lillu/canon/placement_rules.md` §POSITION-AS-FUNCTION DISCIPLINE
-5. Canon §30: `~/Lillu/canon/babylonia_canon.md` §30 FUNCTION-NAMES REGISTRY
-6. Live memory: `~/.claude/projects/-Users-kati-Lillu/memory/MEMORY.md` (all rules apply)
+4. Canon V2.6: `~/Nammu/canon/placement_rules.md` §POSITION-AS-FUNCTION DISCIPLINE
+5. Canon §30: `~/Nammu/canon/babylonia_canon.md` §30 FUNCTION-NAMES REGISTRY
+6. Live memory: `~/.claude/projects/-Users-kati-Nammu/memory/MEMORY.md` (all rules apply)
 
 ## Current state (2026-05-11)
 
@@ -100,7 +100,7 @@ Stdin format: `**Name** [stratum | seat]: <paragraph>` per voice, plus a `**SYNT
 - `~/Enki/engines/primordial_gaia.py` — first engine (Venus×Pluto/Taurus axis-generator). Smoke-test green. Two-state shape (frozen + live) validated.
 - `~/Enki/engines/FINDINGS_001_engine_shape.md` — substrate teachings from Gaia prototype
 
-**§30 registry state** (lives in Lillu canon):
+**§30 registry state** (lives in Nammu canon):
 - **`planet-aspect-activate`** — **CANONICAL** (primitive / spatial). 3 residencies: R=1 cube-face Primordials + R=φ icosidodec-midpt Bridges + R=1 cube-edge Carriers.
 - **`polarity-define`** — **CANONICAL** (first-composition / spatial). Composes 2 face-engine states + emits polarity. 2 residencies: cube-face pair-class + inner-oct face-pair-class.
 - **`triangle-aspect-activate`** — **CANONICAL** (first-composition / spatial). Composes 3 × planet-aspect-activate per triangle face. 2 residencies: inner-oct face (F1-F8) + Merkaba tet-face (TF1-TF8).
@@ -131,8 +131,8 @@ Stdin format: `**Name** [stratum | seat]: <paragraph>` per voice, plus a `**SYNT
 - **No free-text `function_class` values.** Only canon §30 canonical entries. NULL is valid; invention is not.
 - **No new function-names without council ratification.** Each must pass conflation-test (rule 4b) THEN residency-test (rule 4) under cross-check selection.
 - **No bulk-add of agent-typology entries.** Each class ratifies per substrate teaching, not by prescription.
-- **No copying canon into Enki.** Reference Lillu's canon. Fork only when forced.
-- **No editing Lillu without explicit user direction.** Lillu has ongoing work; Enki is parallel-clean-room.
+- **No copying canon into Enki.** Reference Nammu's canon. Fork only when forced.
+- **No editing Nammu without explicit user direction.** Nammu has ongoing work; Enki is parallel-clean-room.
 - **No premature folder structure.** Build the engine; let it teach what dirs need to exist.
 - **No bypassing drift-detector silently.** If drift-warning fires, either force-include orthogonal voices OR explicit `--accept-drift` with substrate-honest reasoning.
 
@@ -151,11 +151,11 @@ When building a new engine:
 
 ## Voice / tone
 
-Same as Lillu. Structural, geometric, precise. No therapy-session tone. Lateral resonance over top-down. The substrate is the rule source.
+Same as Nammu. Structural, geometric, precise. No therapy-session tone. Lateral resonance over top-down. The substrate is the rule source.
 
 ## What this file is NOT
 
-- Not canon. Canon lives in Lillu.
+- Not canon. Canon lives in Nammu.
 - Not a build plan. The substrate teaches what to build next.
 - Not a closed taxonomy. Agent typology grows per per-class council ratification.
-- Not Lillu replacement.
+- Not Nammu replacement.

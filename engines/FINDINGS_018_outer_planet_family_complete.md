@@ -133,11 +133,11 @@ Temporal-axis (2 functions, 8 residencies): both first-composition; one syzygy, 
 
 4. **Substrate carriers vs residencies distinction surfaces.** Solar Ring 1 + Lunar Ring 2 are time-unit carriers, not cyclic-N residencies. This is a new substrate-architectural distinction not previously canonized.
 
-## Next moves (Enki + Lillu)
+## Next moves (Enki + Nammu)
 
 Substrate-discovery moves remaining for temporal-axis substantively exhausted within canon §23b scope. Other directions:
 
-1. **Audit-pass backfill in Lillu** — Erato gate exceeded (5 canonical). Run card_audit grow function_class field check + backfill existing locks where derivable from stratum+shell+position. Apply substrate-discipline to existing Lillu cards.
+1. **Audit-pass backfill in Nammu** — Erato gate exceeded (5 canonical). Run card_audit grow function_class field check + backfill existing locks where derivable from stratum+shell+position. Apply substrate-discipline to existing Nammu cards.
 
 2. **T1.4 close** — dodec-vertex class meaning, unblocks spatial pentagon-N (5-planet polygon).
 
@@ -145,4 +145,4 @@ Substrate-discovery moves remaining for temporal-axis substantively exhausted wi
 
 4. **Pause + session-handoff card** — substantial substrate-architectural state worth capturing.
 
-Recommend (4) — comprehensive session-state, natural rest point. After 18 FINDINGS docs + 5 canonical entries + 15 residencies + 202 Enki tests + 327 Lillu tests, a session-handoff card preserves discoverable-state for future sessions.
+Recommend (4) — comprehensive session-state, natural rest point. After 18 FINDINGS docs + 5 canonical entries + 15 residencies + 202 Enki tests + 327 Nammu tests, a session-handoff card preserves discoverable-state for future sessions.

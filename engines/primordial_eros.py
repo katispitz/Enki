@@ -4,7 +4,7 @@ Eros (primordial) axis engine — Enki.
 NOT to be confused with Olympian-era Eros (son of Aphrodite). This is the
 PRIMORDIAL Eros — Hesiod-line first-generation deity, axis-class.
 
-Substrate position (from Lillu canon §M.5 V2.5 T1.1-REVISED, card 524fdee6):
+Substrate position (from Nammu canon §M.5 V2.5 T1.1-REVISED, card 524fdee6):
   Primordial:    Eros-primordial
   Cube face:     MQF4 (Merkaba Quadrant Face 4, R=1)
   Planet pair:   Jupiter × Neptune

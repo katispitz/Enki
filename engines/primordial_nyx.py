@@ -1,7 +1,7 @@
 """
 Nyx primordial axis engine — Enki.
 
-Substrate position (from Lillu canon §M.5 V2.5 T1.1-REVISED, card ac6c221d):
+Substrate position (from Nammu canon §M.5 V2.5 T1.1-REVISED, card ac6c221d):
   Primordial:    Nyx
   Cube face:     MQF3 (Merkaba Quadrant Face 3, R=1)
   Planet pair:   Moon × Neptune

@@ -1,7 +1,7 @@
 """
 Gaia primordial axis engine — Enki.
 
-Substrate position (from Lillu canon §M.5 V2.5 T1.1-REVISED, card a64c8127):
+Substrate position (from Nammu canon §M.5 V2.5 T1.1-REVISED, card a64c8127):
   Primordial:    Gaia
   Cube face:     MQF0 (Merkaba Quadrant Face 0, R=1)
   Planet pair:   Venus × Pluto

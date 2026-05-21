@@ -12,7 +12,7 @@ Live-compute: takes (or assumes ephemeris of) date → returns Rahu lon + Ketu l
 Stable: nodes drift slowly (~18.61yr precession, substrate-EXTERNAL per
 OQ-NODES-PRECESSION negative-resolution); within hours they're stable.
 
-Note on this engine: we don't import Skyfield here — that's a Lillu engine
+Note on this engine: we don't import Skyfield here — that's a Nammu engine
 concern. Substrate-shape probe accepts pre-computed rahu_lon as input.
 """
 from __future__ import annotations

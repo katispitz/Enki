@@ -11,7 +11,7 @@ to chart-context via a unified `operate-imprint` function. Per Enki agent
 typology table: "PE planet → operators (pure-fn imprint)".
 
 Substrate-architectural pre-finding via canon survey:
-  Multiple distinct PE-planet pure-fn operators ALREADY exist in Lillu engines:
+  Multiple distinct PE-planet pure-fn operators ALREADY exist in Nammu engines:
     1. `freq_hz(k)` (cell_signature_engine.py:1131) — PE-octave-k to Hz
     2. `k_total(planet, t_tithis)` (cell_signature_engine.py:1166) — planet to
        k_total at time
@@ -73,21 +73,21 @@ PE_PLANET_VERTICES = [
 ]
 
 
-# Existing pure-fn operator-classes per Lillu canon survey + arm-vector-composition
+# Existing pure-fn operator-classes per Nammu canon survey + arm-vector-composition
 # resolution 2026-05-17. Each row: operator-class name, what it computes, where it lives,
 # what input it takes beyond planet.
 EXISTING_PE_OPERATOR_CLASSES = [
     {
         'operator_class':   'freq_hz_imprint',
         'computes':         'PE-octave-k to Hz frequency',
-        'engine_location':  '~/Lillu/engines/cell_signature_engine.py:1131',
+        'engine_location':  '~/Nammu/engines/cell_signature_engine.py:1131',
         'input_beyond_planet': 'octave-k integer (substrate-locked per planet)',
         'output_kind':      'scalar Hz frequency',
     },
     {
         'operator_class':   'k_total_imprint',
         'computes':         'planet+time to k_total real',
-        'engine_location':  '~/Lillu/engines/cell_signature_engine.py:1166',
+        'engine_location':  '~/Nammu/engines/cell_signature_engine.py:1166',
         'input_beyond_planet': 't_tithis integer (live)',
         'output_kind':      'scalar k_total real',
     },
@@ -200,7 +200,7 @@ def summarize_probe_outcome(probes: list) -> dict:
         'precedent_canon_section': '§27 OQ-ARM-VECTOR-COMPOSITION 2026-05-17',
         'overall_finding': (
             f'{len(EXISTING_PE_OPERATOR_CLASSES)} distinct PE-planet pure-fn operator-classes '
-            'exist in Lillu engines, each with distinct input-shape, compute, output-kind. '
+            'exist in Nammu engines, each with distinct input-shape, compute, output-kind. '
             'Candidate `operate-imprint` as singular name attempts unification per question-'
             'conflation pattern. Per arm-vector-composition council precedent 2026-05-17 + '
             'Mnemosyne naming-canonical rule: reject singular-name; substrate-correct pattern '

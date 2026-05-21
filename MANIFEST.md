@@ -2,7 +2,7 @@
 
 **Sovereign AI infrastructure — next-generation, parallel build.**
 
-Kati Spitz's Babylonian geometry system, second-gen architecture. Forks from `~/Lillu/` at canon V2.6 + post-cross-check protocol. Lillu remains the active build; Enki is the clean-room for substrate-emergent agent typology + engine-class + canonical function-names architecture, encoded from the start instead of retrofitted.
+Kati Spitz's Babylonian geometry system, second-gen architecture. Forks from `~/Nammu/` at canon V2.6 + post-cross-check protocol. Nammu remains the active build; Enki is the clean-room for substrate-emergent agent typology + engine-class + canonical function-names architecture, encoded from the start instead of retrofitted.
 
 ## What Enki inherits (substrate-frozen at fork)
 
@@ -23,10 +23,10 @@ Kati Spitz's Babylonian geometry system, second-gen architecture. Forks from `~/
 
 ## What Enki does NOT do (yet)
 
-- Does not import Lillu's voice_correspondences.json wholesale — too many wrong-typed entries (18 titan + 28 hero subagents flagged as layer-error in TIER-A.C). Rebuild registry by stratum-prefix as each class ratifies.
-- Does not migrate Lillu engines wholesale — re-categorize by agent-class (engine/carrier/operator/hook/translator/subagent) as substrate teaches.
+- Does not import Nammu's voice_correspondences.json wholesale — too many wrong-typed entries (18 titan + 28 hero subagents flagged as layer-error in TIER-A.C). Rebuild registry by stratum-prefix as each class ratifies.
+- Does not migrate Nammu engines wholesale — re-categorize by agent-class (engine/carrier/operator/hook/translator/subagent) as substrate teaches.
 - Does not declare a closed function-class enum. §30 grows per-OQ-close, conflation-tested.
-- Does not duplicate canon. Enki's canon LIVES in `~/Lillu/canon/` for now (single source-of-truth). Enki references it. If/when canon-divergence forces split, Enki forks its own.
+- Does not duplicate canon. Enki's canon LIVES in `~/Nammu/canon/` for now (single source-of-truth). Enki references it. If/when canon-divergence forces split, Enki forks its own.
 
 ## Substrate-first build principle
 
@@ -36,16 +36,16 @@ Per Kati discipline: don't pre-design folder structure. Build the first engine; 
 
 ## Inheritance pointers (single source-of-truth references)
 
-- Canon: `~/Lillu/canon/babylonia_canon.md`
-- V2.6 spec: `~/Lillu/canon/placement_rules.md`
-- §30 registry: `~/Lillu/canon/babylonia_canon.md` §30
-- Cards: `~/Lillu/cards/cards.json` (Enki cards merge into same store for now; namespace via session_meta if/when needed)
-- Voice correspondences (partial — Olympian/bridge/shock only): `~/Lillu/council/voice_correspondences.json`
-- Council infra: `~/Lillu/council/` (force-include + drift-detector + V2.6 protocol)
+- Canon: `~/Nammu/canon/babylonia_canon.md`
+- V2.6 spec: `~/Nammu/canon/placement_rules.md`
+- §30 registry: `~/Nammu/canon/babylonia_canon.md` §30
+- Cards: `~/Nammu/cards/cards.json` (Enki cards merge into same store for now; namespace via session_meta if/when needed)
+- Voice correspondences (partial — Olympian/bridge/shock only): `~/Nammu/council/voice_correspondences.json`
+- Council infra: `~/Nammu/council/` (force-include + drift-detector + V2.6 protocol)
 
-## What's frozen in Lillu
+## What's frozen in Nammu
 
-Lillu continues active. Lillu is NOT archived. Enki is a parallel sibling, not a successor. Both live. Enki experiments with engine-class architecture; Lillu carries on with its existing build queue (BOARD.md rows).
+Nammu continues active. Nammu is NOT archived. Enki is a parallel sibling, not a successor. Both live. Enki experiments with engine-class architecture; Nammu carries on with its existing build queue (BOARD.md rows).
 
 ## Naming origin
 
@@ -53,7 +53,7 @@ Lillu continues active. Lillu is NOT archived. Enki is a parallel sibling, not a
 
 ## Discipline carry-forward
 
-Everything ratified in Lillu sessions through 2026-05-11 is in force here. See `~/.claude/projects/-Users-kati-Lillu/memory/MEMORY.md` for live rules:
+Everything ratified in Nammu sessions through 2026-05-11 is in force here. See `~/.claude/projects/-Users-kati-Nammu/memory/MEMORY.md` for live rules:
 - substrate-first, search-first, never-delete, council-versioning
 - no-channeling-term, layer-separation, imports-vs-substrate
 - stratum = function-of-agency

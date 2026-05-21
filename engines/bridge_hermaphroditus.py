@@ -1,7 +1,7 @@
 """
 Hermaphroditus bridge engine — Enki.
 
-Substrate position (per Lillu canon §M.5 V2.5 LOCK, card 91697158):
+Substrate position (per Nammu canon §M.5 V2.5 LOCK, card 91697158):
   Bridge:               Hermaphroditus
   Icosidodec midpoint:  midpt(V3, V2)
   Parent vertices:      V3 (Hermes/Mercury seat) ↔ V2 (Aphrodite/Venus seat)

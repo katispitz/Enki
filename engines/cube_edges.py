@@ -20,7 +20,7 @@ Per canon §7 planet mapping:
 Each cube edge → planet-pair → function = `planet-aspect-activate` (canonical,
 canon §30, graduated 2026-05-12).
 
-SUBSTRATE-INCOMPLETE: per-Titan-to-cube-edge mapping is OPEN per Lillu BOARD
+SUBSTRATE-INCOMPLETE: per-Titan-to-cube-edge mapping is OPEN per Nammu BOARD
 T1.3. The 12 edges are canon-locked by GEOMETRY (vertex-pair + planet-pair);
 Titan figure-name assignment is substrate-pending. Cards/Titan names NOT
 included in this enumeration.

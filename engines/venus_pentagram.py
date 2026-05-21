@@ -1,7 +1,7 @@
 """
 Venus pentagram engine — temporal-composition probe.
 
-Substrate-canonical (Lillu canon §23b OQ-RINGS-06): Venus pt3 / X3 / Ring 3 =
+Substrate-canonical (Nammu canon §23b OQ-RINGS-06): Venus pt3 / X3 / Ring 3 =
 **5 inferior conjunctions over 2880 tithis ≈ 8 years**. The 5 conjunctions
 trace a pentagram in the zodiac — 5 positions separated by ~144° each (the
 pentagram angle), drifting only ~2°/cycle.

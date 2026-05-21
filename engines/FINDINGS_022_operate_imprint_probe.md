@@ -10,7 +10,7 @@ Per V2.6 rule 9: §30 registry grows through engine-evidence ONLY. Per V2.7 §SD
 
 ## Engine survey result
 
-Survey of existing PE-planet pure-fn operator-classes in Lillu canon + engines surfaces **6 distinct operator-classes**:
+Survey of existing PE-planet pure-fn operator-classes in Nammu canon + engines surfaces **6 distinct operator-classes**:
 
 | Operator class | Computes | Engine location | Input beyond planet | Output kind |
 |---|---|---|---|---|

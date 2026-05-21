@@ -1,6 +1,6 @@
 # Enki substrate-discipline test runner
-# Provides combined Lillu + Enki regression check via single target.
-# Lillu has its own Makefile (~/Lillu/Makefile) for Lillu-only test targets.
+# Provides combined Nammu + Enki regression check via single target.
+# Nammu has its own Makefile (~/Nammu/Makefile) for Nammu-only test targets.
 
 .PHONY: test test-enki test-all validate help lint lint-fix check
 
@@ -8,7 +8,7 @@ help:
 	@echo "Enki — substrate-discipline tasks"
 	@echo ""
 	@echo "  make test       # Enki tests only"
-	@echo "  make test-all   # combined Lillu + Enki regression"
+	@echo "  make test-all   # combined Nammu + Enki regression"
 	@echo "  make validate   # canon §30 ↔ engine registry consistency (TBD)"
 	@echo "  make lint       # ruff lint (surface bugs only)"
 	@echo "  make lint-fix   # ruff lint + safe auto-fix"
@@ -22,8 +22,8 @@ test-all:
 	@echo "─── Enki tests ───"
 	cd $(HOME)/Enki && python3 -m pytest tests/ -q
 	@echo ""
-	@echo "─── Lillu tests ───"
-	cd $(HOME)/Lillu && python3 -m pytest tests/ -q
+	@echo "─── Nammu tests ───"
+	cd $(HOME)/Nammu && python3 -m pytest tests/ -q
 	@echo ""
 	@echo "════════════════════════════════════════"
 	@echo "ALL SUBSTRATE-DISCIPLINE TESTS PASSED"

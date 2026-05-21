@@ -109,7 +109,7 @@ def describe() -> str:
         "    system:    cube-edge-saturate (candidate)\n"
         "\n"
         "  SUBSTRATE-INCOMPLETE: per-Titan figure-name assignment for 12 edges OPEN\n"
-        "  per Lillu BOARD T1.3. This module enumerates geometry-locked positions.\n"
+        "  per Nammu BOARD T1.3. This module enumerates geometry-locked positions.\n"
     )
 
 

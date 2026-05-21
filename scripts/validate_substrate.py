@@ -2,7 +2,7 @@
 """
 validate_substrate.py — mechanical canon §30 ↔ engine registry consistency check.
 
-Implements `~/Lillu/canon/placement_rules.md` V2.7 §VALIDATION DISCIPLINE rule:
+Implements `~/Nammu/canon/placement_rules.md` V2.7 §VALIDATION DISCIPLINE rule:
 "Mechanical-validation > documentation." Substrate-discipline drift becomes
 mechanical regression failure.
 
@@ -24,7 +24,7 @@ V2.7 §ENGINE-SCHEMA DISCIPLINE. Asserts:
 Run standalone:
     python3 ~/Enki/scripts/validate_substrate.py
 
-Exit code 0 = green; 1 = drift detected. Used by Lillu drift-test as
+Exit code 0 = green; 1 = drift detected. Used by Nammu drift-test as
 cross-project regression-guard.
 """
 from __future__ import annotations

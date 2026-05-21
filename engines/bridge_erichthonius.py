@@ -1,7 +1,7 @@
 """
 Erichthonius bridge engine — Enki.
 
-Substrate position (per Lillu canon §M.5 V2.5 LOCK, card 3de9d703):
+Substrate position (per Nammu canon §M.5 V2.5 LOCK, card 3de9d703):
   Bridge:               Erichthonius
   Icosidodec midpoint:  midpt(V4, V8)
   Parent vertices:      V4 (Athena/Saturn seat) ↔ V8 (Hephaestus/Uranus seat)

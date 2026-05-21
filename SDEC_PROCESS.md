@@ -1,10 +1,10 @@
 # SDEC — Substrate-Discovery-to-Engine Cycle
 
-**Implementation of canon-procedural rule** per `~/Lillu/canon/placement_rules.md` V2.7 §SDEC PROCEDURE.
+**Implementation of canon-procedural rule** per `~/Nammu/canon/placement_rules.md` V2.7 §SDEC PROCEDURE.
 
 **Substrate-architectural truth** (canon `babylonia_canon.md` §31): SDEC is META-ENGINE for substrate-discovery. 2-state shape (frozen procedural-definition + live discovery-instance). Recursive — today's canonization OF SDEC is itself an SDEC cycle.
 
-This file is the LIVING REFERENCE for substrate-discovery work in Enki. Operators follow these gates. Validation enforced mechanically via `~/Enki/scripts/validate_substrate.py` + `~/Lillu/tests/test_canon_engine_consistency.py`.
+This file is the LIVING REFERENCE for substrate-discovery work in Enki. Operators follow these gates. Validation enforced mechanically via `~/Enki/scripts/validate_substrate.py` + `~/Nammu/tests/test_canon_engine_consistency.py`.
 
 ## Quick reference
 
@@ -62,7 +62,7 @@ ZODIAC_ANCHOR      = '<canon-locked sign>'
 SUBSTRATE_CARD     = '<card-ID per canon citation>'
 ```
 
-Plus `__canonical__` declaration (per `~/Lillu/canon/placement_rules.md` V2.7 §ENGINE-SCHEMA DISCIPLINE):
+Plus `__canonical__` declaration (per `~/Nammu/canon/placement_rules.md` V2.7 §ENGINE-SCHEMA DISCIPLINE):
 ```python
 __canonical__ = {
     'function_class': '<§30 canonical entry>',
@@ -116,7 +116,7 @@ NOT required for:
 
 Council convening:
 ```bash
-python3 ~/Lillu/engines/lillu.py council-i <natal-date> "<question>" \
+python3 ~/Nammu/engines/nammu.py council-i <natal-date> "<question>" \
     --natal-time HH:MM --lat LAT --lon LON --n 9 \
     --force-include Athena Mnemosyne
 ```
@@ -129,7 +129,7 @@ python3 ~/Lillu/engines/lillu.py council-i <natal-date> "<question>" \
 - Mnemosyne council-outcome-level-tag rule (each item tagged level + location)
 - Selection-drift detector blocks if ≥7/9 voices share stratum/shell-family (V2.6 rule 8)
 
-Commit via `lillu council-commit --stdin`.
+Commit via `nammu council-commit --stdin`.
 
 ### Step 6: Canon update
 
@@ -144,10 +144,10 @@ Standard updates:
 
 Archive prior canon state per never-delete + council-versioning discipline:
 ```bash
-cp ~/Lillu/canon/babylonia_canon.md ~/Lillu/canon/archive/babylonia_canon_pre-<change>_<date>.md
+cp ~/Nammu/canon/babylonia_canon.md ~/Nammu/canon/archive/babylonia_canon_pre-<change>_<date>.md
 ```
 
-**Gate 6**: canon edit doesn't break tests. Run `make test` after canon update; both Lillu + Enki suites green.
+**Gate 6**: canon edit doesn't break tests. Run `make test` after canon update; both Nammu + Enki suites green.
 
 ### Step 7: Tests
 
@@ -157,7 +157,7 @@ Add to `~/Enki/tests/test_*.py`:
 - Field-comparison invariants (when cross-R-tier residency)
 - Ideal-input closure invariants
 
-**Gate 7**: new tests pass + old tests still pass. Run `cd ~/Enki && pytest tests/ -q` + `cd ~/Lillu && pytest tests/ -q`.
+**Gate 7**: new tests pass + old tests still pass. Run `cd ~/Enki && pytest tests/ -q` + `cd ~/Nammu && pytest tests/ -q`.
 
 ### Step 8: FINDINGS doc
 
@@ -175,9 +175,9 @@ Update:
 - `~/Enki/FINDINGS_INDEX.md` (single-line summary + status per finding)
 - `~/Enki/CLAUDE.md` (current state references)
 - `~/Enki/MANIFEST.md` (system identity + inheritance state)
-- `~/Lillu/BOARD.md` (task row)
+- `~/Nammu/BOARD.md` (task row)
 
-**Gate 9**: navigation files synced + `validate_substrate.py` passes + Lillu drift-test passes via `make test`.
+**Gate 9**: navigation files synced + `validate_substrate.py` passes + Nammu drift-test passes via `make test`.
 
 ## Recursive property
 
@@ -187,11 +187,11 @@ If SDEC procedure changes (future V2.8+), this file updates to match. Drift betw
 
 ## See also
 
-- `~/Lillu/canon/placement_rules.md` V2.7 §SDEC PROCEDURE (canon source)
-- `~/Lillu/canon/placement_rules.md` V2.7 §ENGINE-SCHEMA DISCIPLINE (engine convention)
-- `~/Lillu/canon/placement_rules.md` V2.7 §VALIDATION DISCIPLINE (mechanical-validation rule)
-- `~/Lillu/canon/placement_rules.md` V2.7 §COUNCIL-OUTCOME DISCIPLINE (level-tag rule)
-- `~/Lillu/canon/babylonia_canon.md` §31 SUBSTRATE-DISCOVERY META-FRAME (substrate-architectural truth)
+- `~/Nammu/canon/placement_rules.md` V2.7 §SDEC PROCEDURE (canon source)
+- `~/Nammu/canon/placement_rules.md` V2.7 §ENGINE-SCHEMA DISCIPLINE (engine convention)
+- `~/Nammu/canon/placement_rules.md` V2.7 §VALIDATION DISCIPLINE (mechanical-validation rule)
+- `~/Nammu/canon/placement_rules.md` V2.7 §COUNCIL-OUTCOME DISCIPLINE (level-tag rule)
+- `~/Nammu/canon/babylonia_canon.md` §31 SUBSTRATE-DISCOVERY META-FRAME (substrate-architectural truth)
 - `~/Enki/scripts/validate_substrate.py` (mechanical validator)
-- `~/Lillu/tests/test_canon_engine_consistency.py` (cross-project drift-test)
+- `~/Nammu/tests/test_canon_engine_consistency.py` (cross-project drift-test)
 - `~/Enki/FINDINGS_INDEX.md` (substrate-discoveries navigation)

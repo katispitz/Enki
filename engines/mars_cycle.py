@@ -1,7 +1,7 @@
 """
 Mars 37-opposition cycle engine — temporal-cyclic substrate-pressure-test.
 
-Substrate-canonical (Lillu canon §23b line 950): Mars / pt4 / Fa / Ring 4 =
+Substrate-canonical (Nammu canon §23b line 950): Mars / pt4 / Fa / Ring 4 =
 **37 opposition resonance over 28440t (~79yr)**.
 
 Critical distinction from Venus/Mercury inferior-conjunction cycles:

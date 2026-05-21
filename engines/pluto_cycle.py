@@ -1,7 +1,7 @@
 """
 Pluto cycle engine — Ring 0 sign-ingress (4th cyclic-sign-ingress-activate residency).
 
-Substrate-canonical (Lillu canon §23b line 945):
+Substrate-canonical (Nammu canon §23b line 945):
   Pluto / pt0 / Do / Ring 0 = 89280t / ~248yr / "Pluto outer-orbit carrier (integer×30 ✓)"
 
 Per canon §23b OQ-RINGS-04 RESOLVED + Earth-Pluto-Ring0 retraction 2026-05-11:

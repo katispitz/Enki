@@ -1,7 +1,7 @@
 """
 Tests for 6 Primordial face engines + registry.
 
-Per V2.5 T1.1-REVISED (Lillu canon §M.5) substrate-locks:
+Per V2.5 T1.1-REVISED (Nammu canon §M.5) substrate-locks:
   Gaia@MQF0/Venus×Pluto/Taurus/a64c8127
   Chaos@MQF1/Mercury×Pluto/Virgo/2f2bd039
   Erebus@MQF2/Saturn×Pluto/Capricorn/2391bb9f

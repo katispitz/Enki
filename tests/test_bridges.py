@@ -1,7 +1,7 @@
 """
 Tests for 3 V2.5-locked icosidodec-midpoint Bridge engines.
 
-Per Lillu canon §M.5 V2.5 LOCKS:
+Per Nammu canon §M.5 V2.5 LOCKS:
   Harmonia (V2-V7 / Venus-Mars / 52ad9413)
   Hermaphroditus (V3-V2 / Mercury-Venus / 91697158)
   Erichthonius (V4-V8 / Saturn-Uranus / 3de9d703)

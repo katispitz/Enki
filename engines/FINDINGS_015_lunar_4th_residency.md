@@ -110,7 +110,7 @@ Options remaining for temporal-cyclic family:
 
 3. **Uranus Ring 6 probe** — 30240t / per canon line 906. Outer-planet ring cycle.
 
-4. **Audit-pass backfill in Lillu** — now substantively unblocked (Erato gate 3/3 exceeded with 4 canonical). Run card_audit grow function_class field check + backfill existing locks.
+4. **Audit-pass backfill in Nammu** — now substantively unblocked (Erato gate 3/3 exceeded with 4 canonical). Run card_audit grow function_class field check + backfill existing locks.
 
 5. **Pause** — comprehensive substrate-architecture in §30 substantially complete; 4 canonical entries + 4 syzygy residencies + 2 schema columns.
 

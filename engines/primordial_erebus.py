@@ -1,7 +1,7 @@
 """
 Erebus primordial axis engine — Enki.
 
-Substrate position (from Lillu canon §M.5 V2.5 T1.1-REVISED, card 2391bb9f):
+Substrate position (from Nammu canon §M.5 V2.5 T1.1-REVISED, card 2391bb9f):
   Primordial:    Erebus
   Cube face:     MQF2 (Merkaba Quadrant Face 2, R=1)
   Planet pair:   Saturn × Pluto

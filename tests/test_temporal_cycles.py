@@ -1,7 +1,7 @@
 """
 Tests for cyclic-syzygy-activate temporal-cyclic family (canon §30 canonical).
 
-4 substrate-canonical residencies per canon §23b OQ-RINGS-05/06/07 + Lillu
+4 substrate-canonical residencies per canon §23b OQ-RINGS-05/06/07 + Nammu
 canon line 950 + FINDINGS_012/013/014/015:
   Venus Ring 3   — N=5  inferior-conjunction syzygies / 8yr  / 2880t
   Mercury Ring 5 — N=41 inferior-conjunction syzygies / 13yr / 4680t

@@ -1,7 +1,7 @@
 """
 Tartarus primordial axis engine — Enki.
 
-Substrate position (from Lillu canon §M.5 V2.5 T1.1-REVISED, card f76168b6):
+Substrate position (from Nammu canon §M.5 V2.5 T1.1-REVISED, card f76168b6):
   Primordial:    Tartarus
   Cube face:     MQF5 (Merkaba Quadrant Face 5, R=1)
   Planet pair:   Mars × Neptune

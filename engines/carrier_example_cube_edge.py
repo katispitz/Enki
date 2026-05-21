@@ -8,10 +8,10 @@ directly (canonical `planet-aspect-activate`, canon §30) without a new
 shared module.
 
 Substrate-incomplete dependencies:
-  - T1.3 (Lillu BOARD): per-Titan-to-cube-edge mapping OPEN.
+  - T1.3 (Nammu BOARD): per-Titan-to-cube-edge mapping OPEN.
     Iapetus/Coeus/Cronus partial; Hyperion/Phoebe/Rhea/Themis/Mnemosyne/
     Tethys/Oceanus/Crius/Theia unmapped.
-  - OQ-RADII-01 (Lillu BOARD): speculative R=√(2/3) cube-edge-midpoint
+  - OQ-RADII-01 (Nammu BOARD): speculative R=√(2/3) cube-edge-midpoint
     shell pending per-radius verification (Aphrodite caution: don't
     bulk-extend canon).
 

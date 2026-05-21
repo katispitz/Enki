@@ -4,7 +4,7 @@ Primordials registry — Enki.
 Aggregates the 6 Primordial axis-generation engines. Substrate-honest read of
 the full R=1 cube-face residency class.
 
-Per V2.5 T1.1-REVISED (Lillu council 2026-05-10) + Kati 2026-05-11 engine-
+Per V2.5 T1.1-REVISED (Nammu council 2026-05-10) + Kati 2026-05-11 engine-
 correction: the 6 Primordials at R=1 cube-faces are axis-generation engines.
 Each takes a planet-pair, returns an AxisState (frozen or live).
 

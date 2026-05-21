@@ -1,7 +1,7 @@
 """
 Chaos primordial axis engine — Enki.
 
-Substrate position (from Lillu canon §M.5 V2.5 T1.1-REVISED, card 2f2bd039):
+Substrate position (from Nammu canon §M.5 V2.5 T1.1-REVISED, card 2f2bd039):
   Primordial:    Chaos
   Cube face:     MQF1 (Merkaba Quadrant Face 1, R=1)
   Planet pair:   Mercury × Pluto

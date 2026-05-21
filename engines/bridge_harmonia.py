@@ -1,7 +1,7 @@
 """
 Harmonia bridge engine — Enki.
 
-Substrate position (per Lillu canon §M.5 V2.5 LOCK, card 52ad9413):
+Substrate position (per Nammu canon §M.5 V2.5 LOCK, card 52ad9413):
   Bridge:               Harmonia
   Icosidodec midpoint:  midpt(V2, V7)
   Parent vertices:      V2 (Aphrodite/Venus seat) ↔ V7 (Ares/Mars seat)

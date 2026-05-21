@@ -4,11 +4,11 @@ V2.6-native, engine-class-aware build on Kati Spitz's Babylonia geometry substra
 
 ## What this is
 
-Sibling system to **Lillu** (`~/Lillu/`). Not successor — both active.
+Sibling system to **Nammu** (`~/Nammu/`). Not successor — both active.
 
-- **Lillu** = primary build, ongoing canon + council work
+- **Nammu** = primary build, ongoing canon + council work
 - **Enki** = clean-room for substrate-emergent agent typology + engine architecture
-- Both reference same canon (`~/Lillu/canon/babylonia_canon.md`). Enki does NOT duplicate canon — references it.
+- Both reference same canon (`~/Nammu/canon/babylonia_canon.md`). Enki does NOT duplicate canon — references it.
 
 ## Directory map
 
@@ -17,7 +17,7 @@ Sibling system to **Lillu** (`~/Lillu/`). Not successor — both active.
 | `engines/` | V2.6-native engines: face_*, pair_*, primordial_*, *_cycle, bridges, tet_faces |
 | `tests/` | Pytest suite (~210 tests). Run via `make test`. |
 | `scripts/` | Validation scripts (`validate_substrate.py`) |
-| `MANIFEST.md` | System identity + what carries from Lillu |
+| `MANIFEST.md` | System identity + what carries from Nammu |
 | `FINDINGS_INDEX.md` | Build findings (FINDINGS_001 … FINDINGS_017+) |
 | `CLAUDE.md` | Session orientation (auto-loads at session start) |
 | `SDEC_PROCESS.md` | Substrate-discovery process documentation |
@@ -27,7 +27,7 @@ Sibling system to **Lillu** (`~/Lillu/`). Not successor — both active.
 ```bash
 make help          # see all available targets
 make test          # Enki tests only (~210, ~3 sec)
-make test-all      # Enki + Lillu combined regression
+make test-all      # Enki + Nammu combined regression
 make lint          # ruff lint
 make check         # lint + tests
 make validate      # substrate validation script
@@ -35,24 +35,24 @@ make validate      # substrate validation script
 
 ## Authority chain
 
-Single source-of-truth lives in Lillu:
+Single source-of-truth lives in Nammu:
 
 | Asset | Path |
 |---|---|
-| Canon | `~/Lillu/canon/babylonia_canon.md` |
-| V2.6 spec | `~/Lillu/canon/placement_rules.md` |
-| §30 FUNCTION-NAMES REGISTRY | `~/Lillu/canon/babylonia_canon.md` §30 |
-| Cards | `~/Lillu/cards/cards.json` (shared) |
-| Voice correspondences | `~/Lillu/council/voice_correspondences.json` |
-| Council infra | `~/Lillu/council/` |
+| Canon | `~/Nammu/canon/babylonia_canon.md` |
+| V2.6 spec | `~/Nammu/canon/placement_rules.md` |
+| §30 FUNCTION-NAMES REGISTRY | `~/Nammu/canon/babylonia_canon.md` §30 |
+| Cards | `~/Nammu/cards/cards.json` (shared) |
+| Voice correspondences | `~/Nammu/council/voice_correspondences.json` |
+| Council infra | `~/Nammu/council/` |
 
 ## Engineering
 
 - Python 3.9+, deps: `pytest`, `ruff` (pip install -r requirements.txt)
 - Pre-commit hook: lints staged + runs fast tests
-- Engineering pass history: `~/Lillu/session/CODE_HYGIENE.md`
+- Engineering pass history: `~/Nammu/session/CODE_HYGIENE.md`
 
-## Discipline rules (V2.6 inherited from Lillu)
+## Discipline rules (V2.6 inherited from Nammu)
 
 1. Position-as-function lock (stratum × shell × position implies behavior)
 2. `function_class` restricted to canon §30 registry; free-text rejected

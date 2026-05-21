@@ -1,7 +1,7 @@
 """
 Shared inner-octahedron face engine — R=1/√3 archetype mode-class.
 
-Per Lillu canon §10 (INNER OCTAHEDRON FACES) + §5 (vertex planet assignments).
+Per Nammu canon §10 (INNER OCTAHEDRON FACES) + §5 (vertex planet assignments).
 8 archetype-mode faces (F1-F8), each a triangle of 3 vertex-planets.
 
 Substrate-emergent factoring: inner-oct face function COMPOSES from the
