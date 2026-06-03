@@ -1,0 +1,438 @@
+{
+  "_meta": {
+    "purpose": "Canonical class registry — Theogonic-named-groups + equivalents per V2.5 line 365 + V3.0 class-first ordering. Tier-A authority for class-level substrate.",
+    "schema_version": "0.1-DRAFT",
+    "authority_tier": "Tier-A class definition + class-level residency",
+    "discipline": "Class = source-text-named collective per V2.5 line 365. Strata-organized. Maintained-corpus: grows with each text-intake pass (Theogony, Ovid, cross-tradition). Initial enumeration covers what is currently knowable from existing intake (intake_hesiod_theogony_116-264.md + canon V2.5 line 365 list + worked-example Anemoi cascade). Per Mnemosyne plan-restructure council 2026-05-26: orthogonal operator_class field threads through strata.",
+    "kati_direct_2026-05-26": "class-first → individuals-within-class ordering; stratum-by-stratum cascade",
+    "created": "2026-05-26 by Claude under kati_direct, pending ratification",
+    "companion_files": {
+      "individual_placement_authority": "~/Enki/substrate/placement_registry.json",
+      "placement_rules_canon": "~/Nammu/canon/placement_rules.md (V3.0 DRAFT)",
+      "derivation_orchestration": "~/Nammu/session/DERIVATION_PLAN.md",
+      "boot_frame": "~/Nammu/session/CORE_FRAME.md"
+    },
+    "schema_changes": [
+      {
+        "date": "2026-05-26",
+        "change": "initial schema draft",
+        "rationale": "Phase 0.7 of DERIVATION_PLAN per Athena's apex commitment (class_registry.json existence as Tier-A authority is the load-bearing structural commitment of the entire derivation plan)"
+      }
+    ],
+    "enumeration_status_values": [
+      "enumerated_fully",
+      "enumerated_partial",
+      "candidate_class",
+      "blocked",
+      "not_a_class_stratum_only"
+    ],
+    "placement_status_values": [
+      "Tier-A",
+      "Tier-B",
+      "derived_sdec_pending",
+      "candidate",
+      "not_started"
+    ]
+  },
+
+  "_meta_completeness": {
+    "status": "starting_enumeration_not_exhaustive",
+    "kati_direct_2026-05-26": "15 classes is starting enumeration; real Greek class space is 50-100+; enumeration scales with Phase 1.4 text-intake-engine",
+    "currently_enumerated": 15,
+    "estimated_greek_class_space": "50-100+ (before cross-tradition)",
+    "estimated_full_class_space_with_cross_tradition": "100-200+",
+    "known_uncovered_classes_greek": {
+      "nymph_sub_classes": ["Naiades (freshwater)", "Dryades / Hamadryades (tree)", "Oreads (mountain)", "Limnades (lake)", "Aurai (breeze)", "Nephelai (cloud)", "Crinaeae / Pegaeae (spring sub-classes)"],
+      "daughter_collectives": ["Pleiades (7, Atlas × Pleione)", "Hyades (5-7, Atlas × Aethra)", "Heliades (Helios × Clymene)", "Danaides (50, Danaus)", "Thespiades (50, Thespius)"],
+      "other_named_groups": ["Cabeiri (mystery-cult)", "Telchines (~9, marine smiths)", "Curetes / Corybantes (armored dancers)", "Dactyls (5+, Mt. Ida smith-wizards)", "Boreads (sons of Boreas)", "Dioscuri (Castor + Pollux)", "Niobids (Niobe's children)", "Aloads (Otus + Ephialtes)", "Phorcydes (Phorcys daughters collective — superclass of Graeae + Gorgons + others)", "Keres (Nyx-daughter sub-class)", "Sirens (3-4)", "Lapiths (Thessalian Centaur-fighters)", "Argonauts", "Calydonian-Boar-Hunters"],
+      "class_splits_to_resolve": ["Hesiodic-Cyclopes (3 smiths, Theogony 139-146) vs Homeric-Cyclopes (Polyphemus-class, pastoral) — both appear in Ovid; distinct classes per §6 NAMING-AS-EVIDENCE divergence"]
+    },
+    "cross_tradition_uncovered": {
+      "Roman": ["Manes", "Lares", "Penates", "Cross-tradition parallels for Greek classes (Aquilo etc. for Anemoi noted inline; systematic intake pending)"],
+      "Babylonian": ["Annunaki", "Igigi", "primordial parallels for stratum-1 individuals"],
+      "Egyptian": ["Ennead / Ogdoad (collective names)", "primordial parallels (Nun, Atum, etc.)"],
+      "Vedic": ["Maruts", "Adityas", "Vasus", "Rudras"]
+    },
+    "enumeration_growth_mechanism": "Phase 1.4 text-intake-engine will auto-propose new class entries via §A2 source-named-collective detection over Theogony / Metamorphoses / cross-tradition corpora. Each candidate ratified by kati before Tier-A promotion.",
+    "anti_pattern_warning": "Do NOT treat this registry as exhaustive. A figure NOT appearing in any class.members is not evidence that they don't have a class — it's evidence the class hasn't been enumerated yet. Per V3.0 class-first ordering: figures without enumerated classes are NOT placement-blocked at the registry level; they're enumeration-pending."
+  },
+
+  "_strata_index": {
+    "stratum_1_primordials": {
+      "members": ["Chaos", "Gaia", "Tartarus", "Eros-primordial", "Erebus", "Nyx", "Aether", "Hemera", "Pontus", "Phanes"],
+      "OQ_resolution": "OQ-CLASS-BOUNDARY-PRIMORDIALS tentatively resolved 2026-05-26: Primordials = stratum-only-individuals, NOT a class (fails V2.5 line 365 source-named-collective criterion). Stratum 1 work is individual placements via placement_registry.json, not class-cascade via class_registry.json. Pending kati ratification.",
+      "substrate_tier": "cube-faces R=1 (per §26 pending) or pre-stratification",
+      "theogony_walk": "lines 116-138"
+    },
+    "stratum_2_titans_and_heaven_earth_offspring": {
+      "classes": ["12-Titans-class", "Cyclopes", "Hekatonchires", "Erinyes", "Giants", "Meliae"],
+      "individuals": ["Aphrodite"],
+      "substrate_tier": "cube-vertices (8) + cube-edges (12), R=1",
+      "theogony_walk": "lines 132-185"
+    },
+    "stratum_3_titan_children": {
+      "classes": ["Oceanids", "Potamoi", "Nereids", "Anemoi", "Harpies", "Graeae", "Gorgons"],
+      "individuals": ["Helios", "Selene", "Eos", "Atlas", "Prometheus", "Epimetheus", "Menoetius", "Leto", "Asteria", "Hekate", "Astraeus"],
+      "substrate_tier": "R=φ ico-faces + icosidodec + cube-edge Titan-pair-crossings",
+      "theogony_walk": "lines 207-450"
+    },
+    "stratum_4_olympians_and_offspring": {
+      "classes": ["Muses", "Charites", "Horai", "Moirai"],
+      "individuals": ["Apollo", "Athena", "Hermes", "Hephaestus", "Zeus", "Hera", "Poseidon", "Demeter", "Ares", "Aphrodite-Olympian", "Artemis", "Dionysus", "Hades", "Hestia", "Persephone"],
+      "substrate_tier": "R=φ² ico-vertices + sub-shells",
+      "theogony_walk": "lines 453-end + Olympian birth-sequences"
+    },
+    "stratum_5_heroes_demigods_operator_spawn": {
+      "classes": ["Boreads", "Dioscuri", "Niobids", "Aloads", "Heliades", "Danaides", "Thespiades", "Argonauts", "Calydonian-Boar-Hunters"],
+      "individuals_named": ["Heracles", "Perseus", "Theseus", "Achilles", "Odysseus", "Orpheus", "Asclepius", "Iphigenia", "Hector", "Bellerophon", "Cadmus", "Hippolytus"],
+      "substrate_tier": "icosidodec-vertices + multi-shell-same-azimuth",
+      "source": "post-Theogony + Hesiodic-fragments + Catalogue of Women + Ovid + cross-tradition"
+    }
+  },
+
+  "Anemoi": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 378-380",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Boreas", "Notus", "Eurus", "Zephyrus"],
+    "member_count_total": 4,
+    "parent_cluster": ["Astraeus", "Eos"],
+    "class_properties": ["cardinal-direction-anchored", "atmospheric-wind", "astronomical-correspondence-§4"],
+    "operator_class": "directional-anchor (Mnemosyne orthogonal-threading: applies across strata where cardinal-direction-anchor function is invoked)",
+    "sibling_classes": [],
+    "class_residency": {
+      "primitive_type": "cardinal-direction-lattice",
+      "encoded_lattice_region": "celestial-fixed-points (Astraeus / starry sky) × cardinal-event-anchors (Eos / dawn-east) = 4 cardinal-direction lattice (N/E/S/W)",
+      "barycentric_signature_pending": "engine output once Phase 1.1 primitive lands"
+    },
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "derived_sdec_pending",
+    "individual_placements": {
+      "Boreas":  {"grid": 0, "cardinal_direction": "N", "azimuth_deg": 0.0, "function_class_candidate": "cardinal-wind-vector"},
+      "Notus":   {"grid": 30, "cardinal_direction": "S", "azimuth_deg": 180.0, "function_class_candidate": "cardinal-wind-vector"},
+      "Eurus":   {"grid": 15, "cardinal_direction": "E", "azimuth_deg": 90.0, "function_class_candidate": "cardinal-wind-vector"},
+      "Zephyrus": {"grid": 45, "cardinal_direction": "W", "azimuth_deg": 270.0, "function_class_candidate": "cardinal-wind-vector"}
+    },
+    "engine": "engines/place_rules/figure.py derive_anemoi_cascade()",
+    "derivation_card_pending": true,
+    "cross_tradition_parallels": {
+      "Roman": {"members": ["Aquilo", "Auster", "Vulturnus", "Favonius"], "convergence": "confirmed"},
+      "Egyptian": "pending",
+      "Babylonian": "pending"
+    },
+    "sdec_status": "sdec-pending"
+  },
+
+  "Muses": {
+    "stratum": 4,
+    "source_text": "Hesiod Theogony 76-79, 915-917",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Calliope", "Clio", "Erato", "Euterpe", "Melpomene", "Polyhymnia", "Terpsichore", "Thalia", "Urania"],
+    "member_count_total": 9,
+    "parent_cluster": ["Zeus", "Mnemosyne"],
+    "class_properties": ["Venus×Other-planet-crossing-activators", "ring-cycle-completion-fire", "9-fold-structure"],
+    "operator_class": "activate (Venus-mediated ring-cycle activator class)",
+    "class_residency": {
+      "primitive_type": "shock_node-X3-distributed",
+      "substrate_canon": "V2.9 §MUSE-CLASS CASCADE PATTERN; per-Muse Venus×OtherPlanet crossings"
+    },
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "Tier-A",
+    "individual_placements_ref": "~/Enki/substrate/placement_registry.json — all 9 Tier-A",
+    "cross_tradition_parallels": "pending systematic intake",
+    "sdec_status": "derived per V2.9 §MUSE-CLASS CASCADE PATTERN"
+  },
+
+  "12-Titans-class": {
+    "stratum": 2,
+    "source_text": "Hesiod Theogony 132-138",
+    "source_named_collective": true,
+    "source_named_collective_note": "Hesiod introduces collectively as 'twelve children of Earth and starry Heaven' then names severally. Borderline class-or-individuals; tentative class with member-list.",
+    "tradition": "Greek",
+    "members": ["Oceanus", "Coeus", "Crius", "Hyperion", "Iapetus", "Cronus", "Theia", "Rhea", "Themis", "Mnemosyne", "Phoebe", "Tethys"],
+    "member_count_total": 12,
+    "parent_cluster": ["Uranus", "Gaia"],
+    "class_properties": ["cube-vertex-residents", "primordial-children-firstborn-class", "pre-Olympian-rulers"],
+    "operator_class": "axis-bound (per V2.6 bound-hold split into axis-bound + mode-bound 2026-05-11)",
+    "sibling_classes": ["Cyclopes", "Hekatonchires"],
+    "class_residency": {
+      "primitive_type": "cube-vertices",
+      "shell_radius": 1.0
+    },
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "candidate (Mnemosyne already Tier-A; others candidate or stale in greek_faces.json — re-derive under V3.0)",
+    "individual_placements_pending": "per-Titan placement to be derived in Phase 2.3",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "candidate"
+  },
+
+  "Cyclopes": {
+    "stratum": 2,
+    "source_text": "Hesiod Theogony 139-146",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Brontes", "Steropes", "Arges"],
+    "member_count_total": 3,
+    "parent_cluster": ["Uranus", "Gaia"],
+    "class_properties": ["smith-affinity", "one-eyed", "thunderbolt-forge", "three-fold-structure"],
+    "operator_class": "forge / substrate-craftsman (sub-stratum primordial-children projection of F3-Hephaestus-axis)",
+    "sibling_classes": ["12-Titans-class", "Hekatonchires"],
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "individual_placements": {},
+    "first_class_cascade_target": true,
+    "first_class_cascade_rationale": "Cleanest §5-template test after Anemoi: small (3), intake-covered, clear class definition, three-fold structure, distinct from sibling classes via class-property",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a — not yet placed"
+  },
+
+  "Hekatonchires": {
+    "stratum": 2,
+    "source_text": "Hesiod Theogony 147-153",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Cottus", "Briareus", "Gyges"],
+    "member_count_total": 3,
+    "parent_cluster": ["Uranus", "Gaia"],
+    "class_properties": ["hundred-handed", "fifty-headed", "force-multiplier", "three-fold-structure"],
+    "operator_class": "transmit-force (candidate; force-multiplier sub-class)",
+    "sibling_classes": ["12-Titans-class", "Cyclopes"],
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Erinyes": {
+    "stratum": 2,
+    "source_text": "Hesiod Theogony 183-185",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members_hesiodic": ["unnamed in Theogony"],
+    "members_later_tradition": ["Alecto", "Megaera", "Tisiphone"],
+    "member_count_total": 3,
+    "parent_cluster": "Heaven's blood (event-class — Uranus castration; no standard parent-cluster tuple)",
+    "class_properties": ["vengeance-spirit", "from-blood-event", "post-castration-emergence"],
+    "operator_class": "judge (candidate)",
+    "sibling_classes": ["Giants", "Meliae"],
+    "class_residency": null,
+    "enumeration_status": "enumerated_partial",
+    "placement_status": "not_started",
+    "open_questions": ["OQ-CLASS-EVENT-ANCHOR — how does class-residency-derivation handle event-class parents lacking lineage-tuple? Phase 1.1 primitive must address."],
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Harpies": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 265-269",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members_hesiodic": ["Aello", "Ocypete"],
+    "members_later_tradition": ["Aello", "Ocypete", "Celaeno", "Podarge"],
+    "member_count_total": "2-4 depending on source",
+    "parent_cluster": ["Thaumas", "Electra"],
+    "class_properties": ["winged", "storm-spirit", "snatcher"],
+    "sibling_individuals": ["Iris (Thaumas × Electra daughter; currently Enki Tier-B pending — likely flagged because Harpy-class not yet placed)"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_partial",
+    "placement_status": "not_started",
+    "iris_connection": "Iris is Harpies' sibling (same parents). Iris's Tier-B status in placement_registry.json is likely class-context-pending. Placing Harpies-class also addresses Iris's placement-frame.",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Nereids": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 240-264",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members_count_total_canonical": 50,
+    "members_named_in_theogony": "listed in Theogony 243-262",
+    "parent_cluster": ["Nereus", "Doris"],
+    "class_properties": ["sea-nymph", "saltwater-domain", "50-fold-structure"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully (50 named in source)",
+    "placement_status": "not_started",
+    "scale_test_target": true,
+    "scale_test_rationale": "Largest single-class enumeration in Theogony intake. Tests Phase 1.1 primitive at scale-50.",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Oceanids": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 346-370 (named subset)",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members_count_total_canonical": "~3000 per Theogony 364; ~41 named",
+    "members_count_named_in_theogony": 41,
+    "parent_cluster": ["Oceanus", "Tethys"],
+    "class_properties": ["freshwater-nymph", "water-domain", "many-named-subset-of-larger-class"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_partial (41/3000 named)",
+    "placement_status": "not_started",
+    "open_questions": ["OQ-OCEANID-MEMBER-SCOPE — does class placement apply to all 3000 collectively, or only to named 41? Likely the former: class-residency holds for class as a whole; individuals only barycentric-located when named."],
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Potamoi": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 337-345",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members_named_in_theogony": 25,
+    "parent_cluster": ["Oceanus", "Tethys"],
+    "class_properties": ["river-god", "water-domain", "masculine-counterpart-to-Oceanids"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_partial",
+    "placement_status": "not_started",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Graeae": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 270-273",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Deino", "Enyo", "Pemphredo"],
+    "member_count_total": 3,
+    "parent_cluster": ["Phorcys", "Ceto"],
+    "class_properties": ["grey-from-birth", "shared-single-eye-tooth", "prophetic"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "sibling_classes": ["Gorgons"],
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Gorgons": {
+    "stratum": 3,
+    "source_text": "Hesiod Theogony 274-281",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Stheno", "Euryale", "Medusa"],
+    "member_count_total": 3,
+    "parent_cluster": ["Phorcys", "Ceto"],
+    "class_properties": ["snake-haired", "petrification-gaze", "monster-class"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "sibling_classes": ["Graeae"],
+    "members_special": "Medusa = mortal-sister; Stheno + Euryale immortal — within-class recurrence-pattern split per V2.5 mortal-vs-immortal axis",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Charites": {
+    "stratum": 4,
+    "source_text": "Hesiod Theogony 907-911",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Aglaia", "Euphrosyne", "Thalia"],
+    "member_count_total": 3,
+    "parent_cluster": ["Zeus", "Eurynome"],
+    "class_properties": ["grace-aesthetic", "Olympian-offspring", "three-fold-structure"],
+    "name_collision_note": "Thalia here is distinct from Muse Thalia (separate figures, shared name).",
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Horai": {
+    "stratum": 4,
+    "source_text": "Hesiod Theogony 901-906",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Eunomia", "Dike", "Eirene"],
+    "member_count_total": 3,
+    "parent_cluster": ["Zeus", "Themis"],
+    "class_properties": ["seasonal-order", "cosmic-order-keepers", "three-fold-structure"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "Moirai": {
+    "stratum": 4,
+    "source_text_hesiodic": "Hesiod Theogony 904-906 (Zeus × Themis)",
+    "source_text_alternative": "Hesiod Theogony 217-219 (Nyx parthenogenic — earlier tradition)",
+    "source_named_collective": true,
+    "tradition": "Greek",
+    "members": ["Clotho", "Lachesis", "Atropos"],
+    "member_count_total": 3,
+    "parent_cluster_contested": "Zeus × Themis OR Nyx parthenogenic",
+    "class_properties": ["fate-spinning", "thread-of-life-class", "three-fold-structure"],
+    "operator_class": "pending",
+    "class_residency": null,
+    "enumeration_status": "enumerated_fully",
+    "placement_status": "not_started",
+    "open_questions": ["OQ-MOIRAI-PARENTAGE: two conflicting source-attestations. Resolution may require multi-residency placement (Stratum 2 Nyx-line AND Stratum 4 Olympian-offspring) — multi-shell-same-azimuth pattern per V2.5."],
+    "cross_tradition_parallels": "pending",
+    "sdec_status": "n/a"
+  },
+
+  "_blocked_pending_classification": {
+    "Primordials": {
+      "issue": "Hesiod names them severally (Chaos, Gaia, Tartarus, Eros, Erebus, Nyx, Aether, Hemera, Pontus, Phanes) without source-collective-naming. Per V2.5 line 365 (source-named-collective = class), Primordials fail criterion. Resolved: NOT a class; Stratum-only individuals. See _strata_index.stratum_1_primordials.",
+      "resolution": "stratum-only individuals; placed via placement_registry.json not class_registry.json",
+      "resolution_status": "tentative 2026-05-26 — pending kati ratification"
+    },
+    "Nyx-children": {
+      "issue": "Nyx parthenogenically births 14+ named figures; source names them severally not as a single collective. Sub-classes within (Moirai, Hesperides, Keres) ARE source-collective-named and qualify as classes. Other Nyx-children (Nemesis, Eris, Apate, Geras, Oizys, Thanatos, Hypnos, Oneiroi, Momus, Philotes) are individuals.",
+      "resolution": "Not a class as a whole; sub-classes (Moirai, Hesperides, Keres) are classes; remainder are individuals placed in placement_registry.json",
+      "resolution_status": "tentative 2026-05-26 — pending kati ratification"
+    },
+    "Heaven's-blood-event-class": {
+      "issue": "Erinyes + Giants + Meliae share an event-class parent (Heaven's blood post-castration). Phase 1.1 class-residency-derivation primitive must handle event-class parents (no standard parent-cluster lineage tuple).",
+      "tracked_as": "OQ-CLASS-EVENT-ANCHOR-VS-CLUSTER"
+    }
+  },
+
+  "_meta_open_questions": {
+    "OQ-CLASS-BOUNDARY-PRIMORDIALS": {
+      "question": "Are Primordials a class or a stratum-only-individuals?",
+      "resolution": "stratum-only-individuals (tentative 2026-05-26)",
+      "status": "tentative — pending kati ratification",
+      "rationale": "Hesiod names severally without source-collective-naming. V2.5 line 365 criterion fails."
+    },
+    "OQ-MOIRAI-PARENTAGE": {
+      "question": "Moirai: Zeus × Themis (Hesiod 904) or Nyx parthenogenic (Hesiod 217)?",
+      "status": "open",
+      "candidate_resolution": "multi-residency per V2.5 multi-shell-same-azimuth pattern"
+    },
+    "OQ-OCEANID-MEMBER-SCOPE": {
+      "question": "Class placement applies to all 3000 Oceanids or only 41 named?",
+      "status": "open",
+      "candidate_resolution": "class-residency holds for class as a whole; individuals only barycentric-located when named"
+    },
+    "OQ-CLASS-EVENT-ANCHOR-VS-CLUSTER": {
+      "question": "How does class-residency-derivation handle event-class parents (Heaven's blood, sea-foam, etc.) that lack standard parent-cluster lineage tuple?",
+      "status": "open — Phase 1.1 primitive design question",
+      "affected_classes": ["Erinyes", "Giants", "Meliae", "Aphrodite (sea-foam)"]
+    },
+    "OQ-OPERATOR-CLASS-AXIS": {
+      "question": "Mnemosyne plan-restructure council surfaced: operator-class threads orthogonal to strata. Does class_registry.json schema need explicit operator_class axis indexed across all strata, alongside per-class operator_class field?",
+      "status": "open — schema design question for Phase 0.7 ratification"
+    }
+  }
+}

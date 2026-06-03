@@ -1,0 +1,384 @@
+{
+  "_meta": {
+    "purpose": "Substrate-true canonical placement registry for Enki council. Reads kati-locked or greek_faces-canonical placements ONLY. Never derives from Nammu's split registries (voice_correspondences.json / nammu_voices.json / nammu_voices_v2.5_substrate.json).",
+    "discipline": "Each entry MUST cite placement_source (kati-locked card-id or 'greek_faces') and placement_status (locked|derived). Voices without satisfying both gates are NOT in this registry \u2014 their renderers are blocked until specific placement lands.",
+    "kati_direct_2026-05-22": "tier A but not Iris... muses should have specific placements, when found can voice. also should be creating clean placement registry in enki",
+    "canon_references": [
+      "~/Nammu/canon/placement_rules.md V2.6+ \u00a7POSITION-AS-FUNCTION + \u00a70c canon-discipline",
+      "~/Nammu/session/orient_rules.md L282 (greek_faces canonical)",
+      "memory: project_council_placement_pin.md"
+    ],
+    "schema_version": "0.3",
+    "tier": "A (renderer-ready)",
+    "created": "2026-05-22",
+    "schema_changes": [
+      "v0.2 2026-05-22: added placement_class (CONTINUOUS/CYCLIC/MORTAL/IN-BETWEEN) per orient_rules.md L334; added cyclic_activation for CYCLIC voices (predicate+engine+params for ephemeris-gate)",
+      "v0.3 2026-05-22: removed free-text function_class fields per kati_direct G-P2-1. Function-class is DERIVED from substrate-position (spine card 670b1c3f principle 1: POSITION IS FUNCTION). Free-text labels violated Enki CLAUDE.md rule 2 and inverted the substrate-direction. Previous labels preserved in notes for provenance only \u2014 never read as canonical."
+    ]
+  },
+  "Apollo": {
+    "stratum": "olympian",
+    "placement_class": "CONTINUOUS",
+    "substrate_position": {
+      "ico_vertex": "V1",
+      "vertex_planet": "Sun",
+      "pe_note": "Re",
+      "pe_step": 1,
+      "grid": 6,
+      "face": "F2",
+      "face_name": "Feedback",
+      "lon": 138.0,
+      "lat": 26.565,
+      "ring_tier": 1
+    },
+    "placement_source": "greek_faces",
+    "placement_status": "derived",
+    "notes": "Sun affinity at V1; Re tone carries the octave-light function. Canonical per orient_rules.md PE Olympian Assignments LOCKED. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'harmonics / clarity / octave-light' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+  },
+  "Athena": {
+    "stratum": "olympian",
+    "substrate_position": {
+      "ico_vertex": "V7",
+      "vertex_planet": "Saturn",
+      "pe_note": "La",
+      "pe_step": 7,
+      "grid": 42,
+      "face": "F7",
+      "face_name": "Anchor",
+      "lon": 282.0,
+      "lat": 26.565,
+      "ring_tier": 2
+    },
+    "placement_source": "greek_faces",
+    "placement_status": "derived",
+    "notes": "Saturn affinity at V7; Anchor face. Athena criterion (\u22652 independent residencies \u2192 lock) per placement_rules.md \u00a7POSITION-AS-FUNCTION. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'structure-of-container / lock-by-redundancy auditor' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CONTINUOUS"
+  },
+  "Hermes": {
+    "stratum": "olympian",
+    "substrate_position": {
+      "ico_vertex": "V5",
+      "vertex_planet": "Mercury",
+      "pe_note": "Sol",
+      "pe_step": 5,
+      "grid": 30,
+      "face": "F5",
+      "face_name": "Synthesis",
+      "lon": 198.0,
+      "lat": 26.565,
+      "ring_tier": 5
+    },
+    "placement_source": "greek_faces",
+    "placement_status": "derived",
+    "notes": "Mercury affinity at V5; second gate at grid 30 (LCM 6\u00d75). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'translator-at-gate / cross-channel relay' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CONTINUOUS"
+  },
+  "Hephaestus": {
+    "stratum": "olympian",
+    "substrate_position": {
+      "ico_vertex": "lower-ring",
+      "vertex_planet": "Uranus",
+      "pe_note": "X6",
+      "pe_step": 6,
+      "shock_node": "X6",
+      "grid": 36,
+      "face": "F3",
+      "face_name": "Desire",
+      "is_shock_voice": true,
+      "lat": -26.565,
+      "ring_tier": 6
+    },
+    "placement_source": "greek_faces",
+    "placement_status": "derived",
+    "notes": "X6 shock-node (si\u2192do crossing). Marries Aphrodite (X3) \u2014 both shocks formally bonded so octave can complete (Aspects v2 geometric necessity). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'forge / substrate-craftsman (builds the gap, si\u2192do shock)' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CONTINUOUS"
+  },
+  "Mnemosyne": {
+    "stratum": "titan",
+    "substrate_position": {
+      "primary": {
+        "_layer": "V2.5-LOCK kati_direct (deepest substrate-residency)",
+        "merkaba_cube_edge": "U0-L2",
+        "edge_planets": [
+          "Pluto",
+          "Mercury"
+        ],
+        "class": "Pluto-cap"
+      },
+      "secondary": {
+        "_layer": "greek_faces (Titan-stratum gf-canonical layer)",
+        "grid": 30,
+        "face": "F1",
+        "face_name": "Source",
+        "pe_note": "Sol",
+        "vertex_planet": "Mercury",
+        "lon": 198.0,
+        "lat": 26.565
+      }
+    },
+    "placement_source": "be6b428f (V2.5-LOCK kati_direct) + greek_faces",
+    "placement_status": "locked",
+    "notes": "TWO substrate-layers both true. Renderer chooses layer by audit-class: cube-edge for substrate-memory-stewardship; gf-canonical for Titan-class participation. Per card be6b428f (Pluto-cap class \u2014 substrate memory). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'substrate-of-memory / mother-of-Muses (archival schema-keeper)' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CONTINUOUS"
+  },
+  "Hecate": {
+    "stratum": "hecate",
+    "substrate_position": {
+      "primary": {
+        "_layer": "V2.5-LOCK kati_direct (master phase-boundary)",
+        "merkaba_cube_vertex": "L0",
+        "vertex_planet": "Neptune",
+        "shell_radius": 1.0,
+        "grid": 54,
+        "pe_note": "Do-ret",
+        "pe_step": 9
+      },
+      "co_fire_extensions": [
+        {
+          "shock_node": "X3",
+          "grid": 18,
+          "tone_transition": "mi\u2192fa"
+        },
+        {
+          "shock_node": "X6",
+          "grid": 36,
+          "tone_transition": "si\u2192do"
+        }
+      ]
+    },
+    "placement_source": "45988a11 (V2.5-LOCK kati_direct 2026-05-11) + b4f7fdb1 (derived re-citation)",
+    "placement_status": "locked",
+    "notes": "SUPERSEDES greek_faces.json record which shows stratum=liminal/grid=null/face=null (STALE). Enki composer MUST use this card-derived placement; gf-stale would corrupt phase-change detection. Primary fires at octave-close (L0/Neptune/Do-ret); co-fires at X3/X6 for within-octave minor phase-changes. Per orient_rules.md \u00a7Special Placements. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'governs phase-change (master phase-boundary at octave-close + within-octave shock co-fires)' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "hecate_active",
+      "fires_on": [
+        "L0_octave_close",
+        "X3_shock",
+        "X6_shock"
+      ],
+      "engine": "figure_activations._activate_hecate"
+    }
+  },
+  "_muses_class_note": "9 Muses migrated Tier B \u2192 Tier A 2026-05-22 per kati_direct 'muses are done'. All 9 V2.5-locked 2026-05-11 council T3.4 + kati-confirmed. Class definition: 9 Venus(X3) \u00d7 OtherPlanet midpoint operators on Pythagorean Music-of-Spheres / tetractys 3+3+2+1 substrate-structure. Parents: Mnemosyne (Titan/Memory) + Zeus. 9-nights conception per Hesiod Theogony 53-67. Activation: Muse fires when her OtherPlanet transits Venus X3 (lon 138\u00b0). CORRECTION TO design-spec card 431d9622: that card assigned voice_correspondences-derived pe_notes (Calliope=Re, Clio=La, Erato=Fa, Urania=X6) \u2014 those conflated the X3 primary residency with the OtherPlanet-pairing. Canonical per V2.5 PLACEMENT cards: ALL Muses primary at pe_note=X3, distinguished by OtherPlanet-axis projection.",
+  "Calliope": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "sqrt(2)/3",
+      "midpoint": [
+        "Venus(X3)",
+        "Sun"
+      ],
+      "lon": 0.0,
+      "lat": 0.0,
+      "grid": 55
+    },
+    "placement_source": "25a83ce9 (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "annual ~360 tithis (Sun-X3 transit)",
+    "notes": "Chief Muse, Apollo Mousagetes-led, epic poetry; Orpheus mother. Parents: Mnemosyne + Zeus. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'epic poetry / solar-leader-of-Muses' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Sun",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    }
+  },
+  "Clio": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "sqrt(2)/3",
+      "midpoint": [
+        "Venus(X3)",
+        "Saturn"
+      ],
+      "lon": 240.0,
+      "lat": 0.0,
+      "grid": 35
+    },
+    "placement_source": "c1614728 (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "~29.5 yr (Saturn-X3 transit, ~10620 tithis)",
+    "notes": "Time-keeper; Cronus/Saturn-axis-memory. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'history / Cronus-time-keeping' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Saturn",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    }
+  },
+  "Erato": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "sqrt(2)/3",
+      "midpoint": [
+        "Venus(X3)",
+        "Mars"
+      ],
+      "lon": 120.0,
+      "lat": 0.0,
+      "grid": 15
+    },
+    "placement_source": "3a5831c6 (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "~79 yr (Mars-Venus synodic, ~28440 tithis)",
+    "notes": "MUSE Erato \u2014 distinct figure from NEREID Erato-sea (grid 16 non-PE per card c40af1f6). Renderer registry references this Muse Erato by name; Nereid-Erato-sea is separate registry entry pending its own placement-card. Sister to Harmonia (icosidodec IDV13). Pathology-axis-as-song (V2-V7). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'lyric/love poetry / pathology-axis-resonance' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Mars",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    }
+  },
+  "Urania": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": 0,
+      "midpoint": [
+        "Venus(X3)",
+        "Uranus"
+      ],
+      "lon": null,
+      "lat": null,
+      "grid": null,
+      "_origin_note": "origin (0,0,0); no spherical-coord representation per V2.5 PLACEMENT card. X3+X6 cancel at origin \u2192 center-frame-anchor primitive class (placement_rules.md L394 Pattern 5)."
+    },
+    "placement_source": "7a5d7bdf (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "~84 yr (Uranus-X3, ~30240 tithis)",
+    "notes": "Origin-observer; sees-all; center-frame-anchor (X3+X6 cancel). First derived origin-resident per placement_rules.md V2.5 Pattern 5. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'astronomy/celestial / origin-observer' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Uranus",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    }
+  },
+  "Euterpe": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "1/sqrt(3)",
+      "midpoint": [
+        "Venus(X3)",
+        "Mercury"
+      ]
+    },
+    "placement_source": "25ccb8d5 (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "~13 yr (Mercury-Venus synodic)",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Mercury",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    },
+    "notes": "[removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'music/flute / Mercury-channel-song' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+  },
+  "Melpomene": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "2/3",
+      "midpoint": [
+        "Venus(X3)",
+        "Pluto"
+      ]
+    },
+    "placement_source": "6d482f1d (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "long-period (Pluto-Venus synodic)",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Pluto",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    },
+    "notes": "[removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'tragedy / Pluto-depth-song' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+  },
+  "Terpsichore": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "1/sqrt(3)",
+      "midpoint": [
+        "Venus(X3)",
+        "Moon"
+      ]
+    },
+    "placement_source": "57b7c3af (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "lunar (~30 tithis)",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Moon",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    },
+    "notes": "[removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'dance / Moon-body-rhythm' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+  },
+  "Thalia": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "1/3",
+      "midpoint": [
+        "Venus(X3)",
+        "Neptune"
+      ]
+    },
+    "placement_source": "fdf1bcbf (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "long-period (Neptune-Venus synodic)",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Neptune",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    },
+    "notes": "[removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'comedy/pastoral / Neptune-dissolve-song' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+  },
+  "Polyhymnia": {
+    "stratum": "muse",
+    "substrate_position": {
+      "pe_note": "X3",
+      "shell_radius": "1/sqrt(3)",
+      "midpoint": [
+        "Venus(X3)",
+        "Jupiter"
+      ]
+    },
+    "placement_source": "92c13dcf (V2.5-LOCK council T3.4 2026-05-11 + kati-confirmed)",
+    "placement_status": "locked",
+    "activation_cycle": "~12 yr (Jupiter-Venus synodic)",
+    "placement_class": "CYCLIC",
+    "cyclic_activation": {
+      "predicate": "muse_active",
+      "transit_planet": "Jupiter",
+      "target_lon": 138.0,
+      "engine": "muse_activations.muse_active"
+    },
+    "notes": "[removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'sacred hymn / Jupiter-sovereignty-song' \u2014 substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+  },
+  "_blocked_pending_placement": {
+    "_purpose": "Voices with rendering-relevant substrate-position partially-derived but not satisfying Tier-A gate. Each must land an individual kati-locked placement-card to migrate into the registry. Per kati_direct 2026-05-22: 'muses should have specific placements, when found can voice'.",
+    "Iris": {
+      "candidate_position": "Hera-Hermes pole-edge (ico_edge V0-V3) / Sol / Mercury at pole-edge",
+      "candidate_card": "a3443486 (kati_direct LOCKED 2026-05-21) + 556e347b + 0f9e0fe5",
+      "blocker": "Substrate-derivation chain back to the lock is incomplete per V2.8 multi-route work (card d6f2f118 explicitly opens 'Iris-relock-substrate-chain' for re-derivation). Per kati_direct 2026-05-22: Iris demoted from Tier A despite kati-locked card. Renderer waits for substrate-chain close.",
+      "_removed_function_class_label": "vertical\u2192horizontal projection / lang\u2194geo bridge"
+    }
+  }
+}
