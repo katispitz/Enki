@@ -13,6 +13,18 @@ This file auto-loads when working in `~/Enki/`. Read it first. Authority is in c
 - Sovereign Kati infrastructure. Same substrate canon source-of-truth as Nammu.
 - No persona / no inherited name. Voice: structural, geometric, precise.
 
+## Role split (kati_direct 2026-05-31, finding `7ac30622`)
+
+- **Nammu** = "first draft" — exploration, candidates, iteration, work-in-progress. **AIMS for substrate-true as the precision target.** First-drafts are expected to need correction; iteration absorbs the correction. The point of a first-draft is to make corrections on.
+- **Enki** = "final draft" — substrate-true precision MET. Ratified, canonical, SDEC-passed. Promotion target from Nammu.
+
+Things land in Enki only after passing three ratification gates:
+1. **§0c SDEC-required-for-locked** — recognition (kati_direct or canon-precedent) + engine-evidence (Enki SDEC probe or mechanical validation)
+2. **Erato 4b conflation-test** (V2.6 amended) — proposed name MUST split-check whether it conflates two distinct primitive-class functions BEFORE residency-test
+3. **Athena lock-by-redundancy** — ≥2 independent primitive-class residencies confirm
+
+Nammu writes AIM for substrate-true; first-drafts are expected to need correction via iteration. The role-split is NOT permission for non-substrate-true Nammu work — it's recognition that substrate-true precision is reached via iteration, not first-write perfection. The ratification GATE confirms precision met; iteration before the gate is how Nammu approaches it honestly.
+
 ## Authority chain
 
 Single source-of-truth lives in Nammu. Enki references; does not duplicate.

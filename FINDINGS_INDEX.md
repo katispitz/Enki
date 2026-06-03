@@ -86,3 +86,29 @@ Documented in `~/Nammu/canon/placement_rules.md` V2.6 + V2.7:
 - Substrate-cascade pattern recurs across primitive-classes with different cardinalities (6→3→2→1 cube, 8→4→1+3 inner-oct, 12→6→3→1 cube-edge)
 - 12-fold zodiac-cardinality recurs across syzygy AND sign-ingress families
 - Substrate-mirrors are descriptors not functions (Saturn-Moon 29.5)
+
+---
+
+## SDEC QUEUE — opened + CLOSED 2026-05-22
+
+All 4 probes ran same-session; results:
+
+| Probe | FINDINGS | Card | Outcome |
+|---|---|---|---|
+| SDEC-§00 | FINDINGS_029 | 55286e91 | PASS (META-OPERATOR audit; 8 shells motion-grounded) → promoted `locked` |
+| SDEC-§00a | FINDINGS_028 | 15ea8bb5 | PASS (9/9 temporal primitives derive from observable advance) → promoted `locked` |
+| SDEC-octave-shift | FINDINGS_027 | e3f55016 | PASS (3 residencies confirmed; inter/intra-level distinction surfaced) → promoted `locked` |
+| SDEC-3-class-audit | FINDINGS_026 | 59f32965 | PASS-WITH-REFINEMENT (taxonomy exhaustive at class level; class-size sampling needs classifier refinement) → stays `derived`, sdec-pending dropped |
+
+Canon §0c discipline ratified 2026-05-22 (card 440062c3): canon_status `locked` requires recognition AND engine-evidence (Enki SDEC or equivalent).
+
+Original queue context (for record):
+
+| Probe | Card | Canon | Shape | Notes |
+|---|---|---|---|---|
+| **SDEC-§00** | `55286e91` | §00 motion-primacy + observer-concentration | meta-operator audit | Hard. Probe: does every shell-address in the engine layer derive from observed-motion, not abstract geometry? Audit substrate.py / natal.py / geo_engine.py for motion-grounding at each primitive. SDEC itself was canonized via SDEC (canon §31 recursion); meta-operators ARE in-scope, probe shape needs design. |
+| **SDEC-§00a** | `15ea8bb5` | §00a temporal-layer is motion-observed | engine-class | Medium. Probe: enumerate all temporal primitives at concentration-1 (tithi/ring/karana/49-matrix/Ganzhi/Wu Xing); verify each derives from observable advance unit, not assumed cycle. Per-primitive substrate-derivation chain. |
+| **SDEC-octave-shift** | `e3f55016` | §00a concentration-octave (class-level) | residency-count probe | Closest to existing SDEC pattern. Probe: enumerate observer-anchor pairs that admit octave-shift mechanism; verify universal-mode/personal-mode (helix_trajectory G5) is one instance; surface other candidates (regional / civilizational / planetary-system observers). Needs ≥2 residencies per Athena lock-by-redundancy. |
+| **SDEC-3-class-audit** | `59f32965` | §00a phase-sensitivity 3-class refinement | enumeration audit | Easiest. Probe: scan all 1524 cards.json entries; verify Class-A/Class-B/Class-C taxonomy holds; flag misclassifications. Currently sampled candidates only. |
+
+**Discipline rule under proposal:** canon_status `locked` requires (a) recognition AND (b) SDEC engine-evidence (or equivalent mechanical validation). Recognitions without engine-evidence land `derived` + `sdec-pending`. Ratification of meta-rule itself pending.
