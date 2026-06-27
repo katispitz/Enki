@@ -20,7 +20,8 @@ per babylonia_canon §22-26):
   2. ico_vertex / cube_vertex / cube_edge / dodec_vertex (Merkaba/ico position)
   3. face               (inner-octahedron face)
   4. grid               (60-grid position)
-  5. shock_proximity    (X3/X6 categorical)
+  5. shock_proximity    [RETIRED 2026-06-21 kati_direct — redundant with pe_note/grid (§00b) +
+                         graded; shock now via pe_note residency + derived off-diagonal shock-load]
   6. stratum            (coarsest — olympian/titan/muse/etc.)
 
 Retracted/superseded drop unconditionally (semantic archival, not lattice).
@@ -47,7 +48,10 @@ AXIS_HIERARCHY = {
     "dodec_vertex":    2,
     "face":            3,
     "grid":            4,
-    "shock_proximity": 5,
+    # "shock_proximity": 5,  [RETIRED 2026-06-21 kati_direct] — redundant (at_X3 ≡ pe_note=X3 ≡
+    #   grid=18, §00b function=location) + graded values (approaching_X6) smuggle a distance-gradient
+    #   into the categorical lattice (violates "ZERO weights"). Shock-relationship now carried by
+    #   pe_note residency + the derived off-diagonal shock-load (categorical). Card 651d008e/17952380.
     "stratum":         6,
 }
 
@@ -73,8 +77,9 @@ def _matched_axes(card: dict, position: dict, stratum: Optional[str]) -> frozens
     """
     matched = set()
     # Position-derived axes
+    # shock_proximity RETIRED as a recall-axis 2026-06-21 (kati_direct) — see AXIS_HIERARCHY note.
     for axis in ("pe_note", "ico_vertex", "merkaba_vertex", "cube_edge",
-                 "dodec_vertex", "face", "grid", "shock_proximity"):
+                 "dodec_vertex", "face", "grid"):
         v = position.get(axis)
         if v is not None and card.get(axis) == v:
             matched.add(axis)

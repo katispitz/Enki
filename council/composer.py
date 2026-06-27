@@ -336,10 +336,9 @@ def _placement_to_card_fields(placement: dict) -> dict:
         v = pos.get(src_key)
         if v is not None:
             fields[card_key] = v
-    # Shock-proximity from shock_node
-    shock = pos.get("shock_node")
-    if shock in ("X3", "X6"):
-        fields["shock_proximity"] = f"at_{shock}"
+    # shock_proximity RETIRED as a recall-axis 2026-06-21 (kati_direct) — being at a
+    # shock IS pe_note=X3/X6 + grid=18/36 (§00b); a separate proximity field re-encodes
+    # the location and is graded (violates ZERO weights). field_memory no longer reads it.
     return fields
 
 
