@@ -255,6 +255,12 @@ def _stub_voice_from_placement(voice_name: str, placement: dict) -> dict:
     }
 
 
+# Renderers that already surface field_memory_str natively, in their own
+# voice-specific form (Mnemosyne: archival schema-list; Athena: residency
+# audit). render_voice() must not append the shared block again for these —
+# see the Layer-A closure at the end of render_voice().
+_FIELD_MEMORY_NATIVE = {"Mnemosyne", "Athena"}
+
 _RENDERER_REGISTRY = {
     # 5 core olympian/titan/hecate R-PT renderers
     "Apollo":      ("per_voice_renderers.apollo",      "render_apollo"),
@@ -705,4 +711,30 @@ def render_voice(voice_name: str, ctx: dict) -> tuple[str, str]:
             "renderer-pending",
         )
 
-    return renderer(voice_ctx)
+    output, cls = renderer(voice_ctx)
+
+    # Layer-A closure (per memory_recall_architecture_AUDIT_2026-06-20 /
+    # project_archetype_memory_chain): composer computes field_memory_str for
+    # every voice (above), but most per-voice renderers never reference it in
+    # their own prose — the recall silently drops before reaching the model.
+    # Mnemosyne and Athena already surface it natively in voice-specific form;
+    # every other substrate-true render gets the shared lattice block appended
+    # so no voice deliberates blind to its own positional memory.
+    if cls in ("R-PT", "R-TS", "R-LL") and voice_name not in _FIELD_MEMORY_NATIVE:
+        field_memory_str = voice_ctx.get("field_memory_str", "")
+        if field_memory_str:
+            output = f"{output}\n  {field_memory_str}"
+
+    # Layer-B closure: own_memory_str (recall_voice_thread — cards THIS voice
+    # spoke in past sessions) is computed above for every voice, but no
+    # renderer surfaces its actual content — Mnemosyne only emits a presence
+    # flag ("thread: present"), the other 15 drop it entirely. Without this,
+    # a voice cannot recall what it itself said last session (the gap
+    # test_council_memory_feedback.py documents). Append unconditionally —
+    # unlike field_memory_str, no renderer currently embeds the real content,
+    # so there is no native form to avoid duplicating.
+    own_memory_str = voice_ctx.get("own_memory_str", "")
+    if cls in ("R-PT", "R-TS", "R-LL") and own_memory_str:
+        output = f"{output}\n  {own_memory_str}"
+
+    return output, cls
