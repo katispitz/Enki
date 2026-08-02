@@ -39,13 +39,45 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+try:
+    import numpy as _np
+except Exception:                                     # pragma: no cover
+    _np = None
+
+
+def _jsonable(obj):
+    """Recursively convert numpy scalar types (np.float64/np.bool_/np.int64,
+    surfaced by several downstream engines — e.g. helix_geometry's k_helix/
+    delta_phase, this session's own chart-lon cross-check) into native Python
+    types. json.dumps/Flask's jsonify both reject raw numpy scalars outright —
+    confirmed the hard way: full_reading()'s output 500'd through Flask before
+    this existed. Applied once at full_reading()'s return, not scattered
+    per-field, so nothing downstream has to remember to do this."""
+    if _np is not None and isinstance(obj, _np.generic):
+        return obj.item()
+    if isinstance(obj, dict):
+        return {k: _jsonable(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_jsonable(v) for v in obj]
+    return obj
+
 sys.path.insert(0, str(Path.home() / "Nammu" / "engines"))
 sys.path.insert(0, str(Path.home() / "Enki" / "substrate"))
 sys.path.insert(0, str(Path.home() / "Enki" / "scripts"))
 
 from helix_address import address_of, relation  # noqa: E402
 from bounds import ZODIAC_SIGNS  # noqa: E402
-from locate_entity_v4 import locate as _locate  # noqa: E402
+from substrate_at import substrate_at  # noqa: E402
+from solid_phase import solid_phase as _solid_phase  # noqa: E402
+from chart import full_chart as _full_chart  # noqa: E402
+
+# Cross-pipeline honesty check: full_chart()'s planet longitudes come from
+# locate_entity_v4.locate() (its own DE441-primary call), a DIFFERENT code path
+# from substrate_at()/address_of() (also DE441-primary, via ephem_de441.py
+# directly) even though both should agree closely for in-range dates. Flag,
+# don't silently trust, if they ever drift apart — same discipline as the
+# Sun-sign bug this session started from.
+_LON_CROSS_CHECK_TOLERANCE_DEG = 0.05
 
 NATAL_KATI = datetime(1988, 3, 31, 15, 21, 0, tzinfo=timezone.utc)
 
@@ -129,14 +161,32 @@ def lon_to_sign(lon):
     return ZODIAC_SIGNS[idx], deg_in_sign
 
 
-def body_data(body, addrs):
-    """Structured per-body reading: zodiac position, helix address, correspondence
-    table. Pure data — print_bodies() formats this for the terminal; the Navigator
-    route jsonifies it directly. Single computation path either way."""
+def body_data(body, addrs, functions=None, chart_substrate=None):
+    """Structured per-body reading. Pure data — print_bodies() formats this for
+    the terminal; the Navigator route jsonifies it directly. Single computation
+    path either way.
+
+    Four provenance-distinct layers, kept in separate keys rather than flattened
+    together, because several of them use similar-sounding names for DIFFERENT
+    things (e.g. this dict's own "grid_pos" (helix_geometry, from tropical lon)
+    vs chart_substrate's "grid" (natal.py's own project(), a different
+    computation) — flattening them risks exactly the kind of same-word/
+    different-primitive confusion the zodiac-vs-matrix aspect split already
+    guards against.
+
+      (top-level)       — zodiac position + helix address (helix_address.address_of)
+      correspondence    — static per-planet reference table (card ec79c27d)
+      activation        — Wu Xing phase + counter-rotation state for THIS planet
+                           at THIS moment (substrate_at().functions[body])
+      chart             — dignity/bound/houses(3 systems)/vedic/PE-ring/cell-
+                           signature (chart.py's full_chart(), archetype-free
+                           'substrate' partition only — output_contract.py's own
+                           contract guarantees no myth/figure-name content here)
+    """
     a = addrs[body]
     sign, deg = lon_to_sign(a["lon"])
     corr = CORRESPONDENCE[body]
-    return {
+    out = {
         "body": body,
         "lon": a["lon"],
         "sign": sign,
@@ -147,7 +197,30 @@ def body_data(body, addrs):
         "col": a["col"],
         "helix_pos": a["helix_pos"],
         "correspondence": corr,
+        "activation": None,
+        "chart": None,
+        "lon_cross_check": None,
     }
+    if functions is not None:
+        act = functions.get("activation") or {}
+        out["activation"] = {
+            "tet_side": functions.get("tet_side"),
+            "rotation_angle_deg": act.get("rotation_angle_deg"),
+            "arc_direction": act.get("arc_direction"),
+            "frame": act.get("frame"),
+            "wu_xing_phase": act.get("wu_xing_phase"),
+        }
+    if chart_substrate is not None:
+        out["chart"] = {k: v for k, v in chart_substrate.items() if k != "ecl"}
+        chart_lon = (chart_substrate.get("ecl") or [None])[0]
+        if chart_lon is not None:
+            delta = abs(((chart_lon - a["lon"] + 180) % 360) - 180)
+            out["lon_cross_check"] = {
+                "chart_lon": round(chart_lon, 4),
+                "delta_deg": round(delta, 4),
+                "agrees": delta <= _LON_CROSS_CHECK_TOLERANCE_DEG,
+            }
+    return out
 
 
 def pair_data(pa, pb, addrs):
@@ -176,6 +249,13 @@ def pair_data(pa, pb, addrs):
         "zodiac_sign_offset": spatial.get("sign_offset"),
         "zodiac_line_type": spatial.get("line_type"),
         "zodiac_unavailable": spatial.get("unavailable"),
+        # polyhedral-shell relation (real face-graph, not vertex-index arithmetic) —
+        # per solid, is this pair co-resident/adjacent/antipodal/disjoint. Same
+        # aspect_lattice.aspect() call as zodiac_aspect above, previously unused.
+        "shells": spatial.get("shells"),
+        "shared_shell_cells": spatial.get("shared_shell_cells"),
+        # enneagram (§16 hexad/triangle lines) between the two bodies' PE points
+        "enneagram": spatial.get("enneagram"),
     }
     if "cell_label" in pc:
         skel = pc["skeleton"]
@@ -196,12 +276,50 @@ def pair_data(pa, pb, addrs):
     return out
 
 
-def print_bodies(addrs):
+def print_top_level(result):
+    """The stuff that isn't per-body or per-pair: Merkaba orientation, the real
+    Fire/Air/Earth/Water/Aether rotation-zone (solid_phase — a DIFFERENT 5-fold
+    system than orientation's own Wu Xing clock, don't conflate the two), ASC/
+    houses/lots (empty if no lat/lon), PE-node firings, and the cross-ephemeris
+    honesty check."""
     print("=" * 100)
+    print("MOMENT: Merkaba orientation, rotation-phase zone, angles/houses/lots")
+    print("=" * 100)
+    o = result["orientation"]
+    print(f"  rotation: father={o['father_angle_deg']:.2f}°  mother={o['mother_angle_deg']:.2f}°"
+          f"  (axis={o['rotation_axis']})")
+    print(f"  Wu Xing clock (Venus 72° symmetry-5, separate from the zone below): "
+          f"{o['wu_xing_phase']}  [{o['period_status']}]")
+    sp = result["solid_phase"]
+    est = " [ESTIMATE]" if sp.get("is_estimate") else ""
+    print(f"  rotation-phase zone (canon §8/9, Tet/Oct/Cube/Ico/Dodec -> Fire/Air/Earth/Water/Aether): "
+          f"{sp['phase_name']} / {sp['element']}{est}  (tithi {sp['tithi_in_cycle']} of 30, {sp['half']})")
+    if result["ascendant"]:
+        a = result["ascendant"]
+        print(f"  ASC {a['asc_lon']:.3f}°  MC {a['mc_lon']:.3f}°  sect={a['sect']}")
+        for mode, houses in result["houses"].items():
+            print(f"  houses ({mode}): " + ", ".join(f"{p}=H{h}" for p, h in houses.items() if isinstance(h, int)))
+        if result["lots"]:
+            print("  lots: " + ", ".join(
+                f"{name}={l['sign']} {l['lon_in_sign']:.1f}°" for name, l in result["lots"].items()
+                if isinstance(l, dict) and "sign" in l))
+    else:
+        print("  ASC/houses/lots: unavailable (no lat/lon given)")
+    if result["pe_firing"]:
+        for f in result["pe_firing"]:
+            print(f"  pe_firing: {f['planet']} within {abs(f['deviation_deg']):.2f}° of {f['pe']} (grid {f['grid']})")
+    if result["lon_cross_check_mismatches"]:
+        print("  ⚠ cross-ephemeris mismatch (substrate_at vs chart.py DE441 paths disagree):")
+        for m in result["lon_cross_check_mismatches"]:
+            print(f"    {m['body']}: Δ={m['delta_deg']}° (chart_lon={m['chart_lon']})")
+
+
+def print_bodies(bodies):
+    print("\n" + "=" * 100)
     print("PER-BODY: zodiac position, address (spatial/temporal), correspondence-table element/azoth")
     print("=" * 100)
     for body in ALL_PLANETS:
-        d = body_data(body, addrs)
+        d = bodies[body]
         corr = d["correspondence"]
         print(f"\n{body}")
         print(f"  lon {d['lon']:6.2f}°  →  {d['deg_in_sign']:5.2f}° {d['sign']}")
@@ -212,16 +330,46 @@ def print_bodies(addrs):
         print(f"    sign-element (Merkaba residency): {corr['sign_element']}   "
               f"own-element (humoral temperament): {corr['own_element']}")
         print(f"    azoth operation: {corr['azoth']}    macro-phase: {corr['macro_phase']}")
+        if d["activation"]:
+            act = d["activation"]
+            print(f"  activation: tet_side={act['tet_side']}  wu_xing={act['wu_xing_phase']}"
+                  + (f"  rotation={act['rotation_angle_deg']:.1f}° ({act['arc_direction']})"
+                     if act["rotation_angle_deg"] is not None else ""))
+        if d["chart"]:
+            c = d["chart"]
+            dig = c.get("dignity")
+            dig_str = f"score={dig['score']} {'/'.join(dig['dignities']) or 'peregrine'}" if dig else "n/a (modern planet)"
+            print(f"  chart: dignity={dig_str}  bound={c.get('bound')}  "
+                  f"PE={c.get('pe_pt')}/{c.get('pe_role')}  ring={c.get('ring')} ({c.get('ring_mechanism')})")
+            if c.get("house_whole_sign") is not None:
+                print(f"    houses: whole-sign=H{c['house_whole_sign']}  porphyry=H{c['house_porphyry']}  "
+                      f"placidus=H{c['house_placidus']}")
+            v = c.get("vedic") or {}
+            nak = v.get("nakshatra") or {}
+            if nak:
+                print(f"    vedic: sidereal {v['sidereal_lon']:.2f}°  nakshatra={nak.get('name')} "
+                      f"pada={nak.get('pada')}  navamsa={((v.get('navamsa') or {}).get('navamsa_sign'))}")
+            print(f"    active cell (this planet's row x today's column): "
+                  f"{c.get('cell_x_active_col')} / {c.get('cell_x_active_element_pair')} / {c.get('cell_x_active_phase_delta')}")
+        if d["lon_cross_check"] and not d["lon_cross_check"]["agrees"]:
+            print(f"  ⚠ lon cross-check mismatch: chart_lon={d['lon_cross_check']['chart_lon']}"
+                  f" (Δ={d['lon_cross_check']['delta_deg']}°)")
 
 
-def print_pair(pa, pb, addrs):
-    d = pair_data(pa, pb, addrs)
+def print_pair(d):
+    pa, pb = d["a"], d["b"]
     print(f"\n{pa} <-> {pb}")
     if d["zodiac_unavailable"]:
         print(f"  zodiac aspect (real angle, §31c spatial-60): unavailable — {d['zodiac_unavailable']}")
     else:
         print(f"  zodiac aspect (real angle, §31c spatial-60): {d['zodiac_aspect']}"
               f"  (sign_offset={d['zodiac_sign_offset']}, {d['zodiac_line_type']})")
+    if d.get("shells"):
+        shell_bits = [f"{name}={rel['relation']}" for name, rel in d["shells"].items()]
+        print("    polyhedral shells: " + ", ".join(shell_bits))
+    if d.get("enneagram") and d["enneagram"].get("relations"):
+        print(f"    enneagram (§16): {d['enneagram']['planet_a']}<->{d['enneagram']['planet_b']} "
+              f"{d['enneagram']['relations']}")
     if d["has_cell"]:
         print(f"  pair_49 (static, §31c): {d['cell_label']}"
               f"{' [CONJUNCTION/unison]' if d['is_conjunction'] else ''}")
@@ -240,38 +388,61 @@ def print_pair(pa, pb, addrs):
     print(f"  azoth ops in play: {pa}={sa['azoth']}   {pb}={sb['azoth']}")
 
 
-def print_pairs(addrs, focus=None, only_pair=None):
+def print_pairs(pairs):
     print("\n" + "=" * 100)
     print("PAIR RELATIONS: T(49,60) closure — static pair-cell + motion recall + interval/aspect/quality")
     print("=" * 100)
-    if only_pair:
-        pa, pb = only_pair
-        for p in (pa, pb):
-            if p not in ALL_PLANETS:
-                print(f"\n{p!r} is not a known body (known: {', '.join(ALL_PLANETS)})")
-                return
-        print_pair(pa, pb, addrs)
+    if not pairs:
+        print("\n(no pairs — check --pair planet names against ALL_PLANETS)")
         return
-    for i, pa in enumerate(ALL_PLANETS):
-        for pb in ALL_PLANETS[i + 1:]:
-            if focus and focus not in (pa, pb):
-                continue
-            print_pair(pa, pb, addrs)
-
-
-def ascendant_data(when, lat, lon):
-    """ASC + whole-sign houses via locate_entity_v4.locate() — the same engine
-    natal.py uses. None if lat/lon not supplied (locate() needs both)."""
-    loc = _locate(when.year, when.month, when.day, when.hour, when.minute, when.second,
-                  birth_lat=lat, birth_lon=lon)
-    return loc.get("ascendant")
+    for d in pairs:
+        print_pair(d)
 
 
 def full_reading(when, lat=None, lon=None, focus=None, only_pair=None):
     """Top-level: one JSON-serializable dict, the single source both the CLI
-    formatter and the Navigator /api/reading route consume."""
+    formatter and the Navigator /api/reading route consume.
+
+    Composes THREE substrate-true (archetype-free) sources for one moment:
+      1. helix_address.address_of()/relation() — the T(49,60) joint address +
+         pair relations (both aspect axes: zodiac angle + matrix interval).
+      2. substrate_at() — Merkaba orientation (father/mother counter-rotation +
+         Wu Xing phase), per-planet activation, PE-node firings. Time-only,
+         no location needed.
+      3. chart.py's full_chart() — dignity, bound, houses (whole-sign/porphyry/
+         placidus), vedic (sidereal/nakshatra/navamsa), lots, karana, PE/ring/
+         cell-signature. Runs with or without lat/lon (houses+lots need it,
+         everything else doesn't); output_contract.py's partition() guarantees
+         its 'substrate' block carries no archetype/myth content — that's the
+         ONLY block used here, matching the explicit scope of this tool (card
+         29455a2b: "no archetype/myth content included anywhere... by design").
+    """
     addrs = {body: address_of(body, when) for body in ALL_PLANETS}
-    bodies = {body: body_data(body, addrs) for body in ALL_PLANETS}
+
+    sub_state = substrate_at(when)
+    orientation = sub_state["orientation"]
+    phase = _solid_phase(sub_state["helix"]["cumul_tithi"])
+    pe_firing = sub_state["pe_firing"]
+
+    chart_result = _full_chart(when.year, when.month, when.day,
+                                when.hour, when.minute, when.second,
+                                birth_lat=lat, birth_lon=lon)
+    chart_planets = chart_result["planets"]
+
+    bodies = {
+        body: body_data(
+            body, addrs,
+            functions=sub_state["functions"].get(body),
+            chart_substrate=chart_planets.get(body, {}).get("substrate"),
+        )
+        for body in ALL_PLANETS
+    }
+
+    lon_mismatches = [
+        {"body": b, **d["lon_cross_check"]}
+        for b, d in bodies.items()
+        if d["lon_cross_check"] and not d["lon_cross_check"]["agrees"]
+    ]
 
     if only_pair:
         pairs = [pair_data(*only_pair, addrs)] if all(p in ALL_PLANETS for p in only_pair) else []
@@ -283,14 +454,28 @@ def full_reading(when, lat=None, lon=None, focus=None, only_pair=None):
             if not focus or focus in (pa, pb)
         ]
 
-    ascendant = ascendant_data(when, lat, lon) if (lat is not None and lon is not None) else None
+    asc_lon = chart_result["meta"].get("asc_lon")
+    ascendant = None
+    if asc_lon is not None:
+        ascendant = {
+            "asc_lon": asc_lon,
+            "mc_lon": chart_result["meta"].get("mc_lon"),
+            "sect": chart_result["meta"]["sect"],
+        }
 
-    return {
+    return _jsonable({
         "when_utc": when.isoformat(),
         "bodies": bodies,
         "pairs": pairs,
         "ascendant": ascendant,
-    }
+        "houses": chart_result["houses"],       # {} if no lat/lon
+        "lots": chart_result["lots"],           # {} if no lat/lon
+        "temporal": chart_result["temporal"],   # karana + solid_phase (chart.py's own copy)
+        "orientation": orientation,             # Merkaba rotation state (Wu Xing clock)
+        "solid_phase": phase,                   # Fire/Air/Earth/Water/Aether rotation-zone (canon §8/9)
+        "pe_firing": pe_firing,                 # planets currently within orb of a PE node
+        "lon_cross_check_mismatches": lon_mismatches,  # empty list = the two ephemeris paths agree
+    })
 
 
 def main():
@@ -301,14 +486,19 @@ def main():
                      help="timezone for --date/--time: IANA name (e.g. America/Los_Angeles, "
                           "DST-aware) or raw UTC offset (e.g. -7, +5:30, not DST-aware). Default UTC.")
     ap.add_argument("--natal", action="store_true", help="shortcut: Kati's natal (1988-03-31 15:21 UTC / 7:21 AM PST)")
+    ap.add_argument("--lat", type=float, default=None, help="birth latitude (unlocks ASC/houses/lots/dignity-sect)")
+    ap.add_argument("--lon", type=float, default=None, help="birth longitude")
     ap.add_argument("--label", default=None, help="free-text label for the header")
     ap.add_argument("--focus", help="only show pairs involving this planet")
     ap.add_argument("--pair", nargs=2, metavar=("PLANET_A", "PLANET_B"), help="only show this one pair")
     args = ap.parse_args()
 
     local_repr = None
+    lat, lon = args.lat, args.lon
     if args.natal:
         when = NATAL_KATI
+        if lat is None and lon is None:
+            lat, lon = 33.7879, -117.8531   # Orange, CA — same natal reference as live_reading.py
         label = args.label or "Kati Spitz natal, Orange CA"
     elif args.date:
         time_str = args.time if args.time.count(":") == 2 else args.time + ":00"
@@ -330,10 +520,12 @@ def main():
         header += f" ({label})"
     print(header + "\n")
 
-    addrs = {body: address_of(body, when) for body in ALL_PLANETS}
+    only_pair = tuple(args.pair) if args.pair else None
+    result = full_reading(when, lat=lat, lon=lon, focus=args.focus, only_pair=only_pair)
 
-    print_bodies(addrs)
-    print_pairs(addrs, focus=args.focus, only_pair=args.pair)
+    print_top_level(result)
+    print_bodies(result["bodies"])
+    print_pairs(result["pairs"])
 
 
 if __name__ == "__main__":
