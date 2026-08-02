@@ -151,17 +151,31 @@ def body_data(body, addrs):
 
 
 def pair_data(pa, pb, addrs):
-    """Structured pair-relation: pair_49 cell (or honest no-cell), interval/aspect/
-    quality, recall_49, helix_gap, elements/azoth in play. Same source for CLI and
-    Navigator — see body_data()."""
+    """Structured pair-relation across BOTH of relation()'s axes — they are not
+    redundant and can disagree by name (e.g. Sun<->Saturn: matrix-interval says
+    "5th"/Trine, real zodiacal angle says square):
+
+      pair_49 (here: interval/aspect/quality/shock_load/...) — the STATIC 49-matrix
+        planet-PAIR cell; "aspect" here is a harmonic-interval label from card
+        29455a2b's map (matrix-ROW distance, not sky position).
+      spatial_60 (here: zodiac_*) — the REAL angular aspect from each body's actual
+        ecliptic longitude (conjunction/sextile/square/trine/quincunx/opposition/
+        semi-sextile), zero-orb sign-based (aspect_lattice.py, §31c divisor-stars).
+
+    Same source for CLI and Navigator — see body_data()."""
     aa, ab = addrs[pa], addrs[pb]
     rel = relation(aa, ab)
     pc = rel["pair_49"]
+    spatial = rel.get("spatial_60") or {}
     out = {
         "a": pa, "b": pb,
         "recall_49": rel["recall_49"],
         "helix_gap_2940": rel["helix_gap_2940"],
         "elements": {pa: CORRESPONDENCE[pa], pb: CORRESPONDENCE[pb]},
+        "zodiac_aspect": spatial.get("aspect"),
+        "zodiac_sign_offset": spatial.get("sign_offset"),
+        "zodiac_line_type": spatial.get("line_type"),
+        "zodiac_unavailable": spatial.get("unavailable"),
     }
     if "cell_label" in pc:
         skel = pc["skeleton"]
@@ -203,12 +217,18 @@ def print_bodies(addrs):
 def print_pair(pa, pb, addrs):
     d = pair_data(pa, pb, addrs)
     print(f"\n{pa} <-> {pb}")
+    if d["zodiac_unavailable"]:
+        print(f"  zodiac aspect (real angle, §31c spatial-60): unavailable — {d['zodiac_unavailable']}")
+    else:
+        print(f"  zodiac aspect (real angle, §31c spatial-60): {d['zodiac_aspect']}"
+              f"  (sign_offset={d['zodiac_sign_offset']}, {d['zodiac_line_type']})")
     if d["has_cell"]:
         print(f"  pair_49 (static, §31c): {d['cell_label']}"
               f"{' [CONJUNCTION/unison]' if d['is_conjunction'] else ''}")
         if d["do_boundary"]:
             print(f"  do_boundary: {d['do_boundary']} — Pluto/Neptune read via Venus's frame cell")
-        print(f"  interval/aspect/quality: {d['interval']} / {d['aspect']} / {d['quality']}"
+        print(f"  matrix interval/aspect/quality (harmonic map, NOT the zodiac angle above): "
+              f"{d['interval']} / {d['aspect']} / {d['quality']}"
               f"  (shock_load={d['shock_load']}, {d['octave_sense']}, {d['arm_relation']})")
     else:
         print(f"  pair_49: no-cell — {d['reason']}")
