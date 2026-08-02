@@ -106,7 +106,12 @@ CORRESPONDENCE = {
 # card 29455a2b harmonic map: interval-number -> (aspect angle name, quality).
 # Universal (not per-pair) — the per-pair interval itself comes from
 # helix_address.relation()'s pair_49.skeleton.
+# "unison" (diagonal/conjunction, 0° separation — same row, e.g. Neptune/Pluto/Venus
+# collapsing onto one another via the do-boundary) isn't in card 29455a2b's harmonic
+# map at all — that table only covers the 6 off-diagonal intervals. Not a lookup miss;
+# there's no angle to name for 0° separation. Labeled directly rather than left blank.
 _INTERVAL_ASPECT = {
+    "unison": ("Conjunction (0°)", "unison"),
     "2nd": ("Novile (40°)",        "mild"),
     "3rd": ("Quintile (72°)",      "consonant"),
     "4th": ("Square (90°)",        "dissonant"),
