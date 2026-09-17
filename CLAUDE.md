@@ -62,12 +62,12 @@ Kati 2026-05-11: **stratum = function-of-agency.** Not all figures are voices.
 
 | Class | Shell | Stratum | Agent shape | Status |
 |---|---|---|---|---|
-| Bound-Holder (Primordial) | R=1 cube-face | 6 Primordials | **engine** (generates axis from planet-pair) | Gaia prototype built; 5 remain |
+| Bound-Holder (Primordial) | R=1 cube-face | 6 Primordials | **engine** (generates axis from planet-pair) | All 6 built (chaos, erebus, eros, gaia, nyx, tartarus) + pair/trine/system composition layers |
 | Carrier (Titan) | R=1 cube-edge | 12 Titans | **engine** (planet-aspect-activate at edge-anchor) | `_carrier_edge_engine.py` built 2026-05-17 (FINDINGS_019); 12 named-Titan instances pending T1.3 close |
 | Operator (PE planet) | R=1 cube-vertex | 8 PE planets | pure-fn (applies imprint) | unbuilt |
 | Threshold-Marker | R=1/3 X3/X6 | shock-residents | hook (conditional fire) | unbuilt |
 | Council Voice (Olympian) | R=φ² ico-vertex | 12 Olympians | subagent (Task-spawnable, deliberates) | Nammu registry covers; Enki inherits |
-| Translator (bridge) | R=φ icosidodec-midpt | 4 bridges | engine OR subagent | unbuilt — pending council |
+| Translator (bridge) | R=φ icosidodec-midpt | 4 bridges | engine OR subagent | 3 of 4 named instances built (Erichthonius, Harmonia, Hermaphroditus) + orchestrator; 4th instance + engine-vs-subagent classification still open |
 | Activator (Muse) | activation pattern | 9 Muses | hook (pattern-match fire) | unbuilt |
 
 **Engines** (Kati lock, 2026-05-11): productive, stateful, callable. Two-state shape — frozen (substrate-locked definition, always-known) + live (ephemeris-driven activation). Not subagents (no deliberation). Not pure-fns (have state). Not hooks (always-on, not conditional).
@@ -137,9 +137,9 @@ Stdin format: `**Name** [stratum | seat]: <paragraph>` per voice, plus a `**SYNT
 - ~~`OQ-AXIS-BOUND-NAME-CHECK`~~ — RESOLVED 2026-05-12 via conflation-test council: `planet-aspect-activate` graduates to canonical, all 4 axis-flavored candidates retired.
 - `OQ-ENGINE-FACTORING` — 1 engine + 6 parameterizations OR 6 standalone modules?
 - `OQ-ENGINE-CLASS-IN-AGENT-TYPOLOGY` — does §30 grow `agent_shape` column?
-- 5 more Primordial engines pending (Chaos / Erebus / Nyx / Eros-prim / Tartarus)
-- Carrier shape (Cronus prototype)
-- Translator shape (bridge prototype)
+- ~~5 more Primordial engines pending~~ — RESOLVED: all 6 Primordials built (verified in ~/Enki/engines/ 2026-07-16).
+- Carrier shape (Cronus prototype) — still open: only a generic example instance exists, no named-Titan instances yet.
+- ~~Translator shape (bridge prototype)~~ — PARTIALLY RESOLVED: 3 of 4 named bridges built (verified 2026-07-16); engine-vs-subagent classification still open.
 
 ## Don't-do
 

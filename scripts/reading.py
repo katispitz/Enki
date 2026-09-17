@@ -296,7 +296,8 @@ def print_top_level(result):
           f"{sp['phase_name']} / {sp['element']}{est}  (tithi {sp['tithi_in_cycle']} of 30, {sp['half']})")
     if result["ascendant"]:
         a = result["ascendant"]
-        print(f"  ASC {a['asc_lon']:.3f}°  MC {a['mc_lon']:.3f}°  sect={a['sect']}")
+        print(f"  ASC {a['asc_lon']:.3f}°  MC {a['mc_lon']:.3f}°  "
+              f"DESC {a['desc_lon']:.3f}°  IC {a['ic_lon']:.3f}°  sect={a['sect']}")
         for mode, houses in result["houses"].items():
             print(f"  houses ({mode}): " + ", ".join(f"{p}=H{h}" for p, h in houses.items() if isinstance(h, int)))
         if result["lots"]:
@@ -460,6 +461,8 @@ def full_reading(when, lat=None, lon=None, focus=None, only_pair=None):
         ascendant = {
             "asc_lon": asc_lon,
             "mc_lon": chart_result["meta"].get("mc_lon"),
+            "desc_lon": chart_result["meta"].get("desc_lon"),
+            "ic_lon": chart_result["meta"].get("ic_lon"),
             "sect": chart_result["meta"]["sect"],
         }
 
