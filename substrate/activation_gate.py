@@ -146,7 +146,7 @@ def _check_cyclic(voice_name: str, placement: dict,
     engine = cyc.get("engine", "")
     when = _to_datetime(transit_date)
 
-    if engine == "muse_activations.muse_active":
+    if engine in ("muse_activations.muse_active", "muse_activations.muse_active_conjunction"):
         return _check_muse(voice_name, cyc, when)
 
     if engine == "figure_activations._activate_hecate":
@@ -160,9 +160,17 @@ def _check_cyclic(voice_name: str, placement: dict,
 
 
 def _check_muse(voice_name: str, cyc: dict, when: _dt.datetime) -> ActivationResult:
-    """Muse fires when her transit_planet is within orb of Venus X3 (lon 138°)."""
+    """Muse fires when her transit_planet is within orb of the target. Since 2026-10-11 (kati_direct
+    'fix the muses') the target is VENUS ITSELF (real conjunction, engine muse_active_conjunction);
+    the legacy fixed λ 138° (X3 PE slot — layer error per canon §7 OQ-Z05) is kept only for records."""
+    _conj = cyc.get("engine") == "muse_activations.muse_active_conjunction"
+    _tgt = "Venus" if _conj else "X3 (138°)"
+    _tgt_short = "Venus" if _conj else "X3"
     try:
-        from muse_activations import muse_active
+        import muse_activations as _ma
+        muse_active = (_ma.muse_active_conjunction
+                       if cyc.get("engine") == "muse_activations.muse_active_conjunction"
+                       else _ma.muse_active)
     except ImportError as e:
         return ActivationResult(
             voice_name=voice_name, placement_class="CYCLIC",
@@ -187,7 +195,7 @@ def _check_muse(voice_name: str, cyc: dict, when: _dt.datetime) -> ActivationRes
                 active=True,
                 reason=(
                     f"FIRING — {ma.planet} at lon {ma.lon_at_event:.1f}° "
-                    f"(orb {ma.orb_from_target:.1f}° from X3 138°); "
+                    f"(orb {ma.orb_from_target:.1f}° from {'Venus' if cyc.get('engine','').endswith('conjunction') else 'X3 138°'}); "
                     f"ignition={ma.ignition} resonance={ma.in_resonance_field}"
                 ),
                 detail={
@@ -206,8 +214,8 @@ def _check_muse(voice_name: str, cyc: dict, when: _dt.datetime) -> ActivationRes
         voice_name=voice_name, placement_class="CYCLIC",
         active=False,
         reason=(
-            f"NOT FIRING — {planet} not within orb of X3 (138°) at {when.date()}. "
-            f"Voice will activate at next {planet}-X3 transit."
+            f"NOT FIRING — {planet} not within orb of {_tgt} at {when.date()}. "
+            f"Voice will activate at next {planet}-{_tgt_short} conjunction."
         ),
         detail={"transit_planet": planet, "when": str(when.date())},
     )
