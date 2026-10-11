@@ -43,3 +43,14 @@ def test_moved_deities_are_event_arc_and_activate():
         pl = P.load_placement(name)
         assert pl["placement_class"] == "EVENT_ARC"
         assert G.check_activation(name, pl, when).active is active, name
+
+
+def test_event_arc_voices_convene_when_inside_arc():
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "council"))
+    import composer as C
+    oct_ctx = {"q_profile": {}, "transit_date": "2026-10-11"}
+    jan_ctx = {"q_profile": {}, "transit_date": "2027-01-15"}
+    oct_ = set(C.convene_by_question(oct_ctx)["convened"])
+    jan_ = set(C.convene_by_question(jan_ctx)["convened"])
+    assert {"Apollo", "Inanna", "Lucifer", "Persephone"} <= oct_ and "Dionysus" not in oct_
+    assert {"Dionysus", "Persephone"} <= jan_ and "Apollo" not in jan_

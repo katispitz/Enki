@@ -571,6 +571,14 @@ def convene_by_question(ctx: dict) -> dict:
             pos = pos["primary"]
 
         axes = []
+        # EVENT_ARC convening rule (kati_direct 2026-10-11 "add the convening rule"): an arc
+        # voice has no point-position to match a question on; it convenes when the council
+        # moment lies INSIDE its arc. Categorical (inside or not) — no scores.
+        if placement.get("placement_class") == "EVENT_ARC":
+            from activation_gate import check_activation
+            act = check_activation(voice_name, placement, ctx.get("transit_date"))
+            if act.active:
+                axes.append("arc-active")
         if q_pe is not None and pos.get("pe_note") == q_pe:
             axes.append(f"pe_note={q_pe}")
         if q_shock:
