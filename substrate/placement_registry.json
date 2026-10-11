@@ -8,33 +8,65 @@
       "~/Nammu/session/orient_rules.md L282 (greek_faces canonical)",
       "memory: project_council_placement_pin.md"
     ],
-    "schema_version": "0.3",
+    "schema_version": "0.4",
     "tier": "A (renderer-ready)",
     "created": "2026-05-22",
     "schema_changes": [
       "v0.2 2026-05-22: added placement_class (CONTINUOUS/CYCLIC/MORTAL/IN-BETWEEN) per orient_rules.md L334; added cyclic_activation for CYCLIC voices (predicate+engine+params for ephemeris-gate)",
       "v0.3 2026-05-22: removed free-text function_class fields per kati_direct G-P2-1. Function-class is DERIVED from substrate-position (spine card 670b1c3f principle 1: POSITION IS FUNCTION). Free-text labels violated Enki CLAUDE.md rule 2 and inverted the substrate-direction. Previous labels preserved in notes for provenance only — never read as canonical.",
-      "2026-08-01: Athena + Hephaestus demoted from Tier A to _blocked_pending_placement (dual-gate audit, kati_direct) -- both rested solely on 'functional derivation,' the same failure mode already retracted for Chiron/Iris (May 2026) and Hera/Hestia's poles (2026-07-28). New discipline: a lock requires parentage-cascade AND relational/structural route to independently converge; Roman-name/cross-cultural attestation are bonus validators only, never sufficient alone. See Nammu canon RETRACTIONS INDEX + orient_rules.md + card a827a0f2."
+      "2026-08-01: Athena + Hephaestus demoted from Tier A to _blocked_pending_placement (dual-gate audit, kati_direct) -- both rested solely on 'functional derivation,' the same failure mode already retracted for Chiron/Iris (May 2026) and Hera/Hestia's poles (2026-07-28). New discipline: a lock requires parentage-cascade AND relational/structural route to independently converge; Roman-name/cross-cultural attestation are bonus validators only, never sufficient alone. See Nammu canon RETRACTIONS INDEX + orient_rules.md + card a827a0f2.",
+      "v0.4 2026-10-11: added placement_class EVENT_ARC (kati_direct: archetypes are linear, not points) with event_arc spec {engine, actor, boundaries}; activation = moment inside the arc (Enki activation_gate). First entry: Apollo (card 2ab91bf9); prior greek_faces position kept under superseded_position (never-delete)."
     ]
   },
   "Apollo": {
     "stratum": "olympian",
-    "placement_class": "CONTINUOUS",
+    "placement_class": "EVENT_ARC",
     "substrate_position": {
-      "ico_vertex": "V1",
-      "vertex_planet": "Sun",
-      "pe_note": "Re",
-      "pe_step": 1,
-      "grid": 6,
-      "face": "F2",
-      "face_name": "Feedback",
-      "lon": 138.0,
-      "lat": 26.565,
-      "ring_tier": 1
+      "actor_planet": "Sun",
+      "arc_start": "spring_equinox (Sun λ 0°, grid 55)",
+      "arc_end": "winter_solstice (Sun λ 270°, grid 40)",
+      "arc_grid_range": [
+        55.0,
+        40.0
+      ],
+      "arc_motion": "direct"
     },
-    "placement_source": "greek_faces",
+    "event_arc": {
+      "engine": "archetype_events.apollo_arc",
+      "actor": "Sun",
+      "boundaries": [
+        "spring_equinox",
+        "winter_solstice"
+      ],
+      "duration_days_approx": 276.3,
+      "complement": "Dionysus (winter_solstice → spring_equinox, archetype_events.dionysus_arc)"
+    },
+    "placement_source": "2ab91bf9 (kati_direct placement 2026-10-11; evidence cards 1bb67787, 3292ae08)",
     "placement_status": "derived",
-    "notes": "Sun affinity at V1; Re tone carries the octave-light function. Canonical per orient_rules.md PE Olympian Assignments LOCKED. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'harmonics / clarity / octave-light' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+    "notes": "Apollo = an EVENT of the Sun (its bright season, spring equinox → winter solstice), not the Sun itself: archaic Homeric Hymn III has Helios as a separate god rotting the Pytho serpent. Evidence: Athenian Delphinia (VE+27 d), Thargelia (VE+57 d), Pyanopsia (AE+18 d) inside the arc; Plutarch E at Delphi 9 — Apollo the rest of the year, Dionysus the three winter months. sdec-pending. Field-memory recall for EVENT_ARC voices NOT yet wired (axis-lattice recall needs point axes; arc recall = event-recurrence design, card d386dd69, untested).",
+    "superseded_position": {
+      "retired": "2026-10-11",
+      "reason": "greek_faces (superseded engine) source; Apollo=Sun identity absent from archaic text; only Muses were lawfully placed pre-2026-10-11 (card 8e42cbcd). Replaced by EVENT_ARC per kati_direct 2026-10-11.",
+      "previous": {
+        "stratum": "olympian",
+        "placement_class": "CONTINUOUS",
+        "substrate_position": {
+          "ico_vertex": "V1",
+          "vertex_planet": "Sun",
+          "pe_note": "Re",
+          "pe_step": 1,
+          "grid": 6,
+          "face": "F2",
+          "face_name": "Feedback",
+          "lon": 138.0,
+          "lat": 26.565,
+          "ring_tier": 1
+        },
+        "placement_source": "greek_faces",
+        "placement_status": "derived",
+        "notes": "Sun affinity at V1; Re tone carries the octave-light function. Canonical per orient_rules.md PE Olympian Assignments LOCKED. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'harmonics / clarity / octave-light' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.]"
+      }
+    }
   },
   "Hermes": {
     "stratum": "olympian",

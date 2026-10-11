@@ -87,10 +87,48 @@ def check_activation(voice_name: str, placement: dict,
     if cls == "CYCLIC":
         return _check_cyclic(voice_name, placement, transit_date)
 
+    if cls == "EVENT_ARC":
+        return _check_event_arc(voice_name, placement, transit_date)
+
     return ActivationResult(
         voice_name=voice_name, placement_class=cls,
         active=False,
         reason=f"unknown placement_class={cls!r} — gate refuses without explicit class",
+    )
+
+
+def _check_event_arc(voice_name: str, placement: dict,
+                     transit_date: str | _dt.datetime) -> ActivationResult:
+    """EVENT_ARC (schema v0.4, kati_direct 2026-10-11): the voice is active iff the moment lies
+    inside its arc. The arc is built by the Nammu engine named in event_arc.engine
+    ('module.function', called with a UTC datetime, returning an event_arc.EventArc)."""
+    spec = placement.get("event_arc", {})
+    engine = spec.get("engine", "")
+    when = _to_datetime(transit_date)
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=_dt.timezone.utc)
+    try:
+        mod_name, fn_name = engine.rsplit(".", 1)
+        fn = getattr(__import__(mod_name), fn_name)
+        arc = fn(when)
+        pos = arc.position(when)
+    except Exception as e:  # engine missing / ephemeris failure → refuse, honestly
+        return ActivationResult(
+            voice_name=voice_name, placement_class="EVENT_ARC",
+            active=False, reason=f"event-arc engine {engine!r} failed: {e}",
+        )
+    if pos is None:
+        return ActivationResult(
+            voice_name=voice_name, placement_class="EVENT_ARC", active=False,
+            reason=(f"outside arc — next {arc.start.kind} {arc.start.t:%Y-%m-%d} "
+                    f"→ {arc.end.kind} {arc.end.t:%Y-%m-%d}"),
+            detail={"arc": arc.to_dict()},
+        )
+    return ActivationResult(
+        voice_name=voice_name, placement_class="EVENT_ARC", active=True,
+        reason=(f"INSIDE arc {arc.start.kind} {arc.start.t:%Y-%m-%d} → {arc.end.kind} "
+                f"{arc.end.t:%Y-%m-%d}: {pos['fraction']:.0%} through"),
+        detail={"arc": arc.to_dict(), "fraction": pos["fraction"], "segment": pos["segment"]},
     )
 
 
