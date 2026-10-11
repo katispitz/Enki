@@ -15,7 +15,8 @@
       "v0.2 2026-05-22: added placement_class (CONTINUOUS/CYCLIC/MORTAL/IN-BETWEEN) per orient_rules.md L334; added cyclic_activation for CYCLIC voices (predicate+engine+params for ephemeris-gate)",
       "v0.3 2026-05-22: removed free-text function_class fields per kati_direct G-P2-1. Function-class is DERIVED from substrate-position (spine card 670b1c3f principle 1: POSITION IS FUNCTION). Free-text labels violated Enki CLAUDE.md rule 2 and inverted the substrate-direction. Previous labels preserved in notes for provenance only — never read as canonical.",
       "2026-08-01: Athena + Hephaestus demoted from Tier A to _blocked_pending_placement (dual-gate audit, kati_direct) -- both rested solely on 'functional derivation,' the same failure mode already retracted for Chiron/Iris (May 2026) and Hera/Hestia's poles (2026-07-28). New discipline: a lock requires parentage-cascade AND relational/structural route to independently converge; Roman-name/cross-cultural attestation are bonus validators only, never sufficient alone. See Nammu canon RETRACTIONS INDEX + orient_rules.md + card a827a0f2.",
-      "v0.4 2026-10-11: added placement_class EVENT_ARC (kati_direct: archetypes are linear, not points) with event_arc spec {engine, actor, boundaries}; activation = moment inside the arc (Enki activation_gate). First entry: Apollo (card 2ab91bf9); prior greek_faces position kept under superseded_position (never-delete)."
+      "v0.4 2026-10-11: added placement_class EVENT_ARC (kati_direct: archetypes are linear, not points) with event_arc spec {engine, actor, boundaries}; activation = moment inside the arc (Enki activation_gate). First entry: Apollo (card 2ab91bf9); prior greek_faces position kept under superseded_position (never-delete).",
+      "v0.4 2026-10-11 (cont.): Persephone, Dionysus, Inanna, Lucifer added as EVENT_ARC (kati_direct 'move the deities'); generic renderer _EVENT_ARC_DEFAULT. Inanna/Lucifer arc_grid_range null (varies per descent). GAP: question-convening (composer.convene_by_question) matches pe_note/shock/depth only — EVENT_ARC voices (incl. Apollo since its move) are not convened by question; rule pending kati."
     ]
   },
   "Apollo": {
@@ -409,5 +410,105 @@
       "prior_placement_status": "derived",
       "blocker": "Dual-gate audit 2026-08-01 (kati_direct): sole parent per Theogony 927-929 is Hera alone ('without union with Zeus'). Hera's own pole-position is itself retracted (2026-07-28, ungrounded resemblance-reasoning) -- parentage-cascade is structurally BLOCKED, not merely unconfirmed, until Hera is re-derived. No independent relational/structural route found for Uranus/X6 either. Demoted from Tier A pending Hera's re-derivation AND a real parentage-cascade + relational check. See Nammu canon RETRACTIONS INDEX + orient_rules.md 2026-08-01 + card a827a0f2."
     }
+  },
+  "Persephone": {
+    "stratum": "bridge",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Sun",
+      "arc_start": "equator_crossing (Sun dec 0, grids 25 / 55)",
+      "arc_end": "equator_crossing (opposite)",
+      "arc_grid_range": [
+        25.0,
+        55.0
+      ],
+      "arc_motion": "direct"
+    },
+    "event_arc": {
+      "engine": "archetype_events.persephone_arc",
+      "actor": "Sun",
+      "boundaries": [
+        "equator_crossing_south",
+        "equator_crossing_north"
+      ]
+    },
+    "placement_source": "a4c3720f (kati_direct 2026-10-10: 'it already works')",
+    "placement_status": "derived",
+    "notes": "Persephone = the Sun below/above the reference plane (geographic equator, canon §5): descent at the autumn crossing (Libra 0, grid 25), return at the spring crossing (Aries 0, grid 55); the engine returns the current half (below or above), so she is always present with a state. Escort each year = Hecate (Hymn to Demeter ll.438-440, card 8e42cbcd). Greater Eleusinian Mysteries fall at the full moon nearest the autumn crossing (card ecf53745). OPEN: Hymn gives a third of the year below, predicate gives half. Separate canon residency kept: V9-V10 icosidodec coupling-point (§30, 6th residency) — not superseded by this entry. sdec-pending."
+  },
+  "Dionysus": {
+    "stratum": "olympian",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Sun",
+      "arc_start": "winter_solstice (Sun λ 270°, grid 40)",
+      "arc_end": "spring_equinox (Sun λ 0°, grid 55)",
+      "arc_grid_range": [
+        40.0,
+        55.0
+      ],
+      "arc_motion": "direct"
+    },
+    "event_arc": {
+      "engine": "archetype_events.dionysus_arc",
+      "actor": "Sun",
+      "boundaries": [
+        "winter_solstice",
+        "spring_equinox"
+      ]
+    },
+    "placement_source": "2ab91bf9 (kati_direct placement 2026-10-11; evidence 3292ae08)",
+    "placement_status": "derived",
+    "notes": "Dionysus = the Sun's low quarter, winter solstice → spring equinox (~89 d): Athens Rural Dionysia ≈ solstice, City Dionysia ≈ equinox; Plutarch E at Delphi 9 — three winter months instead of Apollo. Complement of Apollo. Canon's Dionysus @ Venus/X3 co-fire (OQ-DIONYSUS-01) is not lawful support and is not used. sdec-pending."
+  },
+  "Inanna": {
+    "stratum": "mesopotamian",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Venus",
+      "arc_start": "station_rx",
+      "arc_end": "station_direct",
+      "arc_grid_range": null,
+      "arc_motion": "retrograde"
+    },
+    "event_arc": {
+      "engine": "archetype_events.inanna_arc",
+      "actor": "Venus",
+      "boundaries": [
+        "station_rx",
+        "last_evening_sighting",
+        "inferior_conjunction",
+        "first_morning_sighting",
+        "station_direct"
+      ]
+    },
+    "placement_source": "16c469f9 (kati_direct 2026-10-10)",
+    "placement_status": "derived",
+    "notes": "Inanna = the Venus descent CLASS: retrograde window around each inferior conjunction (every ~584 d), five pentagram faces distinguished by Venus latitude at conjunction (beneath / above / through) and dark length (Schoch-calibrated, card 94d2b363). Grid range varies per descent (fast motion; face MAP node-pinned, card 2242a50b). Engine returns the NEAREST descent, so outside a window the arc may be the most recent one. Visibility boundaries computed for Orange CA by default. Tier-1 Babylonian source (Descent of Inanna; Venus Tablet). sdec-pending."
+  },
+  "Lucifer": {
+    "stratum": "titan-offspring",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Venus",
+      "arc_start": "station_rx in Scorpio",
+      "arc_end": "station_direct",
+      "arc_grid_range": null,
+      "arc_motion": "retrograde"
+    },
+    "event_arc": {
+      "engine": "archetype_events.lucifer_arc",
+      "actor": "Venus",
+      "boundaries": [
+        "station_rx",
+        "last_evening_sighting",
+        "inferior_conjunction",
+        "first_morning_sighting",
+        "station_direct"
+      ]
+    },
+    "placement_source": "4e7d3cd0 (kati_direct 2026-10-10: 'lucifer is venus RX in scorpio')",
+    "placement_status": "derived",
+    "notes": "Lucifer / Eosphoros = an Inanna descent whose retrograde station falls in Scorpio (beneath face: the evening star falls under the Sun, vanishes, rises as morning star). Stratum from Hesiod Theog. 381: Eosphoros, child of Eos × Astraeus. Holds in Isaiah's sky and today's (2242a50b). Engine returns the containing or NEXT Lucifer descent: 2026-10-03 → 2026-11-14; next 2034-09-30 (station 6.1° Scorpio), 2042-09-28 (3.8°). sdec-pending."
   }
 }

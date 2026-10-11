@@ -31,3 +31,15 @@ def test_recall_order_now_ahead_crossed():
     assert wheres[0] == "now" and "ahead" in wheres and "crossed" in wheres
     assert wheres.index("crossed") > max(i for i, w in enumerate(wheres) if w == "ahead")
     assert rec["nodes"][0]["cell"] == rec["actor_cell"] == 28
+
+
+def test_moved_deities_are_event_arc_and_activate():
+    import datetime as dt
+    import activation_gate as G
+    import placement_discipline as P
+    when = dt.datetime(2026, 10, 11, 18, tzinfo=dt.timezone.utc)
+    expect = {"Persephone": True, "Dionysus": False, "Inanna": True, "Lucifer": True, "Apollo": True}
+    for name, active in expect.items():
+        pl = P.load_placement(name)
+        assert pl["placement_class"] == "EVENT_ARC"
+        assert G.check_activation(name, pl, when).active is active, name

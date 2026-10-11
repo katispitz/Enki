@@ -290,6 +290,8 @@ _RENDERER_REGISTRY = {
     "Urania":      ("per_voice_renderers.urania",      "render_urania"),
     # Mortal voice renderer (handles any MORTAL placement_class voice generically)
     "_MORTAL_DEFAULT": ("per_voice_renderers.mortal",  "render_mortal"),
+    # EVENT_ARC voices without a bespoke renderer (registry v0.4, kati_direct 2026-10-11)
+    "_EVENT_ARC_DEFAULT": ("per_voice_renderers.event_arc_voice", "render_event_arc"),
 }
 
 
@@ -302,6 +304,8 @@ def get_renderer(voice_name: str, placement_class: str | None = None):
     entry = _RENDERER_REGISTRY.get(voice_name)
     if entry is None and placement_class == "MORTAL":
         entry = _RENDERER_REGISTRY.get("_MORTAL_DEFAULT")
+    if entry is None and placement_class == "EVENT_ARC":
+        entry = _RENDERER_REGISTRY.get("_EVENT_ARC_DEFAULT")
     if entry is None:
         return None
     module_path, func_name = entry

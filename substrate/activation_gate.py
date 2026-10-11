@@ -118,9 +118,10 @@ def _check_event_arc(voice_name: str, placement: dict,
             active=False, reason=f"event-arc engine {engine!r} failed: {e}",
         )
     if pos is None:
+        rel = "next" if arc.start.t > when else "most recent"   # some engines return the nearest arc
         return ActivationResult(
             voice_name=voice_name, placement_class="EVENT_ARC", active=False,
-            reason=(f"outside arc — next {arc.start.kind} {arc.start.t:%Y-%m-%d} "
+            reason=(f"outside arc — {rel} {arc.start.kind} {arc.start.t:%Y-%m-%d} "
                     f"→ {arc.end.kind} {arc.end.t:%Y-%m-%d}"),
             detail={"arc": arc.to_dict()},
         )
