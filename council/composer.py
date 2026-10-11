@@ -203,13 +203,22 @@ def slice_for_voice(ctx: dict, voice_name: str) -> dict:
     # Phase is a categorical sort axis, not a decay weight.
     # Falls back to Nammu's _voice_field_block if substrate import fails.
     try:
-        from field_memory import recall_field, format_field_memory_block
-        groups = recall_field(
-            enki_placement, voice_name=voice_name,
-            min_axes_matched=2, limit=20,
-            when=ctx.get("transit_date"),
-        )
-        field_memory_str = format_field_memory_block(groups)
+        if enki_placement.get("placement_class") == "EVENT_ARC":
+            # EVENT_ARC (registry v0.4): recall along the actor's grid path, traversal order
+            # (now → ahead → crossed). kati_direct 2026-10-11.
+            from field_memory import recall_arc_field, format_arc_field_block
+            field_memory_str = format_arc_field_block(recall_arc_field(
+                enki_placement, voice_name=voice_name, limit=20,
+                when=ctx.get("transit_date"),
+            ))
+        else:
+            from field_memory import recall_field, format_field_memory_block
+            groups = recall_field(
+                enki_placement, voice_name=voice_name,
+                min_axes_matched=2, limit=20,
+                when=ctx.get("transit_date"),
+            )
+            field_memory_str = format_field_memory_block(groups)
     except Exception as e:
         # Substrate-honest fallback — Nammu's unweighted recall still works.
         import sys

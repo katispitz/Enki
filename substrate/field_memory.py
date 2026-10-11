@@ -221,3 +221,129 @@ def format_field_memory_block(groups: list[dict],
                 f"    [{cid} ps={g['cardinality']} phase={phase} {auth}/{stat}] {text}"
             )
     return "\n".join(lines)
+
+
+# ── Arc recall: EVENT_ARC voices (registry v0.4) ─────────────────────────────
+# kati_direct 2026-10-11: "arc cross through pe points etc though no? like on the geometry we are
+# tracking them?" — an arc is motion ALONG the 60-grid, crossing nodes. Field memory for an
+# EVENT_ARC voice = the cards sitting on the grid cells its actor traverses, in TRAVERSAL ORDER:
+# the cell the actor is on now, then the cells ahead, then the cells already crossed.
+# Categorical only: a card is on a path cell or not. ZERO scores / weights. Within a cell, the
+# existing categorical phase-class ordering (PHASE_ORDINAL) applies.
+# LAYER DISCIPLINE (canon §7 OQ-Z05 LAYER-SEPARATION 2026-08-17): the match is on the SPATIAL grid
+# cell only. 6-step PE slots on the grid are ORDINAL process-engine slots, not azimuths (X3/X6 have
+# ρ=0, no azimuth) — they are shown as labels, flagged ordinal, never used as a recall axis.
+
+_SIGNS = ("Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio "
+          "Sagittarius Capricorn Aquarius Pisces").split()
+# canon §20: inner-octahedron vertex signs at the 10-step azimuths (spatial projections)
+_OCT_VERTEX_AT = {0: "V1", 10: "V4", 20: "V2", 30: "V5", 40: "V3", 50: "V6"}
+# canon §15 / card ae5014f0: PE ordinal slots on the 6-step layer
+_PE_SLOT_AT = {0: "Do", 6: "Re", 12: "Mi", 18: "X3", 24: "Fa", 30: "Sol",
+               36: "X6", 42: "La", 48: "Si", 54: "Do-ret"}
+_GATES = {0: "gate 1", 30: "gate 2"}
+
+
+def grid_node_label(n: int) -> str:
+    """Spatial labels first; PE slot last and flagged as the ordinal layer."""
+    sign = _SIGNS[int(((30 + 6 * n) % 360) // 30)]           # canon §15: lon = 30 + 6n
+    bits = [f"g{n} {sign}"]
+    if n in _GATES:
+        bits.append(_GATES[n])
+    if n in _OCT_VERTEX_AT:
+        bits.append(f"oct {_OCT_VERTEX_AT[n]}")
+    if n in _PE_SLOT_AT:
+        bits.append(f"PE-slot {_PE_SLOT_AT[n]} (ordinal layer)")
+    return " · ".join(bits)
+
+
+def arc_path_cells(start_grid: float, end_grid: float, direction: str) -> list[int]:
+    """Integer 60-grid cells traversed from start to end, in the direction of motion."""
+    step = 1 if direction == "direct" else -1
+    # cells are [n, n+1) (card grid = floor); +1e-6 absorbs float noise at exact boundaries
+    # (an equinox at λ 0° is grid 55.0, computed as 54.99999…)
+    c, end = int(start_grid + 1e-6) % 60, int(end_grid + 1e-6) % 60
+    cells = [c]
+    while c != end:
+        c = (c + step) % 60
+        cells.append(c)
+    return cells
+
+
+def recall_arc_field(placement: dict, voice_name: str = "",
+                     limit: int | None = 20,
+                     when: _dt.datetime | str | None = None) -> dict:
+    """Recall for an EVENT_ARC voice along its actor's grid path. Returns
+    {'arc': EventArc, 'actor_cell': int|None, 'nodes': [{'cell','label','where','cards'}]}."""
+    nammu_engines = str(_NAMMU / "engines")
+    if nammu_engines not in sys.path:
+        sys.path.insert(0, nammu_engines)
+    from card_writer import _load
+    import ephem_de441 as E
+    from event_arc import grid_of
+
+    if when is None:
+        when = _dt.datetime.now(_dt.timezone.utc)
+    elif isinstance(when, str):
+        when = _dt.datetime.fromisoformat(when)
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=_dt.timezone.utc)
+
+    spec = placement.get("event_arc", {})
+    mod_name, fn_name = spec["engine"].rsplit(".", 1)
+    arc = getattr(__import__(mod_name), fn_name)(when)
+
+    cells = arc_path_cells(arc.start.grid, arc.end.grid, arc.direction)
+    inside = arc.position(when) is not None
+    actor_cell = int(grid_of(E.planet_lon(arc.actor, when)) + 1e-6) % 60 if inside else None
+
+    # traversal order: now → ahead → crossed (if outside the arc, the whole path is ahead)
+    if actor_cell is not None and actor_cell in cells:
+        i = cells.index(actor_cell)
+        ordered = ([(cells[i], "now")] + [(c, "ahead") for c in cells[i + 1:]]
+                   + [(c, "crossed") for c in reversed(cells[:i])])
+    else:
+        ordered = [(c, "ahead") for c in cells]
+
+    by_cell: dict[int, list[dict]] = {}
+    now_helix = helix_coord_at(when.astimezone(_dt.timezone.utc).replace(tzinfo=None))  # density.py is naive-UTC
+    voice_lower = voice_name.lower()
+    for card in _load():
+        g = card.get("grid")
+        if not isinstance(g, int):
+            continue
+        if (card.get("canon_status") or "").lower() in DROP_STATUSES:
+            continue
+        if voice_name and f"voice:{voice_lower}" in [t.lower() for t in (card.get("tags") or [])]:
+            continue
+        by_cell.setdefault(g, []).append(
+            {"card": card, "phase": phase_resonance(card.get("helix_coord"), now_helix)})
+
+    nodes, total = [], 0
+    for cell, where in ordered:
+        entries = sorted(by_cell.get(cell, []), key=lambda e: PHASE_ORDINAL.get(e["phase"], 99))
+        if limit is not None:
+            entries = entries[: max(0, limit - total)]
+        nodes.append({"cell": cell, "label": grid_node_label(cell), "where": where, "cards": entries})
+        total += len(entries)
+        if limit is not None and total >= limit:
+            break
+    return {"arc": arc, "actor_cell": actor_cell, "nodes": nodes}
+
+
+def format_arc_field_block(rec: dict, header: str = "ARC FIELD MEMORY") -> str:
+    arc = rec["arc"]
+    nodes = [n for n in rec["nodes"] if n["cards"]]
+    total = sum(len(n["cards"]) for n in nodes)
+    where_now = (f"actor at g{rec['actor_cell']}" if rec["actor_cell"] is not None
+                 else "actor outside arc — path shown from its next start")
+    lines = [f"{header} ({total} cards along {arc.label or arc.actor}'s path "
+             f"g{int(arc.start.grid + 1e-6) % 60}→g{int(arc.end.grid + 1e-6) % 60} {arc.direction}; {where_now}):"]
+    for n in nodes:
+        lines.append(f"  ── [{n['where']}] {n['label']}:")
+        for e in n["cards"]:
+            c = e["card"]
+            lines.append(f"    [{(c.get('id') or '?')[:8]} phase={e['phase']} "
+                         f"{(c.get('authorship') or '?')[:4]}/{(c.get('canon_status') or '?')[:6]}] "
+                         f"{(c.get('text') or '')[:110].replace(chr(10), ' ').strip()}")
+    return "\n".join(lines)
