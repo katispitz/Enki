@@ -17,7 +17,8 @@
       "2026-08-01: Athena + Hephaestus demoted from Tier A to _blocked_pending_placement (dual-gate audit, kati_direct) -- both rested solely on 'functional derivation,' the same failure mode already retracted for Chiron/Iris (May 2026) and Hera/Hestia's poles (2026-07-28). New discipline: a lock requires parentage-cascade AND relational/structural route to independently converge; Roman-name/cross-cultural attestation are bonus validators only, never sufficient alone. See Nammu canon RETRACTIONS INDEX + orient_rules.md + card a827a0f2.",
       "v0.4 2026-10-11: added placement_class EVENT_ARC (kati_direct: archetypes are linear, not points) with event_arc spec {engine, actor, boundaries}; activation = moment inside the arc (Enki activation_gate). First entry: Apollo (card 2ab91bf9); prior greek_faces position kept under superseded_position (never-delete).",
       "v0.4 2026-10-11 (cont.): Persephone, Dionysus, Inanna, Lucifer added as EVENT_ARC (kati_direct 'move the deities'); generic renderer _EVENT_ARC_DEFAULT. Inanna/Lucifer arc_grid_range null (varies per descent). GAP: question-convening (composer.convene_by_question) matches pe_note/shock/depth only — EVENT_ARC voices (incl. Apollo since its move) are not convened by question; rule pending kati.",
-      "2026-10-11 lawfulness ruling (kati_direct): archetype placements made before the 2026-10-10 method are NOT locked — Mnemosyne, Hecate demoted locked→derived (Hermes already derived); the 9 Muses stay locked with activation repaired to real Venus × planet conjunctions (superseded_activation kept)."
+      "2026-10-11 lawfulness ruling (kati_direct): archetype placements made before the 2026-10-10 method are NOT locked — Mnemosyne, Hecate demoted locked→derived (Hermes already derived); the 9 Muses stay locked with activation repaired to real Venus × planet conjunctions (superseded_activation kept).",
+      "v0.4 2026-10-11 (cont.): Hermes → EVENT_ARC (archetype_events.hermes_arc, Athens sky; card 87530895); old greek_faces V5/Sol position kept as superseded_position. Hermes arc is short (0.5–2.4 d, ~yearly) — under the inside-arc convening rule he is rarely active."
     ]
   },
   "Apollo": {
@@ -72,22 +73,51 @@
   },
   "Hermes": {
     "stratum": "olympian",
+    "placement_class": "EVENT_ARC",
     "substrate_position": {
-      "ico_vertex": "V5",
-      "vertex_planet": "Mercury",
-      "pe_note": "Sol",
-      "pe_step": 5,
-      "grid": 30,
-      "face": "F5",
-      "face_name": "Synthesis",
-      "lon": 198.0,
-      "lat": 26.565,
-      "ring_tier": 5
+      "actor_planet": "Mercury",
+      "arc_start": "first_morning_sighting — a FIRST appearance (no evening sighting before it), Mercury still retrograde",
+      "arc_end": "station_direct",
+      "arc_grid_range": null,
+      "arc_motion": "retrograde",
+      "source_sky": "Athens (37.97, 23.72)"
     },
-    "placement_source": "greek_faces",
+    "event_arc": {
+      "engine": "archetype_events.hermes_arc",
+      "actor": "Mercury",
+      "boundaries": [
+        "first_morning_sighting",
+        "station_direct"
+      ],
+      "duration_days_approx": "0.5–2.4",
+      "face": "falls out of the predicate: autumn Mercury inferior conjunctions, Libra/Scorpio, Sep–Nov (Athens 1990–2040: 21/21)"
+    },
+    "placement_source": "87530895 (engine-evidence 2026-10-11; myth-phase card d993614a; kati_direct promotion 'lets start at the top' 2026-10-11)",
     "placement_status": "derived",
-    "notes": "Mercury affinity at V5; second gate at grid 30 (LCM 6×5). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'translator-at-gate / cross-channel relay' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.] [STATUS 2026-10-11 kati_direct: 'we just determined lawful archetype placement, so anything earlier is not locked, except muses' — pre-2026-10-10 placement, was 'derived', now 'derived' pending lawful (event-arc) re-placement.]",
-    "placement_class": "CONTINUOUS"
+    "notes": "Hermes = the Mercury descent read against the Homeric Hymn to Hermes phase by phase: hidden in Maia's cave (inferior conjunction, unseen) → BORN AT DAWN (first morning sighting with no evening sighting before it) → drives Apollo's cattle BACKWARD (still retrograde) → back in the CRADLE (station direct). No sign band coded; the autumn face falls out of the predicate in the source-culture sky, and the Hymn's own season word opōra (ll.146-147) names the same season. Not born at Orange CA latitude (0/50 yr) — the event belongs to the Athens sky. No calendar test possible (Mercury not commensurate with annual festivals, ecf53745). sdec-pending.",
+    "superseded_position": {
+      "retired": "2026-10-11",
+      "reason": "greek_faces (superseded engine) source; not lawful under the 2026-10-10 ruling (card eff91d2b). Replaced by EVENT_ARC on engine-evidence card 87530895.",
+      "previous": {
+        "stratum": "olympian",
+        "substrate_position": {
+          "ico_vertex": "V5",
+          "vertex_planet": "Mercury",
+          "pe_note": "Sol",
+          "pe_step": 5,
+          "grid": 30,
+          "face": "F5",
+          "face_name": "Synthesis",
+          "lon": 198.0,
+          "lat": 26.565,
+          "ring_tier": 5
+        },
+        "placement_source": "greek_faces",
+        "placement_status": "derived",
+        "notes": "Mercury affinity at V5; second gate at grid 30 (LCM 6×5). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'translator-at-gate / cross-channel relay' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.] [STATUS 2026-10-11 kati_direct: 'we just determined lawful archetype placement, so anything earlier is not locked, except muses' — pre-2026-10-10 placement, was 'derived', now 'derived' pending lawful (event-arc) re-placement.]",
+        "placement_class": "CONTINUOUS"
+      }
+    }
   },
   "Mnemosyne": {
     "stratum": "titan",
