@@ -18,7 +18,8 @@
       "v0.4 2026-10-11: added placement_class EVENT_ARC (kati_direct: archetypes are linear, not points) with event_arc spec {engine, actor, boundaries}; activation = moment inside the arc (Enki activation_gate). First entry: Apollo (card 2ab91bf9); prior greek_faces position kept under superseded_position (never-delete).",
       "v0.4 2026-10-11 (cont.): Persephone, Dionysus, Inanna, Lucifer added as EVENT_ARC (kati_direct 'move the deities'); generic renderer _EVENT_ARC_DEFAULT. Inanna/Lucifer arc_grid_range null (varies per descent). GAP: question-convening (composer.convene_by_question) matches pe_note/shock/depth only — EVENT_ARC voices (incl. Apollo since its move) are not convened by question; rule pending kati.",
       "2026-10-11 lawfulness ruling (kati_direct): archetype placements made before the 2026-10-10 method are NOT locked — Mnemosyne, Hecate demoted locked→derived (Hermes already derived); the 9 Muses stay locked with activation repaired to real Venus × planet conjunctions (superseded_activation kept).",
-      "v0.4 2026-10-11 (cont.): Hermes → EVENT_ARC (archetype_events.hermes_arc, Athens sky; card 87530895); old greek_faces V5/Sol position kept as superseded_position. Hermes arc is short (0.5–2.4 d, ~yearly) — under the inside-arc convening rule he is rarely active."
+      "v0.4 2026-10-11 (cont.): Hermes → EVENT_ARC (archetype_events.hermes_arc, Athens sky; card 87530895); old greek_faces V5/Sol position kept as superseded_position. Hermes arc is short (0.5–2.4 d, ~yearly) — under the inside-arc convening rule he is rarely active.",
+      "v0.4 2026-10-11 (cont.): Dumuzi + Geshtinanna added as EVENT_ARC (Sun's descending / rising half; card 8ea607db)."
     ]
   },
   "Apollo": {
@@ -640,5 +641,55 @@
     "placement_source": "4e7d3cd0 (kati_direct 2026-10-10: 'lucifer is venus RX in scorpio')",
     "placement_status": "derived",
     "notes": "Lucifer / Eosphoros = an Inanna descent whose retrograde station falls in Scorpio (beneath face: the evening star falls under the Sun, vanishes, rises as morning star). Stratum from Hesiod Theog. 381: Eosphoros, child of Eos × Astraeus. Holds in Isaiah's sky and today's (2242a50b). Engine returns the containing or NEXT Lucifer descent: 2026-10-03 → 2026-11-14; next 2034-09-30 (station 6.1° Scorpio), 2042-09-28 (3.8°). sdec-pending."
+  },
+  "Dumuzi": {
+    "stratum": "mesopotamian",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Sun",
+      "arc_start": "summer_solstice (Sun λ 90°, grid 10)",
+      "arc_end": "winter_solstice (Sun λ 270°, grid 40)",
+      "arc_grid_range": [
+        10.0,
+        40.0
+      ],
+      "arc_motion": "direct"
+    },
+    "event_arc": {
+      "engine": "archetype_events.dumuzi_arc",
+      "actor": "Sun",
+      "boundaries": [
+        "summer_solstice",
+        "winter_solstice"
+      ]
+    },
+    "placement_source": "8ea607db (engine-evidence 2026-10-11; kati_direct promotion 'commit and promote them' 2026-10-11)",
+    "placement_status": "derived",
+    "notes": "Dumuzi (Tammuz) = the Sun's DESCENDING half, summer solstice → winter solstice (~184 d) — an event of the Sun, not the Sun (Utu is a separate god who helps him escape). Inanna's Descent 404-410: 'You for half the year and your sister for half the year'. Astrolabe B month IV Du'uzu 'the shepherd Dumuzi was seized' (Du'uzu opens at the solstice, P&D 222 yr); Ezekiel 8:1,14 Tammuz bewailed 5 Ululu 592 BCE = AE−13 d, selecting the solstice (motion) split over the equator (position) split. Complement: Geshtinanna. Inanna's Venus descent sends him down in the myth — relation, not identity. sdec-pending."
+  },
+  "Geshtinanna": {
+    "stratum": "mesopotamian",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Sun",
+      "arc_start": "winter_solstice (Sun λ 270°, grid 40)",
+      "arc_end": "summer_solstice (Sun λ 90°, grid 10)",
+      "arc_grid_range": [
+        40.0,
+        10.0
+      ],
+      "arc_motion": "direct"
+    },
+    "event_arc": {
+      "engine": "archetype_events.geshtinanna_arc",
+      "actor": "Sun",
+      "boundaries": [
+        "winter_solstice",
+        "summer_solstice"
+      ]
+    },
+    "placement_source": "8ea607db (engine-evidence 2026-10-11; kati_direct promotion 'commit and promote them' 2026-10-11)",
+    "placement_status": "derived",
+    "notes": "Geshtinanna = the Sun's RISING half, winter solstice → summer solstice (~182 d) — the complement forced by Inanna's Descent 404-410: 'when your sister is demanded, on that day you will be released'. No independent dated rite found for her half (open). sdec-pending."
   }
 }
