@@ -20,7 +20,8 @@
       "2026-10-11 lawfulness ruling (kati_direct): archetype placements made before the 2026-10-10 method are NOT locked — Mnemosyne, Hecate demoted locked→derived (Hermes already derived); the 9 Muses stay locked with activation repaired to real Venus × planet conjunctions (superseded_activation kept).",
       "v0.4 2026-10-11 (cont.): Hermes → EVENT_ARC (archetype_events.hermes_arc, Athens sky; card 87530895); old greek_faces V5/Sol position kept as superseded_position. Hermes arc is short (0.5–2.4 d, ~yearly) — under the inside-arc convening rule he is rarely active.",
       "v0.4 2026-10-11 (cont.): Dumuzi + Geshtinanna added as EVENT_ARC (Sun's descending / rising half; card 8ea607db).",
-      "v0.4 2026-10-11 (cont.): Persephone → persephone_third_arc (Pleiades dawn setting → Arcturus dusk rising, ⅓ yr; card 0db3c112); equator entry kept as superseded_position. First STAR-anchored (sidereal) arc — field anchor_frame added."
+      "v0.4 2026-10-11 (cont.): Persephone → persephone_third_arc (Pleiades dawn setting → Arcturus dusk rising, ⅓ yr; card 0db3c112); equator entry kept as superseded_position. First STAR-anchored (sidereal) arc — field anchor_frame added.",
+      "2026-10-11: anchor_frame values follow event_arc.FRAMES ('tropical' default, 'sidereal-canonical'); substrate-canonical ayanamsa sign corrected in Nammu houses.py ((year − 2142)·rate)."
     ]
   },
   "Apollo": {
@@ -552,7 +553,7 @@
       "arc_end": "arcturus_dusk_rising (star-anchored; Athens sky)",
       "arc_grid_range": null,
       "arc_motion": "direct",
-      "anchor_frame": "sidereal (star) — slides against the seasons by precession; ~5 wk since Hesiod"
+      "anchor_frame": "sidereal-canonical (stars; event_arc.EventArc.frame) — own-frame grid ≈ 37.7 → 56.0, stable; tropical reading slides with precession"
     },
     "event_arc": {
       "engine": "archetype_events.persephone_third_arc",
