@@ -19,7 +19,8 @@
       "v0.4 2026-10-11 (cont.): Persephone, Dionysus, Inanna, Lucifer added as EVENT_ARC (kati_direct 'move the deities'); generic renderer _EVENT_ARC_DEFAULT. Inanna/Lucifer arc_grid_range null (varies per descent). GAP: question-convening (composer.convene_by_question) matches pe_note/shock/depth only — EVENT_ARC voices (incl. Apollo since its move) are not convened by question; rule pending kati.",
       "2026-10-11 lawfulness ruling (kati_direct): archetype placements made before the 2026-10-10 method are NOT locked — Mnemosyne, Hecate demoted locked→derived (Hermes already derived); the 9 Muses stay locked with activation repaired to real Venus × planet conjunctions (superseded_activation kept).",
       "v0.4 2026-10-11 (cont.): Hermes → EVENT_ARC (archetype_events.hermes_arc, Athens sky; card 87530895); old greek_faces V5/Sol position kept as superseded_position. Hermes arc is short (0.5–2.4 d, ~yearly) — under the inside-arc convening rule he is rarely active.",
-      "v0.4 2026-10-11 (cont.): Dumuzi + Geshtinanna added as EVENT_ARC (Sun's descending / rising half; card 8ea607db)."
+      "v0.4 2026-10-11 (cont.): Dumuzi + Geshtinanna added as EVENT_ARC (Sun's descending / rising half; card 8ea607db).",
+      "v0.4 2026-10-11 (cont.): Persephone → persephone_third_arc (Pleiades dawn setting → Arcturus dusk rising, ⅓ yr; card 0db3c112); equator entry kept as superseded_position. First STAR-anchored (sidereal) arc — field anchor_frame added."
     ]
   },
   "Apollo": {
@@ -547,25 +548,53 @@
     "placement_class": "EVENT_ARC",
     "substrate_position": {
       "actor_planet": "Sun",
-      "arc_start": "equator_crossing (Sun dec 0, grids 25 / 55)",
-      "arc_end": "equator_crossing (opposite)",
-      "arc_grid_range": [
-        25.0,
-        55.0
-      ],
-      "arc_motion": "direct"
+      "arc_start": "pleiades_dawn_setting (star-anchored; Athens sky)",
+      "arc_end": "arcturus_dusk_rising (star-anchored; Athens sky)",
+      "arc_grid_range": null,
+      "arc_motion": "direct",
+      "anchor_frame": "sidereal (star) — slides against the seasons by precession; ~5 wk since Hesiod"
     },
     "event_arc": {
-      "engine": "archetype_events.persephone_arc",
+      "engine": "archetype_events.persephone_third_arc",
       "actor": "Sun",
       "boundaries": [
-        "equator_crossing_south",
-        "equator_crossing_north"
-      ]
+        "pleiades_dawn_setting",
+        "arcturus_dusk_rising"
+      ],
+      "duration_days_approx": "≈108 (⅓ yr = 122; star-visibility proxy)"
     },
-    "placement_source": "a4c3720f (kati_direct 2026-10-10: 'it already works')",
+    "placement_source": "0db3c112 (kati_direct 2026-10-11: 'its obviously 1/3 - venus is associated with 3'; promotion 'commit and promote it')",
     "placement_status": "derived",
-    "notes": "Persephone = the Sun below/above the reference plane (geographic equator, canon §5): descent at the autumn crossing (Libra 0, grid 25), return at the spring crossing (Aries 0, grid 55); the engine returns the current half (below or above), so she is always present with a state. Escort each year = Hecate (Hymn to Demeter ll.438-440, card 8e42cbcd). Greater Eleusinian Mysteries fall at the full moon nearest the autumn crossing (card ecf53745). OPEN: Hymn gives a third of the year below, predicate gives half. Separate canon residency kept: V9-V10 icosidodec coupling-point (§30, 6th residency) — not superseded by this entry. sdec-pending."
+    "notes": "Persephone below = a THIRD of the year (Hymn to Demeter ll.398-400, 445-447, 463-465), up 'when the earth shall bloom with the flowers of spring' (ll.401-403), grain hidden meanwhile (ll.450-456). Boundaries = Hesiod's star calendar: Pleiades dawn setting (sow) → Arcturus dusk rising (spring); ancient Athens WS−52 → WS+57 (0.30 yr). Festivals bracket it: Thesmophoria WS−65, Lesser Mysteries month (Anthesterion) contains the Arcturus rising. Apollodorus 3.14.4: Adonis' year in thirds — Persephone / Aphrodite / himself (the Greek form of Dumuzi's ½). Escort = Hecate (ll.438-440). Today's sky: 2026-12-07 → 2027-03-24 (stars drift vs seasons). V9-V10 coupling-point residency kept separately. sdec-pending.",
+    "superseded_position": {
+      "retired": "2026-10-11",
+      "reason": "Sun-below-equator predicate gives ½ year; text gives ⅓ three times (card 0db3c112).",
+      "previous": {
+        "stratum": "bridge",
+        "placement_class": "EVENT_ARC",
+        "substrate_position": {
+          "actor_planet": "Sun",
+          "arc_start": "equator_crossing (Sun dec 0, grids 25 / 55)",
+          "arc_end": "equator_crossing (opposite)",
+          "arc_grid_range": [
+            25.0,
+            55.0
+          ],
+          "arc_motion": "direct"
+        },
+        "event_arc": {
+          "engine": "archetype_events.persephone_arc",
+          "actor": "Sun",
+          "boundaries": [
+            "equator_crossing_south",
+            "equator_crossing_north"
+          ]
+        },
+        "placement_source": "a4c3720f (kati_direct 2026-10-10: 'it already works')",
+        "placement_status": "derived",
+        "notes": "Persephone = the Sun below/above the reference plane (geographic equator, canon §5): descent at the autumn crossing (Libra 0, grid 25), return at the spring crossing (Aries 0, grid 55); the engine returns the current half (below or above), so she is always present with a state. Escort each year = Hecate (Hymn to Demeter ll.438-440, card 8e42cbcd). Greater Eleusinian Mysteries fall at the full moon nearest the autumn crossing (card ecf53745). OPEN: Hymn gives a third of the year below, predicate gives half. Separate canon residency kept: V9-V10 icosidodec coupling-point (§30, 6th residency) — not superseded by this entry. sdec-pending."
+      }
+    }
   },
   "Dionysus": {
     "stratum": "olympian",
