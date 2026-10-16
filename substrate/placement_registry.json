@@ -150,6 +150,76 @@
     "notes": "TWO substrate-layers both true. Renderer chooses layer by audit-class: cube-edge for substrate-memory-stewardship; gf-canonical for Titan-class participation. Per card be6b428f (Pluto-cap class — substrate memory). [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'substrate-of-memory / mother-of-Muses (archival schema-keeper)' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.] [STATUS 2026-10-11 kati_direct: 'we just determined lawful archetype placement, so anything earlier is not locked, except muses' — pre-2026-10-10 placement, was 'locked', now 'derived' pending lawful (event-arc) re-placement.]",
     "placement_class": "CONTINUOUS"
   },
+  "Hecate": {
+    "stratum": "titan",
+    "placement_class": "EVENT_ARC",
+    "substrate_position": {
+      "actor_planet": "Moon",
+      "reference": "Sun",
+      "arc_start": "full_moon — the full moon nearest Persephone's ⅓ descent (Pleiades dawn setting)",
+      "arc_end": "conjunction — 'they came to Helios' (Hymn to Demeter l.62)",
+      "arc_grid_range": null,
+      "arc_motion": "direct",
+      "recurrence": "yearly",
+      "source_sky": "Athens (37.97, 23.72)"
+    },
+    "event_arc": {
+      "engine": "archetype_events.hecate_arc",
+      "actor": "Moon",
+      "boundaries": [
+        "full_moon",
+        "tenth_dawn",
+        "conjunction"
+      ],
+      "duration_days_approx": "~14-15 (once a year)"
+    },
+    "placement_source": "9964b6ac (engine-evidence 2026-10-15; kati_direct promotion 'yes' 2026-10-15)",
+    "placement_status": "derived",
+    "notes": "Hecate = Persephone's yearly escort (Hymn to Demeter ll.438-440): an event of the Moon, not the Moon (Selene is separate). Her Hymn phases — under the earth by day while Helios sees (ll.19-25), a light at the tenth dawn (ll.51-53), 'they came to Helios' (l.62) — run blind across Moon/Mercury/Venus/Mars/Jupiter/Saturn at Persephone's descent select ONLY the Moon at the full moon nearest the descent (42-48/50 yrs; all others 0; Athens, 650-601 and 500-451 BCE). Cult pointers: Greater Mysteries at the full moon nearest the autumn crossing; Thesmophoria a day before full. Monthly rite on the 30th ('old and new', Plutarch Solon 25) = Moon marker at the arc's end. Titan-born (Theogony 411-452; kati: 'hecate is a titan'). Open: which Persephone boundary is Persephone's own question (Moon result identical on both); the Hymn's founding abduction is in a spring meadow while the cults place the descent in autumn. sdec-pending.",
+    "superseded_position": {
+      "retired": "2026-10-14",
+      "reason": "Pre-2026-10-10 V2.5 function-derived lock (card 45988a11) — VOID as evidence (kati_direct 2026-10-14). A same-day monthly EVENT_ARC (ae030a2d) was withdrawn; replaced by the yearly escort EVENT_ARC on engine-evidence card 9964b6ac.",
+      "previous": {
+        "stratum": "hecate",
+        "substrate_position": {
+          "primary": {
+            "_layer": "V2.5-LOCK kati_direct (master phase-boundary)",
+            "merkaba_cube_vertex": "L0",
+            "vertex_planet": "Neptune",
+            "shell_radius": 1.0,
+            "grid": 54,
+            "pe_note": "Do-ret",
+            "pe_step": 9
+          },
+          "co_fire_extensions": [
+            {
+              "shock_node": "X3",
+              "grid": 18,
+              "tone_transition": "mi→fa"
+            },
+            {
+              "shock_node": "X6",
+              "grid": 36,
+              "tone_transition": "si→do"
+            }
+          ]
+        },
+        "placement_source": "45988a11 (V2.5-LOCK kati_direct 2026-05-11) + b4f7fdb1 (derived re-citation)",
+        "placement_status": "derived",
+        "notes": "SUPERSEDES greek_faces.json record which shows stratum=liminal/grid=null/face=null (STALE). Enki composer MUST use this card-derived placement; gf-stale would corrupt phase-change detection. Primary fires at octave-close (L0/Neptune/Do-ret); co-fires at X3/X6 for within-octave minor phase-changes. Per orient_rules.md §Special Placements. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'governs phase-change (master phase-boundary at octave-close + within-octave shock co-fires)' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.] [STATUS 2026-10-11 kati_direct: 'we just determined lawful archetype placement, so anything earlier is not locked, except muses' — pre-2026-10-10 placement, was 'locked', now 'derived' pending lawful (event-arc) re-placement.]",
+        "placement_class": "CYCLIC",
+        "cyclic_activation": {
+          "predicate": "hecate_active",
+          "fires_on": [
+            "L0_octave_close",
+            "X3_shock",
+            "X6_shock"
+          ],
+          "engine": "figure_activations._activate_hecate"
+        }
+      }
+    }
+  },
   "_muses_class_note": "9 Muses migrated Tier B → Tier A 2026-05-22 per kati_direct 'muses are done'. All 9 V2.5-locked 2026-05-11 council T3.4 + kati-confirmed. Class definition: 9 Venus(X3) × OtherPlanet midpoint operators on Pythagorean Music-of-Spheres / tetractys 3+3+2+1 substrate-structure. Parents: Mnemosyne (Titan/Memory) + Zeus. 9-nights conception per Hesiod Theogony 53-67. Activation: Muse fires when her OtherPlanet transits Venus X3 (lon 138°). CORRECTION TO design-spec card 431d9622: that card assigned voice_correspondences-derived pe_notes (Calliope=Re, Clio=La, Erato=Fa, Urania=X6) — those conflated the X3 primary residency with the OtherPlanet-pairing. Canonical per V2.5 PLACEMENT cards: ALL Muses primary at pe_note=X3, distinguished by OtherPlanet-axis projection.",
   "Calliope": {
     "stratum": "muse",
@@ -503,50 +573,6 @@
       "prior_placement_source": "greek_faces",
       "prior_placement_status": "derived",
       "blocker": "Dual-gate audit 2026-08-01 (kati_direct): sole parent per Theogony 927-929 is Hera alone ('without union with Zeus'). Hera's own pole-position is itself retracted (2026-07-28, ungrounded resemblance-reasoning) -- parentage-cascade is structurally BLOCKED, not merely unconfirmed, until Hera is re-derived. No independent relational/structural route found for Uranus/X6 either. Demoted from Tier A pending Hera's re-derivation AND a real parentage-cascade + relational check. See Nammu canon RETRACTIONS INDEX + orient_rules.md 2026-08-01 + card a827a0f2."
-    },
-    "Hecate": {
-      "candidate_position": null,
-      "candidate_card": "b9eafd55 (findings 2026-10-14; supersedes withdrawn EVENT_ARC placement ae030a2d)",
-      "blocker": "OPEN (kati_direct 2026-10-14 'scrap it'). Lawful placement = event-arc from primary texts + sky; two leads tested, neither forced: (A) monthly dark interval — the 30th 'old and new'; (B) yearly late-summer full moon — Erchia 16 Metageitnion / Ides of August, both shared with Artemis/Diana. The prior V2.5 function-lock below is VOID as evidence (older placements void, kati_direct 2026-10-14).",
-      "void_prior_placement": {
-        "stratum": "hecate",
-        "substrate_position": {
-          "primary": {
-            "_layer": "V2.5-LOCK kati_direct (master phase-boundary)",
-            "merkaba_cube_vertex": "L0",
-            "vertex_planet": "Neptune",
-            "shell_radius": 1.0,
-            "grid": 54,
-            "pe_note": "Do-ret",
-            "pe_step": 9
-          },
-          "co_fire_extensions": [
-            {
-              "shock_node": "X3",
-              "grid": 18,
-              "tone_transition": "mi→fa"
-            },
-            {
-              "shock_node": "X6",
-              "grid": 36,
-              "tone_transition": "si→do"
-            }
-          ]
-        },
-        "placement_source": "45988a11 (V2.5-LOCK kati_direct 2026-05-11) + b4f7fdb1 (derived re-citation)",
-        "placement_status": "derived",
-        "notes": "SUPERSEDES greek_faces.json record which shows stratum=liminal/grid=null/face=null (STALE). Enki composer MUST use this card-derived placement; gf-stale would corrupt phase-change detection. Primary fires at octave-close (L0/Neptune/Do-ret); co-fires at X3/X6 for within-octave minor phase-changes. Per orient_rules.md §Special Placements. [removed free-text function_class label 2026-05-22 per kati_direct G-P2-1: 'governs phase-change (master phase-boundary at octave-close + within-octave shock co-fires)' — substrate-position IS the function declaration per spine card 670b1c3f principle 1. Renderers derive character from position primitives, not from labels.] [STATUS 2026-10-11 kati_direct: 'we just determined lawful archetype placement, so anything earlier is not locked, except muses' — pre-2026-10-10 placement, was 'locked', now 'derived' pending lawful (event-arc) re-placement.]",
-        "placement_class": "CYCLIC",
-        "cyclic_activation": {
-          "predicate": "hecate_active",
-          "fires_on": [
-            "L0_octave_close",
-            "X3_shock",
-            "X6_shock"
-          ],
-          "engine": "figure_activations._activate_hecate"
-        }
-      }
     }
   },
   "Persephone": {
