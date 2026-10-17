@@ -347,3 +347,99 @@ def format_arc_field_block(rec: dict, header: str = "ARC FIELD MEMORY") -> str:
                          f"{(c.get('authorship') or '?')[:4]}/{(c.get('canon_status') or '?')[:6]}] "
                          f"{(c.get('text') or '')[:110].replace(chr(10), ' ').strip()}")
     return "\n".join(lines)
+
+
+# ── Time-keyed recall (2026-10-16) ───────────────────────────────────────────
+# Since 2026-10-10 an archetype is a sky EVENT whose extent is an EVENT_ARC in time; readings and
+# transits are "which arcs contain this moment". These two paths make the card store answer the
+# same question. Both are CATEGORICAL: a card's arc contains T or not; a card's moment lies inside
+# arc A or not. ZERO scores / weights. Output is in time order (a sort, not a rank).
+#   recall_arcs_containing(T) — cards carrying an event_arcs entry whose arc contains T
+#       pinned entry (start/end given)  → start ≤ T ≤ end
+#       recurring entry                 → the entry's own engine at T, EventArc.contains(T)
+#   recall_moments_in_arc(A)  — cards whose time key lies inside arc A
+#       key = card['moment'] when stamped, else created_at; each hit says which ('by')
+
+def _as_utc(when) -> _dt.datetime:
+    if when is None:
+        return _dt.datetime.now(_dt.timezone.utc)
+    if isinstance(when, str):
+        when = _dt.datetime.fromisoformat(when.replace("Z", "+00:00"))
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=_dt.timezone.utc)
+    return when.astimezone(_dt.timezone.utc)
+
+
+def _engine(name: str):
+    nammu_engines = str(_NAMMU / "engines")
+    if nammu_engines not in sys.path:
+        sys.path.insert(0, nammu_engines)
+    mod_name, fn_name = name.rsplit(".", 1)
+    return getattr(__import__(mod_name), fn_name)
+
+
+def recall_arcs_containing(when=None, include_dropped: bool = False) -> list[dict]:
+    """Cards whose event_arcs entry contains `when`. Returns
+    [{'card', 'archetype', 'by': 'pinned'|'engine', 'start', 'end', 'position'}] in arc-start order.
+    `position` is EventArc.position(when) for engine hits (segment + fraction), None for pinned."""
+    from card_writer import _load
+    T = _as_utc(when)
+    arc_cache: dict[str, object] = {}
+    hits = []
+    for card in _load():
+        arcs = card.get("event_arcs")
+        if not arcs:
+            continue
+        if not include_dropped and (card.get("canon_status") or "").lower() in DROP_STATUSES:
+            continue
+        for a in arcs:
+            if a.get("start") is not None:
+                s, e = _as_utc(a["start"]), _as_utc(a["end"])
+                if s <= T <= e:
+                    hits.append({"card": card, "archetype": a["archetype"], "by": "pinned",
+                                 "start": s, "end": e, "position": None})
+                continue
+            eng = a["engine"]
+            if eng not in arc_cache:
+                arc_cache[eng] = _engine(eng)(T)
+            arc = arc_cache[eng]
+            if arc.contains(T):
+                hits.append({"card": card, "archetype": a["archetype"], "by": "engine",
+                             "start": arc.start.t, "end": arc.end.t, "position": arc.position(T)})
+    hits.sort(key=lambda h: (h["start"], h["archetype"], h["card"].get("id", "")))
+    return hits
+
+
+def recall_moments_in_arc(arc, include_dropped: bool = False) -> list[dict]:
+    """Cards whose time key falls inside `arc` (an EventArc, or a (start, end) pair). Returns
+    [{'card', 'moment', 'by': 'moment'|'created_at', 'position'}] in time order."""
+    from card_writer import _load
+    if isinstance(arc, tuple):
+        s, e = _as_utc(arc[0]), _as_utc(arc[1])
+        pos = lambda t: None  # noqa: E731
+    else:
+        s, e = _as_utc(arc.start.t), _as_utc(arc.end.t)
+        pos = arc.position
+    hits = []
+    for card in _load():
+        if not include_dropped and (card.get("canon_status") or "").lower() in DROP_STATUSES:
+            continue
+        key, by = card.get("moment"), "moment"
+        if not key:
+            key, by = card.get("created_at"), "created_at"
+        if not key:
+            continue
+        t = _as_utc(key)
+        if s <= t <= e:
+            hits.append({"card": card, "moment": t, "by": by, "position": pos(t)})
+    hits.sort(key=lambda h: (h["moment"], h["card"].get("id", "")))
+    return hits
+
+
+def arc_for(archetype: str, when=None):
+    """The arc instance of a Tier-A EVENT_ARC archetype at `when`, from its registry engine."""
+    import placement_discipline as P
+    spec = P.load_placement(archetype).get("event_arc") or {}
+    if not spec.get("engine"):
+        raise KeyError(f"{archetype} is not an EVENT_ARC registry entry")
+    return _engine(spec["engine"])(_as_utc(when))

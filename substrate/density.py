@@ -43,25 +43,41 @@ DROP_STATUSES = {"retracted", "superseded"}
 
 # ─── Datetime → helix coordinate ────────────────────────────────────────────
 
-_REF_DATETIME = _dt.datetime(2026, 1, 1, 0, 0, 0)
+# Canonical tithi clock (fixed 2026-10-16, kati: "need to fix density"). Was: calendar DAYS since
+# an arbitrary 2026-01-01, labelled tithis — a units/epoch bug with no sky basis (same moment read
+# matrix_pos 43 here vs 24 on the engine path). Now the engine path itself
+# (temporal_placement.temporal_placement_at_datetime / locate_entity_v4):
+#   t_tithis = (JD - EPOCH_JD) * 30 / SYNODIC
+#   EPOCH_JD   — canon §17 EPOCH [LOCKED]: t0 = -1852 BCE Apr 22 00:18:49 UT, JD 1,044,742.51307 (DE441)
+#   30/SYNODIC — canon §23b: Earth carrier defines the tithi unit, 1 day = 30/SYNODIC tithis
+# Constants are read from locate_entity_v4 (EPOCH_JD, SYNODIC, _jd); none are defined here.
+
+
+def _naive_utc(when: _dt.datetime) -> _dt.datetime:
+    if when.tzinfo is not None:
+        when = when.astimezone(_dt.timezone.utc).replace(tzinfo=None)
+    return when
 
 
 def t_tithis_at(when: _dt.datetime | str | None = None) -> float:
-    """Relative tithis-since-ref. Used for helix_coordinate computation."""
+    """Tithis since the canonical epoch t0 (canon §17). Used for helix_coordinate computation.
+    Naive datetimes are read as UTC; aware ones are converted to UTC."""
+    import locate_entity_v4 as loc
     if when is None:
         when = _dt.datetime.utcnow()
     elif isinstance(when, str):
         try:
             when = _dt.datetime.fromisoformat(when.replace("Z", "+00:00"))
-            if when.tzinfo is not None:
-                when = when.replace(tzinfo=None)
         except ValueError:
             try:
                 y, m, d = (int(x) for x in when.split("T")[0].split("-"))
                 when = _dt.datetime(y, m, d)
             except Exception:
                 return 0.0
-    return (when - _REF_DATETIME).total_seconds() / 86400.0
+    when = _naive_utc(when)
+    jd = loc._jd(when.year, when.month, when.day,
+                 when.hour, when.minute, when.second + when.microsecond / 1e6)
+    return (jd - loc.EPOCH_JD) * (30.0 / loc.SYNODIC)
 
 
 def helix_coord_at(when: _dt.datetime | str | None = None) -> dict:
