@@ -573,6 +573,39 @@
       "prior_placement_source": "greek_faces",
       "prior_placement_status": "derived",
       "blocker": "Dual-gate audit 2026-08-01 (kati_direct): sole parent per Theogony 927-929 is Hera alone ('without union with Zeus'). Hera's own pole-position is itself retracted (2026-07-28, ungrounded resemblance-reasoning) -- parentage-cascade is structurally BLOCKED, not merely unconfirmed, until Hera is re-derived. No independent relational/structural route found for Uranus/X6 either. Demoted from Tier A pending Hera's re-derivation AND a real parentage-cascade + relational check. See Nammu canon RETRACTIONS INDEX + orient_rules.md 2026-08-01 + card a827a0f2."
+    },
+    "Artemis": {
+      "candidate_position": null,
+      "candidate_card": "8f78a079 (findings 2026-10-17; supersedes withdrawn EVENT_ARC placement 24ed3550)",
+      "blocker": "OPEN (kati 2026-10-17 approved back-out: 'registry to _blocked_pending_placement, supersede 24ed3550 with a findings card'; 2026-10-16 'i just dont know what you based any of that on'). The EVENT_ARC below rested on Claude's encoding (birth -> Sun crossing, 1.25 d threshold, Athens sky, Lucifer's station->station extent), not on a kati placement. Findings kept in card 8f78a079 (Venus 9/219, one north face). Re-placement goes geometry-first (Nammu handoff_2026-10-17 §10-11).",
+      "withdrawn_placement": {
+        "stratum": "olympian",
+        "placement_class": "EVENT_ARC",
+        "substrate_position": {
+          "actor_planet": "Venus",
+          "arc_start": "station_rx — of an Inanna descent whose face hides Venus for no full day",
+          "arc_end": "station_direct",
+          "arc_grid_range": null,
+          "arc_motion": "retrograde",
+          "source_sky": "Athens (37.97, 23.72)"
+        },
+        "event_arc": {
+          "engine": "archetype_events.artemis_arc",
+          "actor": "Venus",
+          "boundaries": [
+            "station_rx",
+            "last_evening_sighting",
+            "first_morning_sighting",
+            "inferior_conjunction",
+            "station_direct"
+          ],
+          "selector": "last evening sighting → first morning sighting < 1.25 d (ARTEMIS_DARK_MAX; Schoch visibility)",
+          "face": "falls out of the selector: Venus at her highest north (+7.9..+8.6° at conjunction); Aquarius/Pisces in 750-401 BCE, Aries now (2001, 2009, 2017, 2025, 2033)"
+        },
+        "placement_source": "24ed3550 (kati_direct placement 'lets place hecate and then artemis' 2026-10-16; engine-evidence scripts/probe_artemis_phases.py)",
+        "placement_status": "derived",
+        "notes": "Artemis = an event OF Venus (not Venus, not Aphrodite): the Venus descent with no full day hidden. Her text phases — 'without travail' (Callimachus 3.24-25, vs Leto's nine days for Apollo, Hymn III 91) and 'Bringer of Light' (phosphoros, Callim. 3.11, 3.204) — run blind per Sun crossing across Moon/Mercury/Venus/Mars/Jupiter/Saturn (Athens 750-401 BCE) select ONLY Venus, 9/219 crossings, all one face (highest north, dark 0.5 d), a median 38 d before the spring equinox (Apollo's arc start). Lucifer's precedent for the arc extent (station → station). Twin of Apollo (Theogony 918-920); cousin of Hecate (Theogony 404-411). Open: Hymn to Aphrodite 16-20 (Aphrodite cannot subdue her) vs Aphrodite's unplaced event; Swiss Ephemeris runs every Venus face ~5 d darker (shortest-face holds, no-day-hidden is Schoch-only); Alexandria sky not run; annual festivals cannot test a Venus event. sdec-pending."
+      }
     }
   },
   "Persephone": {
@@ -702,34 +735,6 @@
     "placement_source": "4e7d3cd0 (kati_direct 2026-10-10: 'lucifer is venus RX in scorpio')",
     "placement_status": "derived",
     "notes": "Lucifer / Eosphoros = an Inanna descent whose retrograde station falls in Scorpio (beneath face: the evening star falls under the Sun, vanishes, rises as morning star). Stratum from Hesiod Theog. 381: Eosphoros, child of Eos × Astraeus. Holds in Isaiah's sky and today's (2242a50b). Engine returns the containing or NEXT Lucifer descent: 2026-10-03 → 2026-11-14; next 2034-09-30 (station 6.1° Scorpio), 2042-09-28 (3.8°). sdec-pending."
-  },
-  "Artemis": {
-    "stratum": "olympian",
-    "placement_class": "EVENT_ARC",
-    "substrate_position": {
-      "actor_planet": "Venus",
-      "arc_start": "station_rx — of an Inanna descent whose face hides Venus for no full day",
-      "arc_end": "station_direct",
-      "arc_grid_range": null,
-      "arc_motion": "retrograde",
-      "source_sky": "Athens (37.97, 23.72)"
-    },
-    "event_arc": {
-      "engine": "archetype_events.artemis_arc",
-      "actor": "Venus",
-      "boundaries": [
-        "station_rx",
-        "last_evening_sighting",
-        "first_morning_sighting",
-        "inferior_conjunction",
-        "station_direct"
-      ],
-      "selector": "last evening sighting → first morning sighting < 1.25 d (ARTEMIS_DARK_MAX; Schoch visibility)",
-      "face": "falls out of the selector: Venus at her highest north (+7.9..+8.6° at conjunction); Aquarius/Pisces in 750-401 BCE, Aries now (2001, 2009, 2017, 2025, 2033)"
-    },
-    "placement_source": "24ed3550 (kati_direct placement 'lets place hecate and then artemis' 2026-10-16; engine-evidence scripts/probe_artemis_phases.py)",
-    "placement_status": "derived",
-    "notes": "Artemis = an event OF Venus (not Venus, not Aphrodite): the Venus descent with no full day hidden. Her text phases — 'without travail' (Callimachus 3.24-25, vs Leto's nine days for Apollo, Hymn III 91) and 'Bringer of Light' (phosphoros, Callim. 3.11, 3.204) — run blind per Sun crossing across Moon/Mercury/Venus/Mars/Jupiter/Saturn (Athens 750-401 BCE) select ONLY Venus, 9/219 crossings, all one face (highest north, dark 0.5 d), a median 38 d before the spring equinox (Apollo's arc start). Lucifer's precedent for the arc extent (station → station). Twin of Apollo (Theogony 918-920); cousin of Hecate (Theogony 404-411). Open: Hymn to Aphrodite 16-20 (Aphrodite cannot subdue her) vs Aphrodite's unplaced event; Swiss Ephemeris runs every Venus face ~5 d darker (shortest-face holds, no-day-hidden is Schoch-only); Alexandria sky not run; annual festivals cannot test a Venus event. sdec-pending."
   },
   "Dumuzi": {
     "stratum": "mesopotamian",
