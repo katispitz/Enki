@@ -62,13 +62,23 @@ _SHOCK_BOUNDARIES = {2.5: "X3 mi→fa", 4.5: "X6 si→do"}
 _ARM = {1: "solar", 3: "solar", 5: "solar", 2: "lunar", 4: "lunar", 6: "lunar"}
 
 
+_DO_RETURN = 7   # Do-return (grid 54, ae5014f0): Venus as the TARGET of a content body
+
+
 def _interval_shock(ia, ib):
     """Off-diagonal geometric skeleton — 4 coordinates (OQ-49-OFFDIAG-ENGINE +
     OQ-49-OFFDIAG-DIRECTION RESOLVED 2026-06-21):
-      interval-quality (scale-degree) · shock-load (scale-crises crossed) ·
+      interval-quality (scale-degree) · shock-load (shock DELIVERY points crossed, X3/X6 —
+      not acoustic semitones; card 4cfdbfcf) ·
       octave-direction (asc=generative / desc=dissolutive, §16/§2/§00a) ·
       arm-relation (same-arm / cross-arm = §16 same-body/cross-body = the supervision shock-transfer).
-    Two interval-metrics are one: label−scale == shock-load (holds 30/30)."""
+    Two interval-metrics are one: label−scale == shock-load (holds 30/30, by construction).
+
+    Do-return (kati_direct 2026-11-04 "fix", card 91531361): a content body → Venus reads UP
+    to Do-return (idx 7 = grid 54, "origin=return"), not down to Do@0. Venus as SOURCE stays
+    Do@0 (origin); Venus×Venus stays the diagonal."""
+    if ib == 0 and ia != 0:
+        ib = _DO_RETURN
     steps = abs(ib - ia)
     lo, hi = sorted((ia, ib))
     crossed = [n for pos, n in _SHOCK_BOUNDARIES.items() if lo < pos < hi]
@@ -84,6 +94,7 @@ def _interval_shock(ia, ib):
         "arm_relation": ("same-arm" if arm_a and arm_a == arm_b
                          else "cross-arm" if arm_a and arm_b else "frame/boundary"),
         "arms": [arm_a, arm_b],   # cross-arm = the §16 cross-body supervision shock-transfer
+        "target": "Do-return" if ib == _DO_RETURN else None,
     }
 
 
