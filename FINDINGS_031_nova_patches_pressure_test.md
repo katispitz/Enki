@@ -5,6 +5,11 @@
 **Probe shape:** canon-precedent cross-check (does current canon already adjudicate / supersede the claim?) + substrate-derivability check
 **Outcome:** NONE of the NOVA patches survive as "integrate as new canon." Each is already-absorbed-in-refined-form, already-reconciled, reject-as-figure-placement, or canon-open-by-design. NOVA was a seed; substrate work has overtaken it.
 
+> **CORRECTION 2026-11-16 (body preserved below as the 06-14 record):** every "Venus IS the frame" / `frame/epoch/void`
+> in this finding now reads **Venus = RECEPTIVE** — kati_direct 2026-08-15, card `722ed656` ("Receptive is accurate
+> frame is not"); derived + sdec-pending. `matrix_engine.py` role is now `receptive/epoch/void`. The (0,0) VINDICATED
+> verdict stands (void = the receptive receiving only itself). The which-of-5 selector reading (PP2) is still OPEN.
+
 ## Method
 
 NOVA = archive-only per CLAUDE.md (excluded from canon until pressure-tested + ratified). For each claim: (1) does current canon already address it, and in what form? (2) is it substrate-derivable, or external/figure-placement? Verdict ∈ {ABSORBED-REFINED, RECONCILED, REJECT, CANON-OPEN, KATI-ONLY}.
